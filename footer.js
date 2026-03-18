@@ -16,22 +16,3 @@ const footerHTML = `
 `;
 
 document.getElementById('footer-placeholder').innerHTML = footerHTML;
-```
-
-### Step 3: Clean up your 12 HTML pages
-Now, on every single page (like `index.html`, `about.html`, etc.), you do this:
-
-1.  **Delete** the entire `<nav>...</nav>` block.
-2.  **In its place**, add this:
-    ```html
-    <div id="nav-placeholder"></div>
-    ```
-3.  **Delete** the entire `<footer>...</footer>` block.
-4.  **In its place**, add this:
-    ```html
-    <div id="footer-placeholder"></div>
-    ```
-5.  **At the very bottom of the page** (just before the closing `</body>` tag), add these lines:
-    ```html
-    <script src="nav.js"></script>
-    <script src="footer.js"></script>
