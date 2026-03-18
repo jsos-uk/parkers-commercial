@@ -9,11 +9,11 @@ const navHTML = `
             </div>
             
             <div class="hidden md:flex items-center space-x-10">
-                <a href="index.html" class="text-[12px] font-medium uppercase tracking-[0.2em] text-white hover:text-brand-accent transition-colors nav-link">Home</a>
-                <a href="case-studies.html" class="text-[12px] font-medium uppercase tracking-[0.2em] text-white hover:text-brand-accent transition-colors nav-link">Case Studies</a>
+                <a href="index.html" class="text-[14px] font-medium uppercase tracking-[0.2em] text-white hover:text-brand-accent transition-colors nav-link">Home</a>
+                <a href="case-studies.html" class="text-[14px] font-medium uppercase tracking-[0.2em] text-white hover:text-brand-accent transition-colors nav-link">Case Studies</a>
                 
                 <div class="relative group">
-                    <a href="services.html" class="text-[12px] font-medium uppercase tracking-[0.2em] text-white hover:text-brand-accent transition-colors nav-link flex items-center gap-1 cursor-pointer">
+                    <a href="services.html" class="text-[14px] font-medium uppercase tracking-[0.2em] text-white hover:text-brand-accent transition-colors nav-link flex items-center gap-1 cursor-pointer">
                         Services <i data-lucide="chevron-down" class="w-3 h-3"></i>
                     </a>
                     <div class="absolute top-full left-0 mt-4 w-72 bg-brand-900 border-t-2 border-brand-accent opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-xl">
@@ -27,13 +27,13 @@ const navHTML = `
                     </div>
                 </div>
                 
-                <a href="contact.html" class="text-[12px] font-medium uppercase tracking-[0.2em] text-white hover:text-brand-accent transition-colors nav-link">Contact Us</a>
+                <a href="contact.html" class="text-[14px] font-medium uppercase tracking-[0.2em] text-white hover:text-brand-accent transition-colors nav-link">Contact Us</a>
             </div>
 
             <div class="hidden md:flex items-center gap-8">
                 <a href="tel:07395106650" class="flex items-center gap-3 text-white hover:text-brand-accent transition-colors group nav-link">
                     <i data-lucide="phone" class="w-4 h-4"></i>
-                    <span class="text-[12px] tracking-[0.2em] font-semibold">07395 106 650</span>
+                    <span class="text-[14px] tracking-[0.2em] font-semibold">07395 106 650</span>
                 </a>
                 <a href="contact.html" class="border border-brand-accent bg-brand-accent text-brand-900 px-8 py-3 font-teko uppercase tracking-[0.1em] text-xl hover:bg-white hover:border-white transition-all duration-500 nav-btn shadow-lg">Get A Quote</a>
             </div>
@@ -46,6 +46,7 @@ const navHTML = `
         </div>
     </div>
 
+    <!-- Mobile Menu Accordion -->
     <div id="mobile-menu" class="hidden md:hidden bg-brand-900 absolute w-full left-0 top-full border-t border-brand-500 z-40 shadow-2xl overflow-y-auto max-h-[85vh]">
         <div class="px-6 py-6 flex flex-col">
             <a href="index.html" class="text-lg font-sans text-white py-4 border-b border-white/10">Home</a>
