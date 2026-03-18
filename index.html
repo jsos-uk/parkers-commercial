@@ -6,6 +6,11 @@
     <title>Parkers Commercial | Delivering a higher standard of commercial cleaning</title>
     <meta name="description" content="Delivering a higher standard of commercial cleaning for over 35 years, built on a foundation of trust, reliability, and family-run accountability.">
     
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Parkers Commercial Cleaning">
+    <meta property="og:description" content="Delivering a higher standard of commercial cleaning for over 35 years.">
+    <meta property="og:type" content="website">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600&family=Teko:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
@@ -187,11 +192,23 @@
                         <p class="text-sm text-white/60 mb-8 font-light">Direct response within 24 hours.</p>
                         <form id="heroLeadForm" action="#" method="POST" class="space-y-6">
                             <div class="grid grid-cols-2 gap-6">
-                                <input type="text" placeholder="First Name" required class="input-elegant">
-                                <input type="text" placeholder="Last Name" required class="input-elegant">
+                                <div>
+                                    <label for="firstName" class="sr-only">First Name</label>
+                                    <input type="text" id="firstName" placeholder="First Name" required class="input-elegant">
+                                </div>
+                                <div>
+                                    <label for="lastName" class="sr-only">Last Name</label>
+                                    <input type="text" id="lastName" placeholder="Last Name" required class="input-elegant">
+                                </div>
                             </div>
-                            <input type="email" placeholder="Email Address" required class="input-elegant">
-                            <textarea placeholder="How can we help you?" rows="2" class="input-elegant resize-none"></textarea>
+                            <div>
+                                <label for="emailAddress" class="sr-only">Email Address</label>
+                                <input type="email" id="emailAddress" placeholder="Email Address" required class="input-elegant">
+                            </div>
+                            <div>
+                                <label for="message" class="sr-only">How can we help you?</label>
+                                <textarea id="message" placeholder="How can we help you?" rows="2" class="input-elegant resize-none"></textarea>
+                            </div>
                             <button type="submit" class="w-full py-4 mt-6 bg-brand-500 text-white font-teko text-2xl uppercase tracking-wide hover:bg-brand-accent hover:text-brand-900 transition-colors duration-300">Submit Request</button>
                         </form>
                     </div>
@@ -350,14 +367,41 @@
 
     <!-- Footer -->
     <footer data-theme="dark" class="bg-brand-900 py-16 border-t-[3px] border-brand-accent">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
-            <img src="https://parkerscommercial.co.uk/wp-content/uploads/2025/09/cropped-Parkers-Logo-Long-354x80.png" alt="Parker's" class="h-8 md:h-10 brightness-0 invert">
-            <div class="text-white/40 text-[10px] tracking-[0.1em] text-center md:text-right font-light uppercase">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 border-b border-white/10 pb-12">
+                <div class="md:col-span-2">
+                    <img src="https://parkerscommercial.co.uk/wp-content/uploads/2025/09/cropped-Parkers-Logo-Long-354x80.png" alt="Parker's" class="h-10 brightness-0 invert mb-6">
+                    <p class="text-white/60 font-light text-sm max-w-sm leading-relaxed mb-6">Delivering a higher standard of commercial cleaning across the UK, built on a foundation of trust, reliability, and accountability.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-white/60 hover:text-brand-accent transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                        <a href="#" class="text-white/60 hover:text-brand-accent transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                        <a href="#" class="text-white/60 hover:text-brand-accent transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-teko text-2xl text-white uppercase tracking-wide mb-6">Contact Us</h4>
+                    <ul class="space-y-4 text-white/60 text-sm font-light">
+                        <li class="flex items-center gap-3"><i data-lucide="phone" class="w-4 h-4 text-brand-accent"></i> <a href="tel:07395106650" class="hover:text-white transition-colors">07395 106 650</a></li>
+                        <li class="flex items-center gap-3"><i data-lucide="mail" class="w-4 h-4 text-brand-accent"></i> <a href="mailto:info@parkerscommercial.co.uk" class="hover:text-white transition-colors">info@parkerscommercial.co.uk</a></li>
+                        <li class="flex items-start gap-3"><i data-lucide="map-pin" class="w-4 h-4 text-brand-accent mt-1"></i> <span>London, United Kingdom<br/>Regional coverage available</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-teko text-2xl text-white uppercase tracking-wide mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-white/60 text-sm font-light">
+                        <li><a href="services.html" class="hover:text-white hover:pl-2 transition-all">All Services</a></li>
+                        <li><a href="ongoing-contract-maintenance.html" class="hover:text-white hover:pl-2 transition-all">Contract Maintenance</a></li>
+                        <li><a href="case-studies.html" class="hover:text-white hover:pl-2 transition-all">Case Studies</a></li>
+                        <li><a href="privacy-policy.html" class="hover:text-white hover:pl-2 transition-all">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-white/40 text-[10px] tracking-[0.1em] font-light uppercase">
                 <p>&copy; 2025 Parker's Commercial Cleaning. All rights reserved.</p>
-                <div class="mt-4 flex flex-wrap gap-6 justify-center md:justify-end font-semibold">
+                <div class="flex flex-wrap gap-6 font-semibold">
                     <a href="index.html" class="hover:text-white transition-colors">Home</a>
-                    <a href="services.html" class="hover:text-white transition-colors">Services</a>
-                    <a href="case-studies.html" class="hover:text-white transition-colors">Case Studies</a>
+                    <a href="terms.html" class="hover:text-white transition-colors">Terms</a>
                     <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
                 </div>
             </div>
