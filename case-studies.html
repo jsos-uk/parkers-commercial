@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies | Parker's Commercial Cleaning</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600&amp;family=Teko:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Hind', 'sans-serif'], heading: ['Playfair Display', 'serif'], teko: ['Teko', 'sans-serif'] },
+                    colors: { brand: { 50: '#f0f7fc', 100: '#e0eef9', 500: '#104A6E', 600: '#0c3854', 700: '#08253a', 900: '#212d45', accent: '#6DC3F6', text: '#4b4f58' } }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        ::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-track { background: #ffffff; } ::-webkit-scrollbar-thumb { background: #cbd5e1; } ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-100 { transition-delay: 100ms; } .delay-200 { transition-delay: 200ms; }
+        
+        .glass-nav { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(15px); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        .img-grayscale-scroll { filter: grayscale(100%); transition: filter 2s ease 0.3s, transform 0.7s ease; }
+        .reveal.active .img-grayscale-scroll, .reveal.active.img-grayscale-scroll { filter: grayscale(0%); }
+    </style>
+</head>
+<body class="font-sans text-brand-text antialiased bg-white overflow-x-hidden selection:bg-brand-900 selection:text-white">
+
+    <!-- Dynamic Themed Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 bg-transparent py-6 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center h-12">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="transition-opacity duration-500 hover:opacity-80" id="nav-logo-link">
+                        <img src="https://parkerscommercial.co.uk/wp-content/uploads/2025/09/cropped-Parkers-Logo-Long-354x80.png" alt="Parker's Commercial Cleaning" id="nav-logo-img" class="h-8 md:h-10 w-auto transition-all duration-500 brightness-0 invert">
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="index.html" class="text-[12px] font-medium uppercase tracking-[0.2em] text-white hover:text-brand-accent transition-colors nav-link">Home</a>
+                    <a href="case-studies.html" class="text-[12px] font-medium uppercase tracking-[0.2em] text-brand-accent transition-colors nav-link font-bold">Case Studies</a>
+                    
+                    <div class="relative group">
+                        <a href="services.html" class="text-[12px] font-medium uppercase tracking-[0.2em] text-white hover:text-brand-accent transition-colors nav-link flex items-center gap-1 cursor-pointer">
+                            Services <i data-lucide="chevron-down" class="w-3 h-3"></i>
+                        </a>
+                        <div class="absolute top-full left-0 mt-4 w-72 bg-brand-900 border-t-2 border-brand-accent opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-xl">
+                            <a href="ongoing-contract-maintenance.html" class="block px-6 py-4 text-white text-sm hover:bg-white/10 hover:text-brand-accent transition-colors border-b border-white/10">Ongoing Contract Maintenance</a>
+                            <a href="commercial-industrial-cleaning.html" class="block px-6 py-4 text-white text-sm hover:bg-white/10 hover:text-brand-accent transition-colors border-b border-white/10">Commercial &amp; Industrial Cleaning</a>
+                            <a href="healthcare-sanitation-services.html" class="block px-6 py-4 text-white text-sm hover:bg-white/10 hover:text-brand-accent transition-colors border-b border-white/10">Healthcare &amp; Sanitation</a>
+                            <a href="high-level-cladding.html" class="block px-6 py-4 text-white text-sm hover:bg-white/10 hover:text-brand-accent transition-colors border-b border-white/10">High-Level &amp; Cladding</a>
+                            <a href="post-construction-sparkle.html" class="block px-6 py-4 text-white text-sm hover:bg-white/10 hover:text-brand-accent transition-colors border-b border-white/10">Post-Construction &amp; Sparkle</a>
+                            <a href="warehouse-factory-cleaning.html" class="block px-6 py-4 text-white text-sm hover:bg-white/10 hover:text-brand-accent transition-colors border-b border-white/10">Warehouse &amp; Factory</a>
+                            <a href="property-management-specialist-services.html" class="block px-6 py-4 text-white text-sm hover:bg-white/10 hover:text-brand-accent transition-colors">Property Management</a>
+                        </div>
+                    </div>
+                    
+                    <a href="contact.html" class="text-[12px] font-medium uppercase tracking-[0.2em] text-white hover:text-brand-accent transition-colors nav-link">Contact Us</a>
+                </div>
+
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="tel:07395106650" class="flex items-center gap-2 text-white hover:text-brand-accent transition-colors group nav-link">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        <span class="text-[12px] tracking-[0.2em] font-semibold">07395 106 650</span>
+                    </a>
+                    <a href="contact.html" class="border border-brand-accent bg-brand-accent text-brand-900 px-8 py-3 font-teko uppercase tracking-[0.1em] text-xl hover:bg-white hover:border-white transition-all duration-500 nav-btn shadow-lg">Get A Quote</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white hover:text-brand-accent focus:outline-none p-2 transition-colors">
+                        <i data-lucide="menu" class="h-8 w-8 stroke-[1.5]"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-900 absolute w-full left-0 top-full border-t border-brand-500 z-40 shadow-2xl">
+            <div class="px-6 py-6 flex flex-col">
+                <a href="index.html" class="mobile-link text-lg font-sans text-white py-4 border-b border-white/10">Home</a>
+                <a href="case-studies.html" class="mobile-link text-lg font-sans text-brand-accent py-4 border-b border-white/10 font-bold">Case Studies</a>
+                <a href="services.html" class="mobile-link text-lg font-sans text-white py-4 border-b border-white/10">Services</a>
+                <a href="contact.html" class="mobile-link text-lg font-sans text-white py-4">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Subpage Hero (Tagged as Dark) -->
+    <header data-theme="dark" class="pt-32 pb-16 md:pt-48 md:pb-24 bg-brand-900 border-b border-white/10 relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&amp;fit=crop&amp;w=2000&amp;q=80" alt="Premium Corporate Architecture" class="w-full h-full object-cover opacity-30 grayscale">
+            <div class="absolute inset-0 bg-brand-900/80"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center reveal active relative z-10">
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-teko font-bold text-white mb-4 uppercase tracking-wide">Case Studies</h1>
+            <p class="text-brand-accent text-sm tracking-[0.3em] uppercase font-semibold">Proven Operational Excellence</p>
+        </div>
+    </header>
+
+    <!-- Intro Section (Tagged as Light) -->
+    <section data-theme="light" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6 lg:px-12 text-center reveal">
+            <h2 class="text-4xl md:text-5xl font-heading font-medium text-brand-900 mb-6">Recent Projects Showcase</h2>
+            <p class="text-lg text-brand-text font-light leading-relaxed mb-8">
+                We believe our work speaks for itself. Over the past 35 years, we have had the privilege of partnering with a diverse range of businesses across the commercial, industrial, and healthcare sectors. Below is a selection of projects that highlight our commitment to quality, safety, and delivering a flawless finish. Each case study demonstrates our process and the tangible difference our professional cleaning services make for our clients.
+            </p>
+        </div>
+    </section>
+
+    <!-- Case Studies Showcase (Tagged as Light) -->
+    <section data-theme="light" class="py-16 pb-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <!-- Case Study 1: Blue Sky Dental -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
+                <div class="relative reveal h-[500px] lg:h-[600px] order-2 lg:order-1 border border-slate-200 p-2">
+                    <img src="https://parkerscommercial.co.uk/wp-content/uploads/2025/10/Gemini_Generated_Image_j147auj147auj147.png" alt="Blue Sky Dental" class="w-full h-full object-cover img-grayscale-scroll">
+                    <div class="absolute top-6 right-6 bg-brand-900 text-white px-4 py-2 font-teko text-xl uppercase tracking-wide shadow-lg">Healthcare</div>
+                </div>
+                <div class="reveal delay-100 order-1 lg:order-2">
+                    <div class="inline-flex items-center gap-4 mb-6">
+                        <span class="text-brand-accent text-[10px] tracking-[0.3em] uppercase font-bold">Healthcare &amp; CQC Compliance</span>
+                    </div>
+                    <h3 class="text-4xl font-heading font-medium text-brand-900 mb-6 uppercase">Blue Sky Dental</h3>
+                    <div class="space-y-6 text-brand-text font-light leading-relaxed">
+                        <p>We provide ongoing contract cleaning for Blue Sky Dental, ensuring their clinical environment consistently meets the rigorous standards required for CQC inspections. Our work includes detailed sanitation of treatment areas and creating a pristine, welcoming atmosphere for their patients, reinforcing their reputation for professional excellence.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 2: Spire Welsley Hospital -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
+                <div class="reveal">
+                    <div class="inline-flex items-center gap-4 mb-6">
+                        <span class="text-brand-accent text-[10px] tracking-[0.3em] uppercase font-bold">Clinical &amp; Surgical Environment Cleaning</span>
+                    </div>
+                    <h3 class="text-4xl font-heading font-medium text-brand-900 mb-6 uppercase">Spire Welsley Hospital</h3>
+                    <div class="space-y-6 text-brand-text font-light leading-relaxed">
+                        <p>For this major private hospital, our team was tasked with performing a comprehensive deep clean of a surgical ward. The project required meticulous attention to detail, adherence to strict infection control protocols, and was completed with zero disruption to the hospital’s critical ongoing operations.</p>
+                    </div>
+                </div>
+                <div class="relative reveal delay-100 h-[500px] lg:h-[600px] border border-slate-200 p-2">
+                    <img src="https://parkerscommercial.co.uk/wp-content/uploads/2025/10/Gemini_Generated_Image_j147auj147auj147-1.png" alt="Spire Welsley Hospital" class="w-full h-full object-cover img-grayscale-scroll">
+                    <div class="absolute top-6 left-6 bg-brand-900 text-white px-4 py-2 font-teko text-xl uppercase tracking-wide shadow-lg">Clinical</div>
+                </div>
+            </div>
+
+            <!-- Case Study 3: Lookers -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
+                <div class="relative reveal h-[500px] lg:h-[600px] order-2 lg:order-1 border border-slate-200 p-2">
+                    <img src="https://parkerscommercial.co.uk/wp-content/uploads/2025/10/Gemini_Generated_Image_j147auj147auj147-2.png" alt="Lookers Showroom" class="w-full h-full object-cover img-grayscale-scroll">
+                    <div class="absolute top-6 right-6 bg-brand-900 text-white px-4 py-2 font-teko text-xl uppercase tracking-wide shadow-lg">Commercial</div>
+                </div>
+                <div class="reveal delay-100 order-1 lg:order-2">
+                    <div class="inline-flex items-center gap-4 mb-6">
+                        <span class="text-brand-accent text-[10px] tracking-[0.3em] uppercase font-bold">Commercial Showroom &amp; Workshop Cleaning</span>
+                    </div>
+                    <h3 class="text-4xl font-heading font-medium text-brand-900 mb-6 uppercase">Lookers</h3>
+                    <div class="space-y-6 text-brand-text font-light leading-relaxed">
+                        <p>Maintaining the prestige of a high-value car showroom is paramount. For Lookers, we deliver a complete cleaning solution that covers their public-facing showroom, offices, and their industrial workshop and servicing bays, ensuring a brand image of quality and professionalism is projected at every touchpoint.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 4: Ramseys Care Home -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <div class="inline-flex items-center gap-4 mb-6">
+                        <span class="text-brand-accent text-[10px] tracking-[0.3em] uppercase font-bold">Residential Care &amp; Sanitation Services</span>
+                    </div>
+                    <h3 class="text-4xl font-heading font-medium text-brand-900 mb-6 uppercase">Ramseys Care Home</h3>
+                    <div class="space-y-6 text-brand-text font-light leading-relaxed">
+                        <p>Creating a safe, hygienic, and comfortable environment is the top priority for any residential care home. Our services for Ramsey’s Care Home focus on the thorough and discreet cleaning of communal areas, resident rooms, and dining facilities, contributing to the health and well-being of all residents.</p>
+                    </div>
+                </div>
+                <div class="relative reveal delay-100 h-[500px] lg:h-[600px] border border-slate-200 p-2">
+                    <img src="https://parkerscommercial.co.uk/wp-content/uploads/2025/10/Gemini_Generated_Image_j147auj147auj147-3.png" alt="Ramseys Care Home" class="w-full h-full object-cover img-grayscale-scroll">
+                    <div class="absolute top-6 left-6 bg-brand-900 text-white px-4 py-2 font-teko text-xl uppercase tracking-wide shadow-lg">Residential Care</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Our Commitment & Why Partner With Us (Tagged as Light) -->
+    <section data-theme="light" class="py-32 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+                <span class="text-brand-accent text-[10px] tracking-[0.3em] uppercase font-bold block mb-4">Our Commitment</span>
+                <h2 class="text-4xl md:text-5xl font-teko font-bold text-brand-900 uppercase">A Higher Standard of Clean</h2>
+                <div class="h-[2px] w-16 bg-brand-accent mx-auto mt-6 mb-6"></div>
+                <p class="text-lg text-brand-text font-light leading-relaxed">
+                    We are dedicated to creating healthier, safer, and more productive environments for your staff and clients through meticulous, compliant, and reliable cleaning protocols.
+                </p>
+            </div>
+            
+            <div class="mb-12 reveal">
+                <h3 class="text-2xl font-heading font-medium text-brand-900 mb-4 text-center">Why Partner With Us?</h3>
+                <p class="text-center text-brand-text font-light mb-12">Our entire operation is built on four key pillars that ensure a seamless and professional service for our commercial clients.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="p-8 bg-white border border-slate-200 text-center reveal hover:shadow-xl transition-all duration-300">
+                    <i data-lucide="shield-check" class="w-10 h-10 text-brand-accent mx-auto mb-6"></i>
+                    <h4 class="font-teko text-2xl uppercase text-brand-900">Uncompromising Safety &amp; Compliance</h4>
+                </div>
+                <div class="p-8 bg-white border border-slate-200 text-center reveal delay-100 hover:shadow-xl transition-all duration-300">
+                    <i data-lucide="clock" class="w-10 h-10 text-brand-accent mx-auto mb-6"></i>
+                    <h4 class="font-teko text-2xl uppercase text-brand-900">Reliable &amp; Punctual Service Delivery</h4>
+                </div>
+                <div class="p-8 bg-white border border-slate-200 text-center reveal delay-200 hover:shadow-xl transition-all duration-300">
+                    <i data-lucide="search" class="w-10 h-10 text-brand-accent mx-auto mb-6"></i>
+                    <h4 class="font-teko text-2xl uppercase text-brand-900">Meticulous Attention to Detail</h4>
+                </div>
+                <div class="p-8 bg-white border border-slate-200 text-center reveal delay-300 hover:shadow-xl transition-all duration-300">
+                    <i data-lucide="users" class="w-10 h-10 text-brand-accent mx-auto mb-6"></i>
+                    <h4 class="font-teko text-2xl uppercase text-brand-900">Dedicated Account Management</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call To Action (Tagged as Dark) -->
+    <section data-theme="dark" class="py-32 bg-brand-900 border-t-[3px] border-brand-accent text-center">
+        <div class="max-w-4xl mx-auto px-6 lg:px-12 reveal">
+            <div class="inline-flex items-center gap-4 mb-8 justify-center">
+                <div class="h-[1px] w-12 bg-white/20"></div>
+                <span class="text-white/80 text-[10px] tracking-[0.3em] uppercase font-medium">Become A Success Story</span>
+                <div class="h-[1px] w-12 bg-white/20"></div>
+            </div>
+            <h2 class="text-5xl md:text-6xl font-teko font-bold text-white mb-8 uppercase tracking-wide">Elevate Your Facility Today</h2>
+            <p class="text-white/60 font-light text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
+                Experience the Parker's Commercial difference. Contact us today to arrange a site walk-through and let us tailor a high-performance cleaning strategy for your infrastructure.
+            </p>
+            <a href="contact.html" class="inline-block bg-white text-brand-900 px-12 py-5 font-teko text-2xl uppercase tracking-wide hover:bg-brand-accent transition-colors duration-500">
+                Contact Our Team
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer (Tagged as Dark) -->
+    <footer data-theme="dark" class="bg-brand-900 py-16 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center">
+                <img src="https://parkerscommercial.co.uk/wp-content/uploads/2025/09/cropped-Parkers-Logo-Long-354x80.png" alt="Parker's Commercial Cleaning" class="h-8 md:h-10 w-auto brightness-0 invert">
+            </div>
+            <div class="text-white/40 text-[10px] tracking-[0.1em] text-center md:text-right font-light uppercase">
+                <p>© <script>document.write(new Date().getFullYear())</script> Parker's Commercial Cleaning. All rights reserved.</p>
+                <div class="mt-4 flex flex-wrap gap-6 justify-center md:justify-end">
+                    <a href="about.html" class="hover:text-white transition-colors">About</a>
+                    <a href="services.html" class="hover:text-white transition-colors">Services</a>
+                    <a href="results.html" class="hover:text-white transition-colors">Results</a>
+                    <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky CTA Bar -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full z-50 flex border-t border-brand-900 shadow-2xl">
+        <a href="tel:07395106650" class="flex-1 bg-white text-brand-900 py-4 font-semibold uppercase tracking-[0.1em] text-xs flex justify-center items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4"></i> Call Now
+        </a>
+        <a href="contact.html" class="flex-1 bg-brand-accent text-brand-900 py-4 font-semibold uppercase tracking-[0.1em] text-xs flex justify-center items-center gap-2">
+            Get Quote
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+        const navbar = document.getElementById('navbar');
+        const navLogoImg = document.getElementById('nav-logo-img');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const navBtn = document.querySelector('.nav-btn');
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const sections = document.querySelectorAll('[data-theme]');
+        
+        function updateNavTheme() {
+            let currentTheme = 'dark'; 
+            const navRect = navbar.getBoundingClientRect();
+            const navCenterY = navRect.top + (navRect.height / 2);
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= navCenterY && rect.bottom >= navCenterY) {
+                    currentTheme = section.getAttribute('data-theme');
+                }
+            });
+
+            if (currentTheme === 'dark') {
+                navbar.classList.remove('glass-nav', 'border-slate-200');
+                navbar.classList.add('bg-transparent', 'border-white/10');
+                if(navLogoImg) navLogoImg.classList.add('brightness-0', 'invert');
+                if(mobileBtn) { mobileBtn.classList.remove('text-brand-900'); mobileBtn.classList.add('text-white'); }
+                navLinks.forEach(link => { link.classList.remove('text-brand-900', 'hover:text-brand-500'); link.classList.add('text-white', 'hover:text-brand-accent'); });
+                if(navBtn) { navBtn.classList.remove('border-brand-900', 'bg-brand-900', 'text-white', 'hover:bg-brand-500', 'hover:border-brand-500'); navBtn.classList.add('border-brand-accent', 'bg-brand-accent', 'text-brand-900', 'hover:bg-white', 'hover:border-white'); }
+            } else {
+                navbar.classList.add('glass-nav', 'border-slate-200');
+                navbar.classList.remove('bg-transparent', 'border-white/10');
+                if(navLogoImg) navLogoImg.classList.remove('brightness-0', 'invert');
+                if(mobileBtn) { mobileBtn.classList.remove('text-white'); mobileBtn.classList.add('text-brand-900'); }
+                navLinks.forEach(link => { link.classList.remove('text-white', 'hover:text-brand-accent'); link.classList.add('text-brand-900', 'hover:text-brand-500'); });
+                if(navBtn) { navBtn.classList.remove('border-brand-accent', 'bg-brand-accent', 'text-brand-900', 'hover:bg-white', 'hover:border-white'); navBtn.classList.add('border-brand-900', 'bg-brand-900', 'text-white', 'hover:bg-brand-500', 'hover:border-brand-500'); }
+            }
+        }
+
+        window.addEventListener('scroll', updateNavTheme);
+        window.addEventListener('resize', updateNavTheme);
+        updateNavTheme();
+
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+
+        const observerOptions = { threshold: 0.15, rootMargin: "0px 0px -100px 0px" };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+
+</body></html>
