@@ -145,19 +145,18 @@
     </div>
 
     <!-- Scripts -->
-    <script>
+<script>
+        // 1. Keep the icon loader
         lucide.createIcons();
-        
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
 
+        // 2. Keep the scroll reveal animations
         const observerOptions = { threshold: 0.15, rootMargin: "0px 0px -100px 0px" };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, observerOptions);
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+        // 3. Keep the page-specific contact form logic!
         const contactForm = document.getElementById('contactForm');
         if(contactForm) {
             contactForm.addEventListener('submit', (e) => {
@@ -172,6 +171,7 @@
         }
     </script>
 
-<script src="nav.js"></script>
+    <script src="nav.js"></script>
+    <script src="footer.js"></script>
 
 </body></html>
