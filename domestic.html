@@ -56,7 +56,12 @@
         .delay-100 { transition-delay: 100ms; }
         .delay-200 { transition-delay: 200ms; }
 
-        /* Softer hero overlay for the residential feel */
+        .glass-nav { 
+            background: rgba(255, 255, 255, 0.98); 
+            backdrop-filter: blur(15px); 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
         .hero-overlay-residential { 
             background: linear-gradient(135deg, rgba(16, 74, 110, 0.85) 0%, rgba(33, 45, 69, 0.95) 100%); 
         }
@@ -84,13 +89,75 @@
 </head>
 <body class="font-sans text-brand-text antialiased bg-slate-50 overflow-x-hidden selection:bg-brand-500 selection:text-white">
 
-    <!-- Header Navigation Injection Point -->
-    <div id="nav-placeholder"></div>
+    <!-- Re-engineered Clean Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 bg-transparent flex flex-col">
+        <!-- Professional Commercial Banner (Moved Above Main Nav) -->
+        <div id="nav-banner" class="w-full py-2 transition-all duration-500 hidden lg:block bg-white/10 backdrop-blur-sm border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
+                <p id="banner-text" class="text-[11px] font-medium uppercase tracking-[0.15em] text-white flex items-center justify-center gap-2">
+                    Looking for commercial services? 
+                    <a href="index.html" id="banner-link" class="text-brand-accent hover:text-white transition-colors font-bold inline-flex items-center gap-1">
+                        Visit our commercial site <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <div id="nav-main-container" class="w-full py-4 lg:py-5 border-b border-white/10 transition-colors duration-500">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <div class="flex justify-between items-center h-12">
+                    
+                    <!-- Logo -->
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="#" class="transition-opacity duration-500 hover:opacity-80">
+                            <img src="images/parkers-logo-long.png" alt="Parker's Domestic Cleaning" id="nav-logo-img" class="h-8 md:h-10 w-auto transition-all duration-500 brightness-0 invert">
+                        </a>
+                    </div>
+                    
+                    <!-- Main Center Links (Clean & Spaced) -->
+                    <div class="hidden lg:flex items-center space-x-10">
+                        <a href="#about" class="text-[14px] font-medium uppercase tracking-[0.2em] text-white hover:text-brand-accent transition-colors nav-link">About</a>
+                        <a href="#services" class="text-[14px] font-medium uppercase tracking-[0.2em] text-white hover:text-brand-accent transition-colors nav-link">Services</a>
+                        <a href="#gallery" class="text-[14px] font-medium uppercase tracking-[0.2em] text-white hover:text-brand-accent transition-colors nav-link">Results</a>
+                    </div>
+
+                    <!-- Right Side: Phone, Quote Button -->
+                    <div class="hidden lg:flex items-center gap-6 xl:gap-8">
+                        <a href="tel:07395106650" class="flex items-center gap-3 text-white hover:text-brand-accent transition-colors group nav-link">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            <span class="text-[14px] tracking-[0.2em] font-semibold">07395 106 650</span>
+                        </a>
+                        
+                        <a href="#quote" class="border border-brand-accent bg-brand-accent text-brand-900 px-8 py-3 font-teko uppercase tracking-[0.1em] text-xl hover:bg-white hover:border-white transition-all duration-500 shadow-lg">Get A Quote</a>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="lg:hidden flex items-center">
+                        <button id="mobile-menu-btn" class="text-white hover:text-brand-accent focus:outline-none nav-link p-2 transition-colors">
+                            <i data-lucide="menu" class="h-8 w-8 stroke-[1.5]"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-brand-900 absolute w-full left-0 top-full border-t border-brand-500 z-40 shadow-2xl">
+            <div class="px-6 py-6 flex flex-col">
+                <a href="#about" class="mobile-nav-link text-lg font-sans text-white py-4 border-b border-white/10">About Us</a>
+                <a href="#services" class="mobile-nav-link text-lg font-sans text-white py-4 border-b border-white/10">Our Services</a>
+                <a href="#gallery" class="mobile-nav-link text-lg font-sans text-white py-4 border-b border-white/10">See Results</a>
+                <a href="#quote" class="mobile-nav-link text-lg font-sans text-white py-4 border-b border-white/10">Request a Quote</a>
+                <a href="index.html" class="text-lg font-sans text-brand-900 bg-brand-accent py-4 px-6 mt-6 font-bold flex items-center justify-between rounded shadow-md">
+                    Switch to Commercial Site <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
 
     <!-- Residential Hero Section -->
-    <header class="relative min-h-[90vh] flex items-center pt-32 pb-24 lg:pb-32 overflow-hidden bg-brand-900">
+    <header data-theme="dark" class="relative min-h-[90vh] flex items-center pt-32 pb-24 lg:pb-32 overflow-hidden bg-brand-900">
         <div class="absolute inset-0 z-0">
-            <!-- Updated Hero Background Image -->
             <img src="images/hero-domestic.webp" alt="Domestic Property Maintenance" class="w-full h-full object-cover opacity-60">
             <div class="absolute inset-0 hero-overlay-residential"></div>
         </div>
@@ -113,14 +180,14 @@
                         <a href="#quote" class="bg-brand-accent text-brand-900 px-8 py-4 rounded-lg font-bold text-sm uppercase tracking-widest hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto text-center">
                             Get a Free Quote
                         </a>
-                        <a href="#services" class="text-white px-8 py-4 rounded-lg font-bold text-sm uppercase tracking-widest hover:bg-white/10 border border-transparent hover:border-white/30 transition-all duration-300 w-full sm:w-auto text-center">
+                        <a href="#services" class="border border-white/30 text-white px-8 py-4 rounded-lg font-bold text-sm uppercase tracking-widest hover:bg-white/10 hover:border-white transition-all duration-300 w-full sm:w-auto text-center">
                             Our Services
                         </a>
                     </div>
                 </div>
 
                 <!-- Right Form Box -->
-                <div id="quote" class="lg:col-span-5 animate-fade-in-up w-full" style="animation-delay: 0.8s;">
+                <div id="quote" class="lg:col-span-5 animate-fade-in-up w-full scroll-mt-24" style="animation-delay: 0.8s;">
                     <div class="bg-white p-8 md:p-10 relative rounded-2xl text-left shadow-2xl border border-slate-100">
                         <div class="mb-8">
                             <h3 class="text-3xl font-teko font-semibold text-brand-900 mb-1 uppercase tracking-wide">Request a Callback</h3>
@@ -165,7 +232,7 @@
     </header>
 
     <!-- Trust Strip -->
-    <div class="bg-white py-10 relative z-20 border-b border-slate-200">
+    <div data-theme="light" class="bg-white py-10 relative z-20 border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-slate-100">
                 <div class="reveal px-2">
@@ -193,7 +260,7 @@
     </div>
 
     <!-- Intro Section -->
-    <section class="py-24 bg-slate-50">
+    <section id="about" data-theme="light" class="py-24 bg-slate-50 scroll-mt-14">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div class="reveal">
@@ -210,7 +277,7 @@
                     </div>
                     
                     <div class="mt-10 pt-8 border-t border-slate-200 flex items-center gap-6">
-                        <img src="https://parkerscommercial.co.uk/wp-content/uploads/2025/09/cropped-Parkers-Logo-Long-354x80.png" alt="Parkers Logo" class="w-32 h-auto grayscale opacity-70">
+                        <img src="images/parkers-logo-long.png" alt="Parkers Logo" class="w-32 h-auto grayscale opacity-70">
                         <div class="h-10 w-[1px] bg-slate-300"></div>
                         <div>
                             <p class="font-bold text-brand-900 text-lg">Parker Family</p>
@@ -239,7 +306,7 @@
     </section>
 
     <!-- Services Grid -->
-    <section id="services" class="py-24 bg-white">
+    <section id="services" data-theme="light" class="py-24 bg-white scroll-mt-14">
         <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center mb-16 reveal">
             <span class="text-brand-accent text-[11px] tracking-[0.2em] uppercase font-bold block mb-3">What We Do</span>
             <h2 class="text-5xl font-teko font-bold text-brand-900 mb-4 uppercase">Our Exterior Services</h2>
@@ -345,7 +412,7 @@
     </section>
 
     <!-- Before & After Gallery -->
-    <section class="py-24 bg-slate-50 border-t border-slate-200">
+    <section id="gallery" data-theme="light" class="py-24 bg-slate-50 border-t border-slate-200 scroll-mt-14">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="text-center mb-16 reveal">
                 <span class="text-brand-accent text-[11px] tracking-[0.2em] uppercase font-bold block mb-3">Real Results</span>
@@ -354,7 +421,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- Project 1 (Uses your explicit before/after split image) -->
+                <!-- Project 1 -->
                 <div class="reveal rounded-2xl overflow-hidden shadow-xl border border-slate-100 bg-white group">
                     <div class="relative overflow-hidden">
                         <img src="images/pressure-washing-before-after.webp" alt="Pressure Washing Before and After" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
@@ -365,7 +432,7 @@
                     </div>
                 </div>
 
-                <!-- Project 2 (Uses your explicit before/after split image) -->
+                <!-- Project 2 -->
                 <div class="reveal delay-100 rounded-2xl overflow-hidden shadow-xl border border-slate-100 bg-white group">
                     <div class="relative overflow-hidden">
                         <img src="images/windows-before-after-2.webp" alt="Window Cleaning Before and After" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
@@ -386,7 +453,7 @@
     </section>
 
     <!-- Why Choose Us / CTA -->
-    <section class="py-24 bg-brand-900 text-center px-6">
+    <section data-theme="dark" class="py-24 bg-brand-900 text-center px-6">
         <div class="max-w-3xl mx-auto reveal">
             <i data-lucide="heart-handshake" class="w-12 h-12 text-brand-accent mx-auto mb-6"></i>
             <h2 class="text-4xl md:text-5xl font-teko font-bold text-white mb-6 uppercase">Why choose Parkers?</h2>
@@ -402,7 +469,7 @@
     <!-- Footer Injection Point -->
     <div id="footer-placeholder"></div>
 
-    <!-- Page Specific Script -->
+    <!-- Page Specific & Nav Script -->
     <script>
         // Intersection Observer for scroll animations
         const observer = new IntersectionObserver((es) => {
@@ -412,10 +479,126 @@
         
         // Initialize Lucide icons
         lucide.createIcons();
+
+        // ---- Embedded Navigation Logic ----
+        const navbar = document.getElementById('navbar');
+        const navMainContainer = document.getElementById('nav-main-container');
+        const navBanner = document.getElementById('nav-banner');
+        const bannerText = document.getElementById('banner-text');
+        const bannerLink = document.getElementById('banner-link');
+        const navLogoImg = document.getElementById('nav-logo-img');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const sections = document.querySelectorAll('[data-theme]');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        // Toggle Mobile Menu
+        menuBtn.addEventListener('click', () => { 
+            mobileMenu.classList.toggle('hidden'); 
+        });
+
+        // Close Mobile Menu on Link Click
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Dynamic Navbar Theme updates based on section background
+        function updateNavTheme() {
+            let currentTheme = 'dark'; // Always default to dark at the top of the page
+            
+            // Only calculate section overlaps if we've actually scrolled past the top hero
+            if (window.scrollY > 50) {
+                const navRect = navbar.getBoundingClientRect();
+                const navCenterY = navRect.top + (navRect.height / 2);
+                
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    // Check if the middle of the navbar is over this section
+                    if (rect.top <= navCenterY && rect.bottom >= navCenterY) { 
+                        currentTheme = section.getAttribute('data-theme') || 'light'; 
+                    }
+                });
+            }
+
+            // Apply Dark/Transparent Theme styling
+            if (currentTheme === 'dark') {
+                navbar.classList.remove('glass-nav'); 
+                navbar.classList.add('bg-transparent');
+                
+                if (navMainContainer) {
+                    navMainContainer.classList.add('border-white/10');
+                    navMainContainer.classList.remove('border-transparent');
+                }
+
+                if (navBanner) {
+                    navBanner.classList.add('bg-white/10', 'border-white/5');
+                    navBanner.classList.remove('bg-slate-100', 'border-slate-200');
+                }
+
+                if (bannerText) {
+                    bannerText.classList.add('text-white');
+                    bannerText.classList.remove('text-brand-text');
+                }
+
+                if (bannerLink) {
+                    bannerLink.classList.add('text-brand-accent', 'hover:text-white');
+                    bannerLink.classList.remove('text-brand-500', 'hover:text-brand-900');
+                }
+                
+                if(navLogoImg) navLogoImg.classList.add('brightness-0', 'invert');
+                menuBtn.classList.remove('text-brand-900'); 
+                menuBtn.classList.add('text-white');
+                
+                navLinks.forEach(l => { 
+                    l.classList.remove('text-brand-900'); 
+                    l.classList.add('text-white'); 
+                });
+
+            // Apply Light/White Glass Theme styling
+            } else {
+                navbar.classList.add('glass-nav'); 
+                navbar.classList.remove('bg-transparent');
+                
+                if (navMainContainer) {
+                    navMainContainer.classList.remove('border-white/10');
+                    navMainContainer.classList.add('border-transparent');
+                }
+
+                if (navBanner) {
+                    navBanner.classList.remove('bg-white/10', 'border-white/5');
+                    navBanner.classList.add('bg-slate-100', 'border-slate-200');
+                }
+
+                if (bannerText) {
+                    bannerText.classList.remove('text-white');
+                    bannerText.classList.add('text-brand-text');
+                }
+
+                if (bannerLink) {
+                    bannerLink.classList.remove('text-brand-accent', 'hover:text-white');
+                    bannerLink.classList.add('text-brand-500', 'hover:text-brand-900');
+                }
+                
+                if(navLogoImg) navLogoImg.classList.remove('brightness-0', 'invert');
+                menuBtn.classList.remove('text-white'); 
+                menuBtn.classList.add('text-brand-900');
+                
+                navLinks.forEach(l => { 
+                    l.classList.remove('text-white'); 
+                    l.classList.add('text-brand-900'); 
+                });
+            }
+        }
+
+        window.addEventListener('scroll', updateNavTheme);
+        window.addEventListener('resize', updateNavTheme);
+        updateNavTheme(); // Run once on load
     </script>
 
-    <!-- Global Layout Scripts -->
-    <script src="nav.js"></script>
+    <!-- Footer Script Only -->
     <script src="footer.js"></script>
 
 </body>
