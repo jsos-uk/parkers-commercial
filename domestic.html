@@ -90,20 +90,20 @@
 <body class="font-sans text-brand-text antialiased bg-slate-50 overflow-x-hidden selection:bg-brand-500 selection:text-white">
 
     <!-- Re-engineered Clean Navigation -->
-    <nav id="navbar" class="fixed w-full z-100 transition-all duration-500 bg-transparent flex flex-col">
-        <!-- Professional Commercial Banner (Moved Above Main Nav) -->
-        <div id="nav-banner" class="w-full py-2 transition-all duration-500 hidden lg:block bg-white/10 backdrop-blur-sm border-b border-white/5">
-            <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
-                <p id="banner-text" class="text-[11px] font-medium uppercase tracking-[0.15em] text-white flex items-center justify-center gap-2">
-                    Looking for commercial services? 
-                    <a href="index.html" id="banner-link" class="text-brand-accent hover:text-white transition-colors font-bold inline-flex items-center gap-1">
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-transparent flex flex-col">
+        <!-- Professional Commercial Banner (Hardcoded styles to guarantee visibility) -->
+        <div id="nav-banner" class="w-full pt-4 pb-2.5 transition-all duration-500" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-12 text-center">
+                <p id="banner-text" class="font-medium uppercase flex flex-wrap items-center justify-center gap-1.5 md:gap-2 leading-tight" style="font-size: 11px; letter-spacing: 0.15em; color: #ffffff; margin: 0;">
+                    <span style="opacity: 0.9;">Looking for commercial services?</span>
+                    <a href="index.html" id="banner-link" class="font-bold inline-flex items-center gap-1 whitespace-nowrap" style="color: #6DC3F6; text-decoration: none; transition: all 0.3s ease;">
                         Visit our commercial site <i data-lucide="arrow-right" class="w-3 h-3"></i>
                     </a>
                 </p>
             </div>
         </div>
 
-        <div id="nav-main-container" class="w-full py-4 lg:py-5 border-b border-white/10 transition-colors duration-500">
+        <div id="nav-main-container" class="w-full py-5 md:py-6 transition-colors duration-500" style="border-bottom: 1px solid rgba(255,255,255,0.1);">
             <div class="max-w-7xl mx-auto px-6 lg:px-12">
                 <div class="flex justify-between items-center h-12">
                     
@@ -143,20 +143,20 @@
 
         <!-- Mobile Dropdown Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-brand-900 absolute w-full left-0 top-full border-t border-brand-500 z-40 shadow-2xl">
-            <div class="px-6 py-6 flex flex-col">
-                <a href="#about" class="mobile-nav-link text-lg font-sans text-white py-4 border-b border-white/10">About Us</a>
-                <a href="#services" class="mobile-nav-link text-lg font-sans text-white py-4 border-b border-white/10">Our Services</a>
-                <a href="#gallery" class="mobile-nav-link text-lg font-sans text-white py-4 border-b border-white/10">See Results</a>
-                <a href="#quote" class="mobile-nav-link text-lg font-sans text-white py-4 border-b border-white/10">Request a Quote</a>
-                <a href="index.html" class="text-lg font-sans text-brand-900 bg-brand-accent py-4 px-6 mt-6 font-bold flex items-center justify-between rounded shadow-md">
-                    Switch to Commercial Site <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                </a>
-            </div>
+        <div class="px-6 py-6 flex flex-col">
+            <a href="#about" class="mobile-nav-link text-lg font-sans text-white py-4 border-b border-white/10">About Us</a>
+            <a href="#services" class="mobile-nav-link text-lg font-sans text-white py-4 border-b border-white/10">Our Services</a>
+            <a href="#gallery" class="mobile-nav-link text-lg font-sans text-white py-4 border-b border-white/10">See Results</a>
+            <a href="#quote" class="mobile-nav-link text-lg font-sans text-white py-4 border-b border-white/10">Request a Quote</a>
+            <a href="index.html" class="text-lg font-sans text-brand-900 bg-brand-accent py-4 px-6 mt-6 font-bold flex items-center justify-between rounded shadow-md">
+                Switch to Commercial Site <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <!-- Residential Hero Section -->
-    <header data-theme="dark" class="relative min-h-[90vh] flex items-center pt-32 pb-24 lg:pb-32 overflow-hidden bg-brand-900">
+<!-- Residential Hero Section - Adjusted Padding Top for Nav Clearance -->
+    <header data-theme="dark" class="relative min-h-screen flex items-center pt-48 pb-24 lg:pt-56 lg:pb-32 overflow-hidden bg-brand-900">
         <div class="absolute inset-0 z-0">
             <img src="images/hero-domestic.webp" alt="Domestic Property Maintenance" class="w-full h-full object-cover opacity-60">
             <div class="absolute inset-0 hero-overlay-residential"></div>
@@ -506,100 +506,98 @@
         });
 
         // Dynamic Navbar Theme updates based on section background
-        function updateNavTheme() {
-            let currentTheme = 'dark'; // Always default to dark at the top of the page
+    function updateNavTheme() {
+        let currentTheme = 'dark'; // Always default to dark at the top of the page
+        
+        // Only calculate section overlaps if we've actually scrolled past the top hero
+        if (window.scrollY > 50) {
+            const navRect = navbar.getBoundingClientRect();
+            const navCenterY = navRect.top + (navRect.height / 2);
             
-            // Only calculate section overlaps if we've actually scrolled past the top hero
-            if (window.scrollY > 50) {
-                const navRect = navbar.getBoundingClientRect();
-                const navCenterY = navRect.top + (navRect.height / 2);
-                
-                sections.forEach(section => {
-                    const rect = section.getBoundingClientRect();
-                    // Check if the middle of the navbar is over this section
-                    if (rect.top <= navCenterY && rect.bottom >= navCenterY) { 
-                        currentTheme = section.getAttribute('data-theme') || 'light'; 
-                    }
-                });
-            }
-
-            // Apply Dark/Transparent Theme styling
-            if (currentTheme === 'dark') {
-                navbar.classList.remove('glass-nav'); 
-                navbar.classList.add('bg-transparent');
-                
-                if (navMainContainer) {
-                    navMainContainer.classList.add('border-white/10');
-                    navMainContainer.classList.remove('border-transparent');
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                // Check if the middle of the navbar is over this section
+                if (rect.top <= navCenterY && rect.bottom >= navCenterY) { 
+                    currentTheme = section.getAttribute('data-theme') || 'light'; 
                 }
-
-                if (navBanner) {
-                    navBanner.classList.add('bg-white/10', 'border-white/5');
-                    navBanner.classList.remove('bg-slate-100', 'border-slate-200');
-                }
-
-                if (bannerText) {
-                    bannerText.classList.add('text-white');
-                    bannerText.classList.remove('text-brand-text');
-                }
-
-                if (bannerLink) {
-                    bannerLink.classList.add('text-brand-accent', 'hover:text-white');
-                    bannerLink.classList.remove('text-brand-500', 'hover:text-brand-900');
-                }
-                
-                if(navLogoImg) navLogoImg.classList.add('brightness-0', 'invert');
-                menuBtn.classList.remove('text-brand-900'); 
-                menuBtn.classList.add('text-white');
-                
-                navLinks.forEach(l => { 
-                    l.classList.remove('text-brand-900'); 
-                    l.classList.add('text-white'); 
-                });
-
-            // Apply Light/White Glass Theme styling
-            } else {
-                navbar.classList.add('glass-nav'); 
-                navbar.classList.remove('bg-transparent');
-                
-                if (navMainContainer) {
-                    navMainContainer.classList.remove('border-white/10');
-                    navMainContainer.classList.add('border-transparent');
-                }
-
-                if (navBanner) {
-                    navBanner.classList.remove('bg-white/10', 'border-white/5');
-                    navBanner.classList.add('bg-slate-100', 'border-slate-200');
-                }
-
-                if (bannerText) {
-                    bannerText.classList.remove('text-white');
-                    bannerText.classList.add('text-brand-text');
-                }
-
-                if (bannerLink) {
-                    bannerLink.classList.remove('text-brand-accent', 'hover:text-white');
-                    bannerLink.classList.add('text-brand-500', 'hover:text-brand-900');
-                }
-                
-                if(navLogoImg) navLogoImg.classList.remove('brightness-0', 'invert');
-                menuBtn.classList.remove('text-white'); 
-                menuBtn.classList.add('text-brand-900');
-                
-                navLinks.forEach(l => { 
-                    l.classList.remove('text-white'); 
-                    l.classList.add('text-brand-900'); 
-                });
-            }
+            });
         }
 
-        window.addEventListener('scroll', updateNavTheme);
-        window.addEventListener('resize', updateNavTheme);
-        updateNavTheme(); // Run once on load
-    </script>
+        // Apply Dark/Transparent Theme styling
+        if (currentTheme === 'dark') {
+            navbar.classList.remove('glass-nav'); 
+            navbar.classList.add('bg-transparent');
+            
+            if (navMainContainer) {
+                navMainContainer.style.borderBottom = '1px solid rgba(255,255,255,0.1)';
+            }
 
-    <!-- Footer Script Only -->
-    <script src="footer.js"></script>
+            if (navBanner) {
+                navBanner.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+                navBanner.style.borderBottom = '1px solid rgba(255, 255, 255, 0.05)';
+            }
+
+            if (bannerText) {
+                bannerText.style.color = '#ffffff';
+            }
+
+            if (bannerLink) {
+                bannerLink.style.color = '#6DC3F6'; // brand-accent
+                bannerLink.addEventListener('mouseover', function() { this.style.color = '#ffffff'; });
+                bannerLink.addEventListener('mouseout', function() { this.style.color = '#6DC3F6'; });
+            }
+            
+            if(navLogoImg) navLogoImg.classList.add('brightness-0', 'invert');
+            menuBtn.classList.remove('text-brand-900'); 
+            menuBtn.classList.add('text-white');
+            
+            navLinks.forEach(l => { 
+                l.classList.remove('text-brand-900'); 
+                l.classList.add('text-white'); 
+            });
+
+        // Apply Light/White Glass Theme styling
+        } else {
+            navbar.classList.add('glass-nav'); 
+            navbar.classList.remove('bg-transparent');
+            
+            if (navMainContainer) {
+                navMainContainer.style.borderBottom = '1px solid transparent';
+            }
+
+            if (navBanner) {
+                navBanner.style.backgroundColor = '#f8fafc'; // slate-50
+                navBanner.style.borderBottom = '1px solid #e2e8f0'; // slate-200
+            }
+
+            if (bannerText) {
+                bannerText.style.color = '#4b4f58'; // brand-text
+            }
+
+            if (bannerLink) {
+                bannerLink.style.color = '#104A6E'; // brand-500
+                bannerLink.addEventListener('mouseover', function() { this.style.color = '#08253a'; });
+                bannerLink.addEventListener('mouseout', function() { this.style.color = '#104A6E'; });
+            }
+            
+            if(navLogoImg) navLogoImg.classList.remove('brightness-0', 'invert');
+            menuBtn.classList.remove('text-white'); 
+            menuBtn.classList.add('text-brand-900');
+            
+            navLinks.forEach(l => { 
+                l.classList.remove('text-white'); 
+                l.classList.add('text-brand-900'); 
+            });
+        }
+    }
+
+    window.addEventListener('scroll', updateNavTheme);
+    window.addEventListener('resize', updateNavTheme);
+    updateNavTheme(); // Run once on load
+</script>
+
+<!-- Footer Script Only -->
+<script src="footer.js"></script>
 
 </body>
 </html>
