@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkers Domestic | Local Exterior Property Maintenance</title>
+    <meta name="description" content="Family-run exterior property maintenance in London and Essex. Expert window cleaning, gutter clearing, fascia restoration, pressure washing, conservatory, and solar panel cleaning.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600&family=Teko:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { 
+                        sans: ['Hind', 'sans-serif'], 
+                        heading: ['Playfair Display', 'serif'],
+                        teko: ['Teko', 'sans-serif']
+                    },
+                    colors: {
+                        brand: { 
+                            50: '#f0f7fc', 
+                            100: '#e0eef9', 
+                            500: '#104A6E',
+                            600: '#0c3854', 
+                            700: '#08253a', 
+                            900: '#212d45', 
+                            accent: '#6DC3F6', 
+                            text: '#4b4f58' 
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'fade-in-up': 'fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                    },
+                    keyframes: {
+                        fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+                        fadeInUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } }
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #ffffff; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+
+        /* Softer hero overlay for the residential feel */
+        .hero-overlay-residential { 
+            background: linear-gradient(135deg, rgba(16, 74, 110, 0.85) 0%, rgba(33, 45, 69, 0.95) 100%); 
+        }
+        
+        .input-friendly { 
+            width: 100%; 
+            background: #ffffff; 
+            border: 1px solid #e2e8f0; 
+            color: #212d45; 
+            padding: 1rem 1.25rem; 
+            font-size: 1rem; 
+            transition: all 0.3s ease; 
+            border-radius: 0.5rem; 
+        }
+        .input-friendly:focus { 
+            outline: none; 
+            border-color: #6DC3F6; 
+            box-shadow: 0 0 0 3px rgba(109, 195, 246, 0.2); 
+        }
+        .input-friendly::placeholder { 
+            color: #94a3b8; 
+            font-weight: 300; 
+        }
+    </style>
+</head>
+<body class="font-sans text-brand-text antialiased bg-slate-50 overflow-x-hidden selection:bg-brand-500 selection:text-white">
+
+    <!-- Header Navigation Injection Point -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Residential Hero Section -->
+    <header class="relative min-h-[90vh] flex items-center pt-32 pb-24 lg:pb-32 overflow-hidden bg-brand-900">
+        <div class="absolute inset-0 z-0">
+            <!-- Updated Hero Background Image -->
+            <img src="images/hero-domestic.webp" alt="Domestic Property Maintenance" class="w-full h-full object-cover opacity-60">
+            <div class="absolute inset-0 hero-overlay-residential"></div>
+        </div>
+        
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <!-- Left Content -->
+                <div class="lg:col-span-7 pt-10 text-center lg:text-left">
+                    <div class="inline-flex items-center justify-center lg:justify-start gap-3 mb-6 animate-fade-in bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+                        <i data-lucide="home" class="w-4 h-4 text-brand-accent"></i>
+                        <span class="text-white font-semibold text-[11px] tracking-[0.15em] uppercase">Your Local Family Business</span>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-teko font-bold text-white leading-[1.05] mb-6 animate-fade-in tracking-wide drop-shadow-lg">
+                        Expert Exterior <br> Property Maintenance
+                    </h1>
+                    <p class="text-xl text-brand-100 mb-10 leading-relaxed font-light animate-fade-in max-w-xl mx-auto lg:mx-0">
+                        Protecting your home and enhancing curb appeal. We are a trusted, family-run team offering professional window cleaning, gutter clearing, pressure washing, and conservatory cleaning across London and Essex.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-fade-in" style="animation-delay: 0.6s;">
+                        <a href="#quote" class="bg-brand-accent text-brand-900 px-8 py-4 rounded-lg font-bold text-sm uppercase tracking-widest hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto text-center">
+                            Get a Free Quote
+                        </a>
+                        <a href="#services" class="text-white px-8 py-4 rounded-lg font-bold text-sm uppercase tracking-widest hover:bg-white/10 border border-transparent hover:border-white/30 transition-all duration-300 w-full sm:w-auto text-center">
+                            Our Services
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Form Box -->
+                <div id="quote" class="lg:col-span-5 animate-fade-in-up w-full" style="animation-delay: 0.8s;">
+                    <div class="bg-white p-8 md:p-10 relative rounded-2xl text-left shadow-2xl border border-slate-100">
+                        <div class="mb-8">
+                            <h3 class="text-3xl font-teko font-semibold text-brand-900 mb-1 uppercase tracking-wide">Request a Callback</h3>
+                            <p class="text-sm text-brand-text font-light">Fast, friendly, and no-obligation quotes for your home.</p>
+                        </div>
+                        
+                       <form id="domesticLeadForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-5">
+                            <input type="hidden" name="access_key" value="0e562e4d-f4ff-4f74-b3d8-16869cd744de">
+                            <input type="hidden" name="subject" value="New Domestic Property Maintenance Enquiry">
+
+                            <div class="grid grid-cols-2 gap-5">
+                                <input type="text" name="first_name" placeholder="First Name" required class="input-friendly">
+                                <input type="text" name="last_name" placeholder="Last Name" required class="input-friendly">
+                            </div>
+    
+                            <input type="email" name="email" placeholder="Email Address" required class="input-friendly">
+                            
+                            <div class="grid grid-cols-2 gap-5">
+                                <input type="tel" name="phone" placeholder="Phone Number" required class="input-friendly">
+                                <input type="text" name="postcode" placeholder="Postcode" required class="input-friendly">
+                            </div>
+
+                            <select name="service_required" class="input-friendly" required>
+                                <option value="" disabled selected>Select a Service...</option>
+                                <option value="Window Cleaning">Window Cleaning</option>
+                                <option value="Conservatory Cleaning">Conservatory Cleaning</option>
+                                <option value="Gutter Cleaning">Gutter Cleaning</option>
+                                <option value="Fascia & Soffit Cleaning">Fascia & Soffit Cleaning</option>
+                                <option value="Pressure Washing">Pressure Washing</option>
+                                <option value="Solar Panel Cleaning">Solar Panel Cleaning</option>
+                                <option value="Multiple Services">Multiple Services</option>
+                            </select>
+    
+                            <button type="submit" class="w-full py-4 mt-2 bg-brand-500 text-white rounded-lg font-bold text-sm uppercase tracking-widest hover:bg-brand-600 transition-colors duration-300 shadow-md">
+                                Send Enquiry
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Trust Strip -->
+    <div class="bg-white py-10 relative z-20 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-slate-100">
+                <div class="reveal px-2">
+                    <i data-lucide="shield-check" class="w-8 h-8 mx-auto text-brand-accent mb-3"></i>
+                    <h4 class="text-brand-900 font-bold text-sm uppercase tracking-wider mb-1">Fully Insured</h4>
+                    <p class="text-brand-text text-xs">Complete peace of mind</p>
+                </div>
+                <div class="reveal delay-100 px-2">
+                    <i data-lucide="users" class="w-8 h-8 mx-auto text-brand-accent mb-3"></i>
+                    <h4 class="text-brand-900 font-bold text-sm uppercase tracking-wider mb-1">Family Run</h4>
+                    <p class="text-brand-text text-xs">A team you can trust</p>
+                </div>
+                <div class="reveal delay-200 px-2">
+                    <i data-lucide="map-pin" class="w-8 h-8 mx-auto text-brand-accent mb-3"></i>
+                    <h4 class="text-brand-900 font-bold text-sm uppercase tracking-wider mb-1">Local Business</h4>
+                    <p class="text-brand-text text-xs">Serving London & Essex</p>
+                </div>
+                <div class="reveal delay-300 px-2">
+                    <i data-lucide="calendar" class="w-8 h-8 mx-auto text-brand-accent mb-3"></i>
+                    <h4 class="text-brand-900 font-bold text-sm uppercase tracking-wider mb-1">Reliable</h4>
+                    <p class="text-brand-text text-xs">We turn up when we say</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Intro Section -->
+    <section class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <div class="inline-flex items-center gap-4 mb-6">
+                        <span class="text-brand-500 text-[12px] tracking-[0.2em] uppercase font-bold">About Parker's</span>
+                        <div class="h-[2px] w-12 bg-brand-accent rounded-full"></div>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-teko font-bold text-brand-900 mb-6 uppercase leading-tight">
+                        Caring for your home, <br><span class="text-brand-500">Inside and out.</span>
+                    </h2>
+                    <div class="space-y-5 text-brand-text font-light text-lg leading-relaxed">
+                        <p>With over 35 years in the property maintenance industry, the Parker family knows exactly what it takes to protect and maintain your home's exterior.</p>
+                        <p>Unlike massive, faceless corporations, we are a local, family-owned business. We pride ourselves on building lasting relationships with our domestic customers. When you hire us, you're getting a dedicated, friendly team that respects your property and delivers an immaculate finish every single time.</p>
+                    </div>
+                    
+                    <div class="mt-10 pt-8 border-t border-slate-200 flex items-center gap-6">
+                        <img src="https://parkerscommercial.co.uk/wp-content/uploads/2025/09/cropped-Parkers-Logo-Long-354x80.png" alt="Parkers Logo" class="w-32 h-auto grayscale opacity-70">
+                        <div class="h-10 w-[1px] bg-slate-300"></div>
+                        <div>
+                            <p class="font-bold text-brand-900 text-lg">Parker Family</p>
+                            <p class="text-xs tracking-widest uppercase text-brand-500 font-semibold">Management Team</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative reveal delay-200">
+                    <div class="aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+                        <!-- Updated About Image -->
+                        <img src="images/conservatory-cleaning-2.webp" alt="Home Exterior Maintenance" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <!-- Floating badge -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-lg border border-slate-100 flex items-center gap-4">
+                        <div class="bg-brand-50 w-12 h-12 rounded-full flex items-center justify-center">
+                            <i data-lucide="star" class="w-6 h-6 text-brand-accent fill-brand-accent"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-brand-900">5-Star Rated</p>
+                            <p class="text-xs text-brand-text">By our local customers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center mb-16 reveal">
+            <span class="text-brand-accent text-[11px] tracking-[0.2em] uppercase font-bold block mb-3">What We Do</span>
+            <h2 class="text-5xl font-teko font-bold text-brand-900 mb-4 uppercase">Our Exterior Services</h2>
+            <p class="text-lg text-brand-text font-light max-w-2xl mx-auto">Professional, safe, and effective cleaning solutions to maintain your property's value and curb appeal.</p>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <!-- 6 Items now -> Perfect 3x2 Grid on desktop -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+                
+                <!-- Window Cleaning -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300 reveal group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="images/high-rise-exterior-window-cleaning.webp" alt="Window Cleaning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="bg-white w-14 h-14 rounded-xl shadow-sm flex items-center justify-center -mt-14 mb-6 border border-slate-100 relative z-10">
+                            <i data-lucide="droplets" class="w-7 h-7 text-brand-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-teko text-brand-900 uppercase mb-3">Window Cleaning</h3>
+                        <p class="text-brand-text font-light mb-6">Using advanced pure water reach-and-wash systems, we clean your windows, frames, and sills safely from the ground. Enjoy a streak-free, long-lasting shine without ladders.</p>
+                        <a href="#quote" class="text-brand-500 font-bold text-xs uppercase tracking-wider hover:text-brand-900 transition-colors flex items-center gap-2">Request Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+
+                <!-- Conservatory Cleaning -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300 reveal delay-100 group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="images/conservatory-cleaning.webp" alt="Conservatory Cleaning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="bg-white w-14 h-14 rounded-xl shadow-sm flex items-center justify-center -mt-14 mb-6 border border-slate-100 relative z-10">
+                            <i data-lucide="sun" class="w-7 h-7 text-brand-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-teko text-brand-900 uppercase mb-3">Conservatory Cleaning</h3>
+                        <p class="text-brand-text font-light mb-6">Bring the light back into your sunroom. We safely remove algae, moss, and dirt from conservatory roofs, glass panels, and UPVC frames, restoring it to a welcoming space.</p>
+                        <a href="#quote" class="text-brand-500 font-bold text-xs uppercase tracking-wider hover:text-brand-900 transition-colors flex items-center gap-2">Request Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+
+                <!-- Fascia & Soffit -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300 reveal delay-200 group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="images/domestic-gutter-cleaning-2.webp" alt="Fascia and Soffit Cleaning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="bg-white w-14 h-14 rounded-xl shadow-sm flex items-center justify-center -mt-14 mb-6 border border-slate-100 relative z-10">
+                            <i data-lucide="home" class="w-7 h-7 text-brand-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-teko text-brand-900 uppercase mb-3">Fascia & Soffit Cleaning</h3>
+                        <p class="text-brand-text font-light mb-6">Over time, UPVC rooflines gather dirt, traffic film, and algae. Our specialist cleaning restores your fascias, soffits, and cladding back to their bright white, "just installed" appearance.</p>
+                        <a href="#quote" class="text-brand-500 font-bold text-xs uppercase tracking-wider hover:text-brand-900 transition-colors flex items-center gap-2">Request Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+
+                <!-- Gutter Cleaning -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300 reveal group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="images/domestic-gutter-cleaning.webp" alt="Gutter Cleaning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="bg-white w-14 h-14 rounded-xl shadow-sm flex items-center justify-center -mt-14 mb-6 border border-slate-100 relative z-10">
+                            <i data-lucide="cloud-rain" class="w-7 h-7 text-brand-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-teko text-brand-900 uppercase mb-3">Gutter Clearing</h3>
+                        <p class="text-brand-text font-light mb-6">Blocked gutters lead to severe water damage and dampness in your home. We use powerful gutter vac systems to remove leaves, moss, and debris, ensuring water flows safely away.</p>
+                        <a href="#quote" class="text-brand-500 font-bold text-xs uppercase tracking-wider hover:text-brand-900 transition-colors flex items-center gap-2">Request Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+
+                <!-- Pressure Washing -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300 reveal delay-100 group">
+                    <div class="h-48 overflow-hidden bg-slate-200">
+                         <img src="images/pressure-washing-before-after-2.webp" alt="Pressure Washing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="bg-white w-14 h-14 rounded-xl shadow-sm flex items-center justify-center -mt-14 mb-6 border border-slate-100 relative z-10">
+                            <i data-lucide="waves" class="w-7 h-7 text-brand-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-teko text-brand-900 uppercase mb-3">Pressure Washing</h3>
+                        <p class="text-brand-text font-light mb-6">Transform tired, slippery driveways, patios, and decking. Our industrial-grade pressure washing removes ingrained dirt, moss, and weeds, bringing outdoor surfaces back to life safely.</p>
+                        <a href="#quote" class="text-brand-500 font-bold text-xs uppercase tracking-wider hover:text-brand-900 transition-colors flex items-center gap-2">Request Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+
+                <!-- Solar Panel Cleaning -->
+                <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300 reveal delay-200 group">
+                    <div class="h-48 overflow-hidden">
+                         <img src="images/solar-panels-cleaning.webp" alt="Solar Panel Cleaning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="bg-white w-14 h-14 rounded-xl shadow-sm flex items-center justify-center -mt-14 mb-6 border border-slate-100 relative z-10">
+                            <i data-lucide="zap" class="w-7 h-7 text-brand-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-teko text-brand-900 uppercase mb-3">Solar Panel Cleaning</h3>
+                        <p class="text-brand-text font-light mb-6">Dirty solar panels can lose up to 25% of their efficiency. Our pure water cleaning system safely removes dust, bird droppings, and algae without scratching, maximizing your energy output.</p>
+                        <a href="#quote" class="text-brand-500 font-bold text-xs uppercase tracking-wider hover:text-brand-900 transition-colors flex items-center gap-2">Request Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Before & After Gallery -->
+    <section class="py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-accent text-[11px] tracking-[0.2em] uppercase font-bold block mb-3">Real Results</span>
+                <h2 class="text-5xl font-teko font-bold text-brand-900 mb-4 uppercase">Before & After</h2>
+                <p class="text-lg text-brand-text font-light max-w-2xl mx-auto">See the visible difference our professional exterior cleaning makes to your property.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Project 1 (Uses your explicit before/after split image) -->
+                <div class="reveal rounded-2xl overflow-hidden shadow-xl border border-slate-100 bg-white group">
+                    <div class="relative overflow-hidden">
+                        <img src="images/pressure-washing-before-after.webp" alt="Pressure Washing Before and After" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-teko text-brand-900 uppercase">Driveway & Patio Restoration</h3>
+                        <p class="text-sm text-brand-text font-light mt-2">Professional surface cleaning removing years of built-up grime, moss, and weathering.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 (Uses your explicit before/after split image) -->
+                <div class="reveal delay-100 rounded-2xl overflow-hidden shadow-xl border border-slate-100 bg-white group">
+                    <div class="relative overflow-hidden">
+                        <img src="images/windows-before-after-2.webp" alt="Window Cleaning Before and After" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-teko text-brand-900 uppercase">Window & Frame Cleaning</h3>
+                        <p class="text-sm text-brand-text font-light mt-2">Pure water systems cut through dirt and algae, leaving glass and UPVC frames spotless.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center reveal delay-200">
+                 <a href="#quote" class="inline-flex items-center gap-3 text-brand-500 font-bold text-sm uppercase tracking-widest hover:text-brand-900 transition-colors">
+                    Want these results for your home? Get a Quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / CTA -->
+    <section class="py-24 bg-brand-900 text-center px-6">
+        <div class="max-w-3xl mx-auto reveal">
+            <i data-lucide="heart-handshake" class="w-12 h-12 text-brand-accent mx-auto mb-6"></i>
+            <h2 class="text-4xl md:text-5xl font-teko font-bold text-white mb-6 uppercase">Why choose Parkers?</h2>
+            <p class="text-brand-100 text-lg font-light mb-10 leading-relaxed">
+                We respect that your home is your sanctuary. Our operators are fully uniformed, polite, and take the utmost care around your garden, vehicles, and property boundaries. No mess left behind—just a beautifully maintained exterior.
+            </p>
+            <a href="#quote" class="inline-block bg-brand-accent text-brand-900 px-10 py-4 rounded-lg font-bold text-sm uppercase tracking-widest hover:bg-white transition-all duration-300 shadow-xl">
+                Book Your Clean Today
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer Injection Point -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Page Specific Script -->
+    <script>
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((es) => {
+            es.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+
+    <!-- Global Layout Scripts -->
+    <script src="nav.js"></script>
+    <script src="footer.js"></script>
+
+</body>
+</html>
