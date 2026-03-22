@@ -90,22 +90,23 @@
                     <h3 class="text-3xl font-teko font-bold text-brand-900 uppercase tracking-wide mb-2">Request A Quote</h3>
                     <p class="text-sm font-light text-brand-text">Fill in your details below and our team will respond within 24 hours.</p>
                 </div>
-                <form id="contactForm" action="#" method="POST" class="space-y-10">
+<form id="contactForm" action="#" method="POST" class="space-y-10">
+                    
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                         <div>
-                            <label class="block text-[10px] font-bold text-brand-900 uppercase tracking-[0.2em] mb-2" for="name">First Name *</label>
-                            <input type="text" id="name" name="name" required="" class="input-elegant">
+                            <label class="block text-[10px] font-bold text-brand-900 uppercase tracking-[0.2em] mb-2" for="first-name">First Name *</label>
+                            <input type="text" id="first-name" name="first-name" required class="input-elegant">
                         </div>
                         <div>
-                            <label class="block text-[10px] font-bold text-brand-900 uppercase tracking-[0.2em] mb-2" for="company">Last Name *</label>
-                            <input type="text" id="company" name="company" required="" class="input-elegant">
+                            <label class="block text-[10px] font-bold text-brand-900 uppercase tracking-[0.2em] mb-2" for="last-name">Last Name *</label>
+                            <input type="text" id="last-name" name="last-name" required class="input-elegant">
                         </div>
                     </div>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                         <div>
                             <label class="block text-[10px] font-bold text-brand-900 uppercase tracking-[0.2em] mb-2" for="email">Work Email *</label>
-                            <input type="email" id="email" name="email" required="" class="input-elegant">
+                            <input type="email" id="email" name="email" required class="input-elegant">
                         </div>
                         <div>
                             <label class="block text-[10px] font-bold text-brand-900 uppercase tracking-[0.2em] mb-2" for="phone">Phone Number</label>
@@ -113,9 +114,34 @@
                         </div>
                     </div>
 
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <div>
+                            <label class="block text-[10px] font-bold text-brand-900 uppercase tracking-[0.2em] mb-2" for="company">Company Name</label>
+                            <input type="text" id="company" name="company" class="input-elegant">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold text-brand-900 uppercase tracking-[0.2em] mb-2" for="service">What can we help with? *</label>
+                            <div class="relative">
+                                <select id="service" name="service" required class="input-elegant appearance-none cursor-pointer pr-8 w-full">
+                                    <option value="" disabled selected>Select a service...</option>
+                                    <option value="Ongoing Contract Maintenance">Ongoing Contract Maintenance</option>
+                                    <option value="Commercial & Industrial Cleaning">Commercial & Industrial Cleaning</option>
+                                    <option value="Healthcare & Sanitation">Healthcare & Sanitation</option>
+                                    <option value="High-Level & Cladding">High-Level & Cladding</option>
+                                    <option value="Post-Construction Sparkle">Post-Construction Sparkle</option>
+                                    <option value="Property Management">Property Management</option>
+                                    <option value="Other">Other / General Inquiry</option>
+                                </select>
+                                <div class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 flex items-center text-brand-900">
+                                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div>
-                        <label class="block text-[10px] font-bold text-brand-900 uppercase tracking-[0.2em] mb-2" for="message">How can we help you?</label>
-                        <textarea id="message" name="message" rows="2" class="input-elegant resize-none pt-4 pb-2" placeholder="Details about your facility or required services..."></textarea>
+                        <label class="block text-[10px] font-bold text-brand-900 uppercase tracking-[0.2em] mb-2" for="message">Additional Details</label>
+                        <textarea id="message" name="message" rows="2" class="input-elegant resize-none pt-4 pb-2" placeholder="Tell us a little about your facility or required services..."></textarea>
                     </div>
 
                     <button type="submit" class="w-full py-5 bg-brand-900 text-white font-teko text-2xl uppercase tracking-wide hover:bg-brand-accent hover:text-brand-900 transition-colors duration-300 mt-4">
