@@ -115,15 +115,22 @@
                     <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-10 relative rounded-sm text-left shadow-2xl">
                         <h3 class="text-3xl font-teko font-semibold text-white mb-2 uppercase tracking-wide">Request a Free Quote</h3>
                         <p class="text-sm text-white/60 mb-8 font-light">Direct response within 24 hours.</p>
-                        <form id="heroLeadForm" action="#" method="POST" class="space-y-6">
-                            <div class="grid grid-cols-2 gap-6">
-                                <input type="text" placeholder="First Name" required="" class="input-elegant">
-                                <input type="text" placeholder="Last Name" required="" class="input-elegant">
-                            </div>
-                            <input type="email" placeholder="Email Address" required="" class="input-elegant">
-                            <textarea placeholder="How can we help you?" rows="2" class="input-elegant resize-none"></textarea>
-                            <button type="submit" class="w-full py-4 mt-6 bg-brand-500 text-white font-teko text-2xl uppercase tracking-wide hover:bg-brand-accent hover:text-brand-900 transition-colors duration-300">Submit Request</button>
-                        </form>
+                       <form id="heroLeadForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                            <input type="hidden" name="access_key" value="0e562e4d-f4ff-4f74-b3d8-16869cd744de">
+
+                                <div class="grid grid-cols-2 gap-6">
+                                    <input type="text" name="first_name" placeholder="First Name" required="" class="input-elegant">
+                                    <input type="text" name="last_name" placeholder="Last Name" required="" class="input-elegant">
+                                </div>
+    
+                                <input type="email" name="email" placeholder="Email Address" required="" class="input-elegant">
+    
+                                <textarea name="message" placeholder="How can we help you?" rows="2" class="input-elegant resize-none"></textarea>
+    
+                                <button type="submit" class="w-full py-4 mt-6 bg-brand-500 text-white font-teko text-2xl uppercase tracking-wide hover:bg-brand-accent hover:text-brand-900 transition-colors duration-300">
+                                Submit Request
+                            </button>
+                            </form>
                     </div>
                 </div>
             </div>
