@@ -1,18 +1,18 @@
 const navHTML = `
-<nav id="navbar" class="fixed w-full z-50 transition-all duration-500 bg-transparent flex flex-col">
-    <!-- Professional Domestic Banner (Above Main Nav) -->
-    <div id="nav-banner" class="w-full py-2 transition-all duration-500 hidden lg:block bg-white/10 backdrop-blur-sm border-b border-white/5">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
-            <p id="banner-text" class="text-[11px] font-medium uppercase tracking-[0.15em] text-white flex items-center justify-center gap-2">
-                Looking for residential property maintenance? 
-                <a href="domestic.html" id="banner-link" class="text-brand-accent hover:text-white transition-colors font-bold inline-flex items-center gap-1">
+<nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-transparent flex flex-col">
+    <!-- Professional Domestic Banner (Above Main Nav - Visible on all devices) -->
+    <div id="nav-banner" class="w-full py-2 transition-all duration-500 bg-white/10 backdrop-blur-sm border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-12 text-center">
+            <p id="banner-text" class="text-[10px] md:text-[11px] font-medium uppercase tracking-[0.1em] md:tracking-[0.15em] text-white flex flex-wrap items-center justify-center gap-1.5 md:gap-2 leading-tight">
+                <span class="opacity-90">Looking for residential property maintenance?</span>
+                <a href="domestic.html" id="banner-link" class="text-brand-accent hover:text-white transition-colors font-bold inline-flex items-center gap-1 whitespace-nowrap">
                     Visit our domestic site <i data-lucide="arrow-right" class="w-3 h-3"></i>
                 </a>
             </p>
         </div>
     </div>
 
-    <div id="nav-main-container" class="w-full py-6 border-b border-white/10 transition-colors duration-500">
+    <div id="nav-main-container" class="w-full py-5 md:py-6 border-b border-white/10 transition-colors duration-500">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="flex justify-between items-center h-12">
                 <div class="flex-shrink-0 flex items-center">
