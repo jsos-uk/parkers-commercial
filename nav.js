@@ -1,18 +1,18 @@
 const navHTML = `
-<nav id="navbar" class="fixed top-50 left-0 w-full z-50 transition-all duration-500 bg-transparent flex flex-col">
-    <!-- Professional Domestic Banner (Above Main Nav - Visible on all devices) -->
-    <div id="nav-banner" class="w-full py-2 transition-all duration-500 bg-white/10 backdrop-blur-sm border-b border-white/5">
+<nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-transparent flex flex-col">
+    <!-- Professional Domestic Banner (Hardcoded styles to guarantee visibility) -->
+    <div id="nav-banner" class="w-full pt-4 pb-2.5 transition-all duration-500" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.05);">
         <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-12 text-center">
-            <p id="banner-text" class="text-[10px] md:text-[11px] font-medium uppercase tracking-[0.1em] md:tracking-[0.15em] text-white flex flex-wrap items-center justify-center gap-1.5 md:gap-2 leading-tight">
-                <span class="opacity-90">Looking for residential property maintenance?</span>
-                <a href="domestic.html" id="banner-link" class="text-brand-accent hover:text-white transition-colors font-bold inline-flex items-center gap-1 whitespace-nowrap">
+            <p id="banner-text" class="font-medium uppercase flex flex-wrap items-center justify-center gap-1.5 md:gap-2 leading-tight" style="font-size: 11px; letter-spacing: 0.15em; color: #ffffff; margin: 0;">
+                <span style="opacity: 0.9;">Looking for residential property maintenance?</span>
+                <a href="domestic.html" id="banner-link" class="font-bold inline-flex items-center gap-1 whitespace-nowrap" style="color: #6DC3F6; text-decoration: none; transition: all 0.3s ease;">
                     Visit our domestic site <i data-lucide="arrow-right" class="w-3 h-3"></i>
                 </a>
             </p>
         </div>
     </div>
 
-    <div id="nav-main-container" class="w-full py-5 md:py-6 border-b border-white/10 transition-colors duration-500">
+    <div id="nav-main-container" class="w-full py-5 md:py-6 transition-colors duration-500" style="border-bottom: 1px solid rgba(255,255,255,0.1);">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="flex justify-between items-center h-12">
                 <div class="flex-shrink-0 flex items-center">
@@ -136,23 +136,22 @@ function updateNavTheme() {
         navbar.classList.add('bg-transparent');
         
         if (navMainContainer) {
-            navMainContainer.classList.add('border-white/10');
-            navMainContainer.classList.remove('border-transparent');
+            navMainContainer.style.borderBottom = '1px solid rgba(255,255,255,0.1)';
         }
 
         if (navBanner) {
-            navBanner.classList.add('bg-white/10', 'border-white/5');
-            navBanner.classList.remove('bg-slate-100', 'border-slate-200');
+            navBanner.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+            navBanner.style.borderBottom = '1px solid rgba(255, 255, 255, 0.05)';
         }
 
         if (bannerText) {
-            bannerText.classList.add('text-white');
-            bannerText.classList.remove('text-brand-text');
+            bannerText.style.color = '#ffffff';
         }
 
         if (bannerLink) {
-            bannerLink.classList.add('text-brand-accent', 'hover:text-white');
-            bannerLink.classList.remove('text-brand-500', 'hover:text-brand-900');
+            bannerLink.style.color = '#6DC3F6'; // brand-accent
+            bannerLink.addEventListener('mouseover', function() { this.style.color = '#ffffff'; });
+            bannerLink.addEventListener('mouseout', function() { this.style.color = '#6DC3F6'; });
         }
 
         if(navLogoImg) navLogoImg.classList.add('brightness-0', 'invert');
@@ -163,23 +162,22 @@ function updateNavTheme() {
         navbar.classList.remove('bg-transparent');
         
         if (navMainContainer) {
-            navMainContainer.classList.remove('border-white/10');
-            navMainContainer.classList.add('border-transparent');
+            navMainContainer.style.borderBottom = '1px solid transparent';
         }
 
         if (navBanner) {
-            navBanner.classList.remove('bg-white/10', 'border-white/5');
-            navBanner.classList.add('bg-slate-100', 'border-slate-200');
+            navBanner.style.backgroundColor = '#f8fafc'; // slate-50
+            navBanner.style.borderBottom = '1px solid #e2e8f0'; // slate-200
         }
 
         if (bannerText) {
-            bannerText.classList.remove('text-white');
-            bannerText.classList.add('text-brand-text');
+            bannerText.style.color = '#4b4f58'; // brand-text
         }
 
         if (bannerLink) {
-            bannerLink.classList.remove('text-brand-accent', 'hover:text-white');
-            bannerLink.classList.add('text-brand-500', 'hover:text-brand-900');
+            bannerLink.style.color = '#104A6E'; // brand-500
+            bannerLink.addEventListener('mouseover', function() { this.style.color = '#08253a'; });
+            bannerLink.addEventListener('mouseout', function() { this.style.color = '#104A6E'; });
         }
 
         if(navLogoImg) navLogoImg.classList.remove('brightness-0', 'invert');
