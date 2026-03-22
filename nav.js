@@ -23,7 +23,7 @@ const navHTML = `
                         <a href="high-level-cladding.html" class="block px-6 py-4 text-white text-sm hover:bg-white/10 hover:text-brand-accent transition-colors border-b border-white/10">High-Level & Cladding</a>
                         <a href="post-construction-sparkle.html" class="block px-6 py-4 text-white text-sm hover:bg-white/10 hover:text-brand-accent transition-colors border-b border-white/10">Post-Construction & Sparkle</a>
                         <a href="warehouse-factory-cleaning.html" class="block px-6 py-4 text-white text-sm hover:bg-white/10 hover:text-brand-accent transition-colors border-b border-white/10">Warehouse & Factory</a>
-                        <a href="property-management-specialist-services.html" class="block px-6 py-4 text-white text-sm hover:bg-white/10 hover:text-brand-accent transition-colors">Property Management</a>
+                        <a href="property-management.html" class="block px-6 py-4 text-white text-sm hover:bg-white/10 hover:text-brand-accent transition-colors">Property Management</a>
                     </div>
                 </div>
                 
