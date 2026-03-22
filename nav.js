@@ -63,7 +63,7 @@ const navHTML = `
                     <a href="high-level-cladding.html" class="text-white/70 text-base py-2 border-b border-white/5">High-Level & Cladding</a>
                     <a href="post-construction-sparkle.html" class="text-white/70 text-base py-2 border-b border-white/5">Post-Construction & Sparkle</a>
                     <a href="warehouse-factory-cleaning.html" class="text-white/70 text-base py-2 border-b border-white/5">Warehouse & Factory</a>
-                    <a href="property-management-specialist-services.html" class="text-white/70 text-base py-2">Property Management</a>
+                    <a href="property-management.html" class="text-white/70 text-base py-2">Property Management</a>
                 </div>
             </div>
             <a href="contact.html" class="text-lg font-sans text-white py-4">Contact Us</a>
