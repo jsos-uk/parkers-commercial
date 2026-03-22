@@ -10,7 +10,7 @@ const navHTML = `
             
             <div class="hidden md:flex items-center space-x-10">
                 <a href="index.html" class="text-[14px] font-medium uppercase tracking-[0.2em] text-white hover:text-brand-accent transition-colors nav-link">Home</a>
-                <a href="case-studies.html" class="text-[14px] font-medium uppercase tracking-[0.2em] text-white hover:text-brand-accent transition-colors nav-link">Case Studies</a>
+                <a href="about.html" class="text-[14px] font-medium uppercase tracking-[0.2em] text-white hover:text-brand-accent transition-colors nav-link">About</a>
                 
                 <div class="relative group">
                     <a href="services.html" class="text-[14px] font-medium uppercase tracking-[0.2em] text-white hover:text-brand-accent transition-colors nav-link flex items-center gap-1 cursor-pointer">
@@ -46,11 +46,10 @@ const navHTML = `
         </div>
     </div>
 
-    <!-- Mobile Menu Accordion -->
     <div id="mobile-menu" class="hidden md:hidden bg-brand-900 absolute w-full left-0 top-full border-t border-brand-500 z-40 shadow-2xl overflow-y-auto max-h-[85vh]">
         <div class="px-6 py-6 flex flex-col">
             <a href="index.html" class="text-lg font-sans text-white py-4 border-b border-white/10">Home</a>
-            <a href="case-studies.html" class="text-lg font-sans text-white py-4 border-b border-white/10">Case Studies</a>
+            <a href="about.html" class="text-lg font-sans text-white py-4 border-b border-white/10">About</a>
             <div class="border-b border-white/10">
                 <button id="mobile-services-btn" class="w-full flex justify-between items-center text-lg font-sans text-white py-4 focus:outline-none">
                     Services <i data-lucide="plus" class="w-5 h-5 text-brand-accent transition-transform duration-300" id="mobile-services-icon"></i>
