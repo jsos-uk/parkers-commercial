@@ -4,7 +4,7 @@ const navHTML = `
         <div class="flex justify-between items-center h-12">
             <div class="flex-shrink-0 flex items-center">
                 <a href="index.html" class="transition-opacity duration-500 hover:opacity-80" id="nav-logo-link">
-                    <img src="https://parkerscommercial.co.uk/wp-content/uploads/2025/09/cropped-Parkers-Logo-Long-354x80.png" alt="Parker's Commercial Cleaning" id="nav-logo-img" class="h-8 md:h-10 w-auto transition-all duration-500 brightness-0 invert">
+                    <img src="images/parkers-logo-long.png" alt="Parker's Commercial Cleaning" id="nav-logo-img" class="h-8 md:h-10 w-auto transition-all duration-500 brightness-0 invert">
                 </a>
             </div>
             
