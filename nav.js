@@ -1,5 +1,5 @@
 const navHTML = `
-<nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-transparent flex flex-col">
+<nav id="navbar" class="fixed top-50 left-0 w-full z-50 transition-all duration-500 bg-transparent flex flex-col">
     <!-- Professional Domestic Banner (Above Main Nav - Visible on all devices) -->
     <div id="nav-banner" class="w-full py-2 transition-all duration-500 bg-white/10 backdrop-blur-sm border-b border-white/5">
         <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-12 text-center">
