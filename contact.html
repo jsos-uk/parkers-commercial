@@ -44,6 +44,23 @@
         .input-elegant { width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(0, 0, 0, 0.2); color: #212d45; padding: 0.75rem 0; font-size: 1rem; transition: all 0.5s ease; border-radius: 0; }
         .input-elegant:focus { outline: none; border-bottom-color: #212d45; background: rgba(0,0,0,0.01); }
         .input-elegant::placeholder { color: rgba(33, 45, 69, 0.4); font-weight: 300; }
+
+        /* Force solid background on contact page */
+#navbar {
+    background-color: #212d45 !important; /* This matches your brand-900 color */
+    backdrop-filter: none !important;
+}
+
+/* Ensure the banner and main container have solid backgrounds and no borders */
+#nav-banner {
+    background-color: #1a2438 !important; /* Slightly darker than brand-900 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+#nav-main-container {
+    background-color: #212d45 !important;
+    border-bottom: none !important;
+}
     </style>
 </head>
 <body class="font-sans text-brand-text antialiased bg-brand-900 overflow-x-hidden selection:bg-brand-accent selection:text-brand-900">
