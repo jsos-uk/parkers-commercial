@@ -90,16 +90,21 @@
                     <h3 class="text-3xl font-teko font-bold text-brand-900 uppercase tracking-wide mb-2">Request A Quote</h3>
                     <p class="text-sm font-light text-brand-text">Fill in your details below and our team will respond within 24 hours.</p>
                 </div>
-<form id="contactForm" action="#" method="POST" class="space-y-10">
+
+                <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-10">
+                    
+                    <input type="hidden" name="access_key" value="0e562e4d-f4ff-4f74-b3d8-16869cd744de">
+                    <input type="hidden" name="subject" value="New Commercial Contact Inquiry">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                         <div>
-                            <label class="block text-[10px] font-bold text-brand-900 uppercase tracking-[0.2em] mb-2" for="first-name">First Name *</label>
-                            <input type="text" id="first-name" name="first-name" required class="input-elegant">
+                            <label class="block text-[10px] font-bold text-brand-900 uppercase tracking-[0.2em] mb-2" for="first_name">First Name *</label>
+                            <input type="text" id="first_name" name="first_name" required class="input-elegant">
                         </div>
                         <div>
-                            <label class="block text-[10px] font-bold text-brand-900 uppercase tracking-[0.2em] mb-2" for="last-name">Last Name *</label>
-                            <input type="text" id="last-name" name="last-name" required class="input-elegant">
+                            <label class="block text-[10px] font-bold text-brand-900 uppercase tracking-[0.2em] mb-2" for="last_name">Last Name *</label>
+                            <input type="text" id="last_name" name="last_name" required class="input-elegant">
                         </div>
                     </div>
                     
