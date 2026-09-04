@@ -30,6 +30,7 @@ const navHTML = `
                             Services <i data-lucide="chevron-down" class="w-3 h-3"></i>
                         </a>
                         <div class="absolute top-full left-0 mt-4 w-72 bg-brand-900 border-t-2 border-brand-accent opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-xl">
+                            <a href="commercial-gutter-cleaning.html" class="block px-6 py-4 text-white text-sm hover:bg-white/10 hover:text-brand-accent transition-colors border-b border-white/10 font-medium text-brand-accent">Commercial Gutter Cleaning</a>
                             <a href="ongoing-contract-maintenance.html" class="block px-6 py-4 text-white text-sm hover:bg-white/10 hover:text-brand-accent transition-colors border-b border-white/10">Ongoing Contract Maintenance</a>
                             <a href="commercial-industrial-cleaning.html" class="block px-6 py-4 text-white text-sm hover:bg-white/10 hover:text-brand-accent transition-colors border-b border-white/10">Commercial & Industrial Cleaning</a>
                             <a href="healthcare-sanitation-services.html" class="block px-6 py-4 text-white text-sm hover:bg-white/10 hover:text-brand-accent transition-colors border-b border-white/10">Healthcare & Sanitation</a>
@@ -44,9 +45,9 @@ const navHTML = `
                 </div>
 
                 <div class="hidden md:flex items-center gap-8">
-                    <a href="tel:07395106650" class="flex items-center gap-3 text-white hover:text-brand-accent transition-colors group nav-link">
+                    <a href="tel:02046206344" class="flex items-center gap-3 text-white hover:text-brand-accent transition-colors group nav-link">
                         <i data-lucide="phone" class="w-4 h-4"></i>
-                        <span class="text-[14px] tracking-[0.2em] font-semibold">07395 106 650</span>
+                        <span class="text-[14px] tracking-[0.2em] font-semibold">020 4620 6344</span>
                     </a>
                     <a href="contact.html" class="border border-brand-accent bg-brand-accent text-brand-900 px-8 py-3 font-teko uppercase tracking-[0.1em] text-xl hover:bg-white hover:border-white transition-all duration-500 nav-btn shadow-lg">Get A Quote</a>
                 </div>
@@ -70,6 +71,7 @@ const navHTML = `
                 </button>
                 <div id="mobile-services-menu" class="hidden pl-4 pb-4 flex flex-col space-y-4 bg-black/10 rounded-sm">
                     <a href="services.html" class="text-white/70 text-base py-2 border-b border-white/5">All Services Overview</a>
+                    <a href="commercial-gutter-cleaning.html" class="text-white text-base py-2 border-b border-white/5 font-semibold text-brand-accent">Commercial Gutter Cleaning</a>
                     <a href="ongoing-contract-maintenance.html" class="text-white/70 text-base py-2 border-b border-white/5">Ongoing Contract Maintenance</a>
                     <a href="commercial-industrial-cleaning.html" class="text-white/70 text-base py-2 border-b border-white/5">Commercial & Industrial Cleaning</a>
                     <a href="healthcare-sanitation-services.html" class="text-white/70 text-base py-2 border-b border-white/5">Healthcare & Sanitation</a>

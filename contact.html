@@ -1,8 +1,49 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth"><head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EE427PXV5E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-EE427PXV5E');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Parker's Commercial Cleaning</title>
+    <title>Get a Commercial Cleaning Quote | London & Essex | Parker's</title>
+    <meta name="description" content="Request a fast commercial cleaning proposal or book a site audit for your office block, dental practice, care home, or facility in London & Essex.">
+    <link rel="canonical" href="https://parkerscommercial.co.uk/contact">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://parkerscommercial.co.uk/contact">
+    <meta property="og:title" content="Get a Commercial Cleaning Quote | London & Essex | Parker's">
+    <meta property="og:description" content="Request a fast commercial cleaning proposal or site audit for your office block, dental practice, or facility in London & Essex.">
+    <meta property="og:image" content="https://parkerscommercial.co.uk/images/parkers-logo-long.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Commercial Cleaning Quote | London & Essex">
+    <meta property="twitter:description" content="Request a fast commercial cleaning proposal in London & Essex.">
+    <meta property="twitter:image" content="https://parkerscommercial.co.uk/images/parkers-logo-long.png">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "mainEntity": {
+        "@type": "CleaningService",
+        "name": "Parker's Commercial Cleaning",
+        "telephone": "+442046206344",
+        "email": "contact@parkerscommercial.co.uk",
+        "url": "https://parkerscommercial.co.uk/",
+        "areaServed": ["London", "Essex", "Greater London"]
+      }
+    }
+    </script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -86,7 +127,7 @@
                 <div class="space-y-12">
                     <div>
                         <p class="text-white/40 text-[10px] tracking-[0.2em] uppercase font-medium mb-2">Direct Line</p>
-                        <a href="tel:07395106650" class="text-white text-3xl font-teko hover:text-brand-accent transition-colors tracking-wide">07395 106 650</a>
+                        <a href="tel:02046206344" class="text-white text-3xl font-teko hover:text-brand-accent transition-colors tracking-wide">020 4620 6344</a>
                     </div>
                     
                     <div>
@@ -96,7 +137,7 @@
 
                     <div>
                         <p class="text-white/40 text-[10px] tracking-[0.2em] uppercase font-medium mb-2">Operating Region</p>
-                        <p class="text-white font-light text-lg">UK Wide / Regional Operations</p>
+                        <p class="text-white font-light text-lg">London, Essex &amp; South East</p>
                     </div>
                 </div>
             </div>
@@ -146,12 +187,13 @@
                             <div class="relative">
                                 <select id="service" name="service" required class="input-elegant appearance-none cursor-pointer pr-8 w-full">
                                     <option value="" disabled selected>Select a service...</option>
+                                    <option value="Commercial Gutter Cleaning & High-Reach Clearance">Commercial Gutter Cleaning & High-Reach Clearance</option>
+                                    <option value="Property Management & Block Cleaning">Property Management & Block Cleaning</option>
                                     <option value="Ongoing Contract Maintenance">Ongoing Contract Maintenance</option>
                                     <option value="Commercial & Industrial Cleaning">Commercial & Industrial Cleaning</option>
-                                    <option value="Healthcare & Sanitation">Healthcare & Sanitation</option>
-                                    <option value="High-Level & Cladding">High-Level & Cladding</option>
+                                    <option value="Healthcare & CQC Sanitation">Healthcare & CQC Sanitation</option>
+                                    <option value="High-Level Cladding & Facade Washing">High-Level Cladding & Facade Washing</option>
                                     <option value="Post-Construction Sparkle">Post-Construction Sparkle</option>
-                                    <option value="Property Management">Property Management</option>
                                     <option value="Other">Other / General Inquiry</option>
                                 </select>
                                 <div class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 flex items-center text-brand-900">
@@ -184,7 +226,7 @@
     
     <!-- Mobile Sticky CTA Bar -->
     <div class="md:hidden fixed bottom-0 left-0 w-full z-50 flex border-t border-brand-900 shadow-2xl">
-        <a href="tel:07395106650" class="flex-1 bg-white text-brand-900 py-4 font-semibold uppercase tracking-[0.1em] text-xs flex justify-center items-center gap-2">
+        <a href="tel:02046206344" class="flex-1 bg-white text-brand-900 py-4 font-semibold uppercase tracking-[0.1em] text-xs flex justify-center items-center gap-2">
             <i data-lucide="phone" class="w-4 h-4"></i> Call Now
         </a>
         <a href="mailto:contact@parkerscommercial.co.uk" class="flex-1 bg-brand-accent text-brand-900 py-4 font-semibold uppercase tracking-[0.1em] text-xs flex justify-center items-center gap-2">
@@ -204,13 +246,24 @@
         }, observerOptions);
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // 3. Keep the page-specific contact form logic!
+        // 3. Keep the page-specific contact form logic with conversion tracking dataLayer push
+        window.dataLayer = window.dataLayer || [];
         const contactForm = document.getElementById('contactForm');
         if(contactForm) {
             contactForm.addEventListener('submit', (e) => {
                 e.preventDefault();
                 const btn = contactForm.querySelector('button');
                 btn.innerText = 'TRANSMITTING...';
+                
+                // Fire GA4 conversion event dataLayer push
+                const selectedService = document.getElementById('service')?.value || 'General Inquiry';
+                window.dataLayer.push({
+                    'event': 'generate_lead',
+                    'lead_type': 'Commercial Inbound Quote',
+                    'service_requested': selectedService,
+                    'page_location': window.location.href
+                });
+
                 setTimeout(() => {
                     contactForm.style.display = 'none';
                     document.getElementById('successMessage').classList.remove('hidden');
