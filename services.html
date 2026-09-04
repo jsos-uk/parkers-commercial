@@ -51,7 +51,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600&amp;family=Teko:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -59,9 +59,9 @@
             theme: {
                 extend: {
                     fontFamily: { 
-                        sans: ['Hind', 'sans-serif'], 
-                        heading: ['Playfair Display', 'serif'], 
-                        teko: ['Teko', 'sans-serif'] 
+                        sans: ['Inter', 'sans-serif'], 
+                        heading: ['Outfit', 'sans-serif'],
+                        teko: ['Outfit', 'sans-serif'] 
                     },
                     colors: { 
                         brand: { 
@@ -72,7 +72,7 @@
                             700: '#08253a', 
                             900: '#212d45', 
                             accent: '#6DC3F6', 
-                            text: '#4b4f58' 
+                            text: '#1e293b' 
                         } 
                     }
                 }
@@ -96,9 +96,6 @@
             backdrop-filter: blur(15px); 
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
-        
-        .img-grayscale-scroll { filter: grayscale(100%); transition: filter 2s ease 0.3s, transform 0.7s ease; }
-        .reveal.active .img-grayscale-scroll, .reveal.active.img-grayscale-scroll { filter: grayscale(0%); }
     </style>
 </head>
 <body class="font-sans text-brand-text antialiased bg-slate-50 overflow-x-hidden selection:bg-brand-900 selection:text-white">
@@ -110,7 +107,7 @@
     <header data-theme="dark" class="pt-32 pb-16 md:pt-48 md:pb-24 bg-brand-900 border-b border-white/10 relative overflow-hidden">
         <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-500 opacity-20 blur-3xl pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center reveal active relative z-10">
-            <h1 class="text-5xl md:text-6xl lg:text-7xl font-teko font-bold text-white mb-4 uppercase tracking-wide">Our Services</h1>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-4 uppercase tracking-tight">Our Services</h1>
             <p class="text-brand-accent text-sm tracking-[0.3em] uppercase font-semibold">Tailored Operational Solutions</p>
         </div>
     </header>
@@ -126,17 +123,17 @@
     </section>
 
     <!-- Services Grid (Tagged as Light) -->
-    <section data-theme="light" class="py-32 bg-slate-50 min-h-screen">
+    <section data-theme="light" class="py-24 bg-slate-50 min-h-screen">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Service 0: Commercial Gutter Cleaning (Priority Push) -->
                 <a href="commercial-gutter-cleaning.html" class="group block bg-white border border-slate-200 overflow-hidden reveal shadow-sm hover:shadow-xl transition-shadow duration-500">
                     <div class="h-64 overflow-hidden relative border-b border-slate-200">
-                        <img src="images/high-level-gutter-cleaning.jpg" alt="Commercial Gutter Cleaning & High-Reach Clearance" class="w-full h-full object-cover img-grayscale-scroll group-hover:scale-105 transition-transform duration-700">
+                        <img src="images/high-level-gutter-cleaning.jpg" alt="Commercial Gutter Cleaning & High-Reach Clearance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="p-10">
-                        <h3 class="text-3xl font-teko font-medium text-brand-900 mb-4 uppercase tracking-wide group-hover:text-brand-500 transition-colors">Commercial Gutter Cleaning</h3>
+                        <h3 class="text-3xl font-heading font-medium text-brand-900 mb-4 uppercase tracking-wide group-hover:text-brand-500 transition-colors">Commercial Gutter Cleaning</h3>
                         <p class="text-brand-text font-light leading-relaxed mb-6">Ground-operated vacuum extraction up to 50ft with wireless CCTV camera verification for property management blocks, warehouses, and offices.</p>
                         <span class="text-brand-500 font-semibold text-sm uppercase tracking-[0.1em] flex items-center gap-2 group-hover:gap-4 transition-all">Explore Service <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
                     </div>
@@ -145,10 +142,10 @@
                 <!-- Service 1 -->
                 <a href="ongoing-contract-maintenance.html" class="group block bg-white border border-slate-200 overflow-hidden reveal delay-100 shadow-sm hover:shadow-xl transition-shadow duration-500">
                     <div class="h-64 overflow-hidden relative border-b border-slate-200">
-                        <img src="images/ongoing-contract-maintenance.jpg" alt="Ongoing Contract Maintenance" class="w-full h-full object-cover img-grayscale-scroll group-hover:scale-105 transition-transform duration-700">
+                        <img src="images/ongoing-contract-maintenance.jpg" alt="Ongoing Contract Maintenance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="p-10">
-                        <h3 class="text-3xl font-teko font-medium text-brand-900 mb-4 uppercase tracking-wide group-hover:text-brand-500 transition-colors">Ongoing Contract Maintenance</h3>
+                        <h3 class="text-3xl font-heading font-medium text-brand-900 mb-4 uppercase tracking-wide group-hover:text-brand-500 transition-colors">Ongoing Contract Maintenance</h3>
                         <p class="text-brand-text font-light leading-relaxed mb-6">Reliable, fully-managed scheduled cleaning. We handle the logistics, staffing, and quality control so you can focus entirely on running your business.</p>
                         <span class="text-brand-500 font-semibold text-sm uppercase tracking-[0.1em] flex items-center gap-2 group-hover:gap-4 transition-all">Explore Service <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
                     </div>
@@ -157,10 +154,10 @@
                 <!-- Service 2 -->
                 <a href="commercial-industrial-cleaning.html" class="group block bg-white border border-slate-200 overflow-hidden reveal delay-100 shadow-sm hover:shadow-xl transition-shadow duration-500">
                     <div class="h-64 overflow-hidden relative border-b border-slate-200">
-                        <img src="images/commercial-and-industrial-cleaning.webp" alt="Commercial &amp; Industrial Cleaning" class="w-full h-full object-cover img-grayscale-scroll group-hover:scale-105 transition-transform duration-700">
+                        <img src="images/commercial-and-industrial-cleaning.webp" alt="Commercial &amp; Industrial Cleaning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="p-10">
-                        <h3 class="text-3xl font-teko font-medium text-brand-900 mb-4 uppercase tracking-wide group-hover:text-brand-500 transition-colors">Commercial &amp; Industrial</h3>
+                        <h3 class="text-3xl font-heading font-medium text-brand-900 mb-4 uppercase tracking-wide group-hover:text-brand-500 transition-colors">Commercial &amp; Industrial</h3>
                         <p class="text-brand-text font-light leading-relaxed mb-6">Heavy-duty, specialized cleaning designed to tackle grease, grime, and unique challenges within high-traffic manufacturing and industrial facilities.</p>
                         <span class="text-brand-500 font-semibold text-sm uppercase tracking-[0.1em] flex items-center gap-2 group-hover:gap-4 transition-all">Explore Service <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
                     </div>
@@ -169,10 +166,10 @@
                 <!-- Service 3 -->
                 <a href="healthcare-sanitation-services.html" class="group block bg-white border border-slate-200 overflow-hidden reveal delay-200 shadow-sm hover:shadow-xl transition-shadow duration-500">
                     <div class="h-64 overflow-hidden relative border-b border-slate-200">
-                        <img src="images/healthcare-and-sanitisation.jpg" alt="Healthcare Sanitation" class="w-full h-full object-cover img-grayscale-scroll group-hover:scale-105 transition-transform duration-700">
+                        <img src="images/healthcare-and-sanitisation.jpg" alt="Healthcare Sanitation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="p-10">
-                        <h3 class="text-3xl font-teko font-medium text-brand-900 mb-4 uppercase tracking-wide group-hover:text-brand-500 transition-colors">Healthcare &amp; Sanitation</h3>
+                        <h3 class="text-3xl font-heading font-medium text-brand-900 mb-4 uppercase tracking-wide group-hover:text-brand-500 transition-colors">Healthcare &amp; Sanitation</h3>
                         <p class="text-brand-text font-light leading-relaxed mb-6">Strict, clinical-grade sanitation services meeting all CQC compliance requirements for medical, dental, and veterinary practices.</p>
                         <span class="text-brand-500 font-semibold text-sm uppercase tracking-[0.1em] flex items-center gap-2 group-hover:gap-4 transition-all">Explore Service <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
                     </div>
@@ -181,10 +178,10 @@
                 <!-- Service 4 -->
                 <a href="high-level-cladding.html" class="group block bg-white border border-slate-200 overflow-hidden reveal shadow-sm hover:shadow-xl transition-shadow duration-500">
                     <div class="h-64 overflow-hidden relative border-b border-slate-200 bg-slate-200">
-                        <img src="images/high-level-cladding.jpg" alt="High-Level Cladding" class="w-full h-full object-cover img-grayscale-scroll group-hover:scale-105 transition-transform duration-700">
+                        <img src="images/high-level-cladding.jpg" alt="High-Level Cladding" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="p-10">
-                        <h3 class="text-3xl font-teko font-medium text-brand-900 mb-4 uppercase tracking-wide group-hover:text-brand-500 transition-colors">High-Level &amp; Cladding</h3>
+                        <h3 class="text-3xl font-heading font-medium text-brand-900 mb-4 uppercase tracking-wide group-hover:text-brand-500 transition-colors">High-Level &amp; Cladding</h3>
                         <p class="text-brand-text font-light leading-relaxed mb-6">Specialist IPAF-certified operators and high-reach water-fed pole systems to safely restore the exterior facade and windows of your building.</p>
                         <span class="text-brand-500 font-semibold text-sm uppercase tracking-[0.1em] flex items-center gap-2 group-hover:gap-4 transition-all">Explore Service <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
                     </div>
@@ -193,10 +190,10 @@
                 <!-- Service 5 -->
                 <a href="post-construction-sparkle.html" class="group block bg-white border border-slate-200 overflow-hidden reveal delay-100 shadow-sm hover:shadow-xl transition-shadow duration-500">
                     <div class="h-64 overflow-hidden relative border-b border-slate-200 bg-slate-200">
-                        <img src="images/construction-sparkle-cleaning.jpg" alt="Post Construction" class="w-full h-full object-cover img-grayscale-scroll group-hover:scale-105 transition-transform duration-700">
+                        <img src="images/construction-sparkle-cleaning.jpg" alt="Post Construction" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="p-10">
-                        <h3 class="text-3xl font-teko font-medium text-brand-900 mb-4 uppercase tracking-wide group-hover:text-brand-500 transition-colors">Post-Construction Sparkle</h3>
+                        <h3 class="text-3xl font-heading font-medium text-brand-900 mb-4 uppercase tracking-wide group-hover:text-brand-500 transition-colors">Post-Construction Sparkle</h3>
                         <p class="text-brand-text font-light leading-relaxed mb-6">Thorough, multi-stage builders' cleans and final "sparkle" detailing to prepare your newly built or renovated property for immediate client handover.</p>
                         <span class="text-brand-500 font-semibold text-sm uppercase tracking-[0.1em] flex items-center gap-2 group-hover:gap-4 transition-all">Explore Service <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
                     </div>
@@ -205,10 +202,10 @@
                 <!-- Service 6 -->
                 <a href="property-management-specialist-services.html" class="group block bg-white border border-slate-200 overflow-hidden reveal delay-200 shadow-sm hover:shadow-xl transition-shadow duration-500">
                     <div class="h-64 overflow-hidden relative border-b border-slate-200 bg-slate-200">
-                        <img src="images/property-management-external.jpg" alt="Property Management" class="w-full h-full object-cover img-grayscale-scroll group-hover:scale-105 transition-transform duration-700">
+                        <img src="images/property-management-external.jpg" alt="Property Management" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="p-10">
-                        <h3 class="text-3xl font-teko font-medium text-brand-900 mb-4 uppercase tracking-wide group-hover:text-brand-500 transition-colors">Property Management</h3>
+                        <h3 class="text-3xl font-heading font-medium text-brand-900 mb-4 uppercase tracking-wide group-hover:text-brand-500 transition-colors">Property Management</h3>
                         <p class="text-brand-text font-light leading-relaxed mb-6">Integrated cleaning and maintenance solutions tailored specifically for block managers overseeing multi-tenant residential or commercial spaces.</p>
                         <span class="text-brand-500 font-semibold text-sm uppercase tracking-[0.1em] flex items-center gap-2 group-hover:gap-4 transition-all">Explore Service <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
                     </div>
@@ -223,35 +220,35 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
                 <div class="lg:col-span-1 reveal">
-                    <h3 class="text-4xl font-teko font-bold text-brand-900 mb-4 uppercase">The Parker's Standard</h3>
+                    <h3 class="text-4xl font-heading font-bold text-brand-900 mb-4 uppercase">The Parker's Standard</h3>
                     <p class="text-brand-text font-light leading-relaxed">We do not compromise on compliance, safety, or quality. Our operations are governed by strict internal frameworks ensuring seamless service delivery.</p>
                 </div>
                 <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div class="flex gap-4 reveal delay-100">
                         <i data-lucide="shield-check" class="w-8 h-8 text-brand-accent flex-shrink-0"></i>
                         <div>
-                            <h5 class="font-teko text-2xl uppercase text-brand-900 mb-1">Fully Vetted Staff</h5>
+                            <h5 class="font-heading text-2xl uppercase text-brand-900 mb-1">Fully Vetted Staff</h5>
                             <p class="text-sm font-light text-brand-text leading-relaxed">Every operative undergoes strict background checks, extensive onboarding, and continuous on-site training.</p>
                         </div>
                     </div>
                     <div class="flex gap-4 reveal delay-200">
                         <i data-lucide="clipboard-list" class="w-8 h-8 text-brand-accent flex-shrink-0"></i>
                         <div>
-                            <h5 class="font-teko text-2xl uppercase text-brand-900 mb-1">Rigorous Auditing</h5>
+                            <h5 class="font-heading text-2xl uppercase text-brand-900 mb-1">Rigorous Auditing</h5>
                             <p class="text-sm font-light text-brand-text leading-relaxed">Our management team utilizes digital reporting tools to conduct unannounced quality assurance checks.</p>
                         </div>
                     </div>
                     <div class="flex gap-4 reveal delay-100">
                         <i data-lucide="file-text" class="w-8 h-8 text-brand-accent flex-shrink-0"></i>
                         <div>
-                            <h5 class="font-teko text-2xl uppercase text-brand-900 mb-1">COSHH Compliant</h5>
+                            <h5 class="font-heading text-2xl uppercase text-brand-900 mb-1">COSHH Compliant</h5>
                             <p class="text-sm font-light text-brand-text leading-relaxed">Full documentation, risk assessments, and method statements (RAMS) are provided for every active contract.</p>
                         </div>
                     </div>
                     <div class="flex gap-4 reveal delay-200">
                         <i data-lucide="leaf" class="w-8 h-8 text-brand-accent flex-shrink-0"></i>
                         <div>
-                            <h5 class="font-teko text-2xl uppercase text-brand-900 mb-1">Eco-Conscious Practices</h5>
+                            <h5 class="font-heading text-2xl uppercase text-brand-900 mb-1">Eco-Conscious Practices</h5>
                             <p class="text-sm font-light text-brand-text leading-relaxed">We utilize environmentally responsible chemicals and sustainable waste management protocols wherever possible.</p>
                         </div>
                     </div>
@@ -264,11 +261,11 @@
     <section data-theme="dark" class="py-24 bg-brand-900 border-t-[3px] border-brand-accent">
         <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-12">
             <div class="max-w-2xl reveal">
-                <h2 class="text-5xl font-teko font-bold text-white uppercase mb-4">Require a Bespoke Solution?</h2>
+                <h2 class="text-5xl font-heading font-bold text-white uppercase mb-4">Require a Bespoke Solution?</h2>
                 <p class="text-white/60 font-light text-lg">Many of our clients require a hybrid approach. We offer complimentary site audits to design a custom service framework tailored exactly to your building's foot traffic and operational demands.</p>
             </div>
             <div class="reveal delay-100 flex-shrink-0">
-                <a href="contact.html" class="inline-block bg-white text-brand-900 px-12 py-5 font-teko text-2xl uppercase tracking-wide hover:bg-brand-accent transition-colors duration-500">
+                <a href="contact.html" class="inline-block bg-white text-brand-900 px-8 py-4 rounded-lg font-heading text-base font-semibold uppercase tracking-wider hover:bg-brand-accent transition-all duration-300 shadow-lg hover:shadow-xl">
                     Request Site Audit
                 </a>
             </div>

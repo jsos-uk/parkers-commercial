@@ -47,14 +47,16 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600&amp;family=Teko:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Hind', 'sans-serif'], heading: ['Playfair Display', 'serif'], teko: ['Teko', 'sans-serif'] },
-                    colors: { brand: { 50: '#f0f7fc', 100: '#e0eef9', 500: '#104A6E', 600: '#0c3854', 700: '#08253a', 900: '#212d45', accent: '#6DC3F6', text: '#4b4f58' } }
+                    fontFamily: { sans: ['Inter', 'sans-serif'], 
+                        heading: ['Outfit', 'sans-serif'],
+                        teko: ['Outfit', 'sans-serif'] },
+                    colors: { brand: { 50: '#f0f7fc', 100: '#e0eef9', 500: '#104A6E', 600: '#0c3854', 700: '#08253a', 900: '#212d45', accent: '#6DC3F6', text: '#1e293b' } }
                 }
             }
         }
@@ -67,8 +69,6 @@
         .delay-100 { transition-delay: 100ms; } .delay-200 { transition-delay: 200ms; }
         
         .glass-nav { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(15px); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-        .img-grayscale-scroll { filter: grayscale(100%); transition: filter 2s ease 0.3s, transform 0.7s ease; }
-        .reveal.active .img-grayscale-scroll, .reveal.active.img-grayscale-scroll { filter: grayscale(0%); }
     </style>
 </head>
 <body class="font-sans text-brand-text antialiased bg-white overflow-x-hidden selection:bg-brand-900 selection:text-white">
@@ -110,7 +110,7 @@
                         <i data-lucide="phone" class="w-4 h-4"></i>
                         <span class="text-[12px] tracking-[0.2em] font-semibold">020 4620 6344</span>
                     </a>
-                    <a href="contact.html" class="border border-brand-accent bg-brand-accent text-brand-900 px-8 py-3 font-teko uppercase tracking-[0.1em] text-xl hover:bg-white hover:border-white transition-all duration-500 nav-btn shadow-lg">Get A Quote</a>
+                    <a href="contact.html" class="border border-brand-accent bg-brand-accent text-brand-900 px-6 py-2.5 rounded-lg font-heading uppercase tracking-[0.08em] text-base font-semibold hover:bg-white hover:border-white transition-all duration-300 nav-btn shadow-md hover:shadow-lg">Get A Quote</a>
                 </div>
 
                 <div class="md:hidden flex items-center">
@@ -138,7 +138,7 @@
             <div class="absolute inset-0 bg-brand-900/80"></div>
         </div>
         <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center reveal active relative z-10">
-            <h1 class="text-5xl md:text-6xl lg:text-7xl font-teko font-bold text-white mb-4 uppercase tracking-wide">Case Studies</h1>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-4 uppercase tracking-tight">Case Studies</h1>
             <p class="text-brand-accent text-sm tracking-[0.3em] uppercase font-semibold">Proven Operational Excellence</p>
         </div>
     </header>
@@ -158,10 +158,10 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             
             <!-- Case Study 1: Blue Sky Dental -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
                 <div class="relative reveal h-[500px] lg:h-[600px] order-2 lg:order-1 border border-slate-200 p-2">
-                    <img src="https://parkerscommercial.co.uk/wp-content/uploads/2025/10/Gemini_Generated_Image_j147auj147auj147.png" alt="Blue Sky Dental" class="w-full h-full object-cover img-grayscale-scroll">
-                    <div class="absolute top-6 right-6 bg-brand-900 text-white px-4 py-2 font-teko text-xl uppercase tracking-wide shadow-lg">Healthcare</div>
+                    <img src="https://parkerscommercial.co.uk/wp-content/uploads/2025/10/Gemini_Generated_Image_j147auj147auj147.png" alt="Blue Sky Dental" class="w-full h-full object-cover ">
+                    <div class="absolute top-6 right-6 bg-brand-900 text-white px-4 py-2 font-heading text-xl uppercase tracking-wide shadow-lg">Healthcare</div>
                 </div>
                 <div class="reveal delay-100 order-1 lg:order-2">
                     <div class="inline-flex items-center gap-4 mb-6">
@@ -175,7 +175,7 @@
             </div>
 
             <!-- Case Study 2: Spire Welsley Hospital -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
                 <div class="reveal">
                     <div class="inline-flex items-center gap-4 mb-6">
                         <span class="text-brand-accent text-[10px] tracking-[0.3em] uppercase font-bold">Clinical &amp; Surgical Environment Cleaning</span>
@@ -186,16 +186,16 @@
                     </div>
                 </div>
                 <div class="relative reveal delay-100 h-[500px] lg:h-[600px] border border-slate-200 p-2">
-                    <img src="https://parkerscommercial.co.uk/wp-content/uploads/2025/10/Gemini_Generated_Image_j147auj147auj147-1.png" alt="Spire Welsley Hospital" class="w-full h-full object-cover img-grayscale-scroll">
-                    <div class="absolute top-6 left-6 bg-brand-900 text-white px-4 py-2 font-teko text-xl uppercase tracking-wide shadow-lg">Clinical</div>
+                    <img src="https://parkerscommercial.co.uk/wp-content/uploads/2025/10/Gemini_Generated_Image_j147auj147auj147-1.png" alt="Spire Welsley Hospital" class="w-full h-full object-cover ">
+                    <div class="absolute top-6 left-6 bg-brand-900 text-white px-4 py-2 font-heading text-xl uppercase tracking-wide shadow-lg">Clinical</div>
                 </div>
             </div>
 
             <!-- Case Study 3: Lookers -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
                 <div class="relative reveal h-[500px] lg:h-[600px] order-2 lg:order-1 border border-slate-200 p-2">
-                    <img src="https://parkerscommercial.co.uk/wp-content/uploads/2025/10/Gemini_Generated_Image_j147auj147auj147-2.png" alt="Lookers Showroom" class="w-full h-full object-cover img-grayscale-scroll">
-                    <div class="absolute top-6 right-6 bg-brand-900 text-white px-4 py-2 font-teko text-xl uppercase tracking-wide shadow-lg">Commercial</div>
+                    <img src="https://parkerscommercial.co.uk/wp-content/uploads/2025/10/Gemini_Generated_Image_j147auj147auj147-2.png" alt="Lookers Showroom" class="w-full h-full object-cover ">
+                    <div class="absolute top-6 right-6 bg-brand-900 text-white px-4 py-2 font-heading text-xl uppercase tracking-wide shadow-lg">Commercial</div>
                 </div>
                 <div class="reveal delay-100 order-1 lg:order-2">
                     <div class="inline-flex items-center gap-4 mb-6">
@@ -220,8 +220,8 @@
                     </div>
                 </div>
                 <div class="relative reveal delay-100 h-[500px] lg:h-[600px] border border-slate-200 p-2">
-                    <img src="https://parkerscommercial.co.uk/wp-content/uploads/2025/10/Gemini_Generated_Image_j147auj147auj147-3.png" alt="Ramseys Care Home" class="w-full h-full object-cover img-grayscale-scroll">
-                    <div class="absolute top-6 left-6 bg-brand-900 text-white px-4 py-2 font-teko text-xl uppercase tracking-wide shadow-lg">Residential Care</div>
+                    <img src="https://parkerscommercial.co.uk/wp-content/uploads/2025/10/Gemini_Generated_Image_j147auj147auj147-3.png" alt="Ramseys Care Home" class="w-full h-full object-cover ">
+                    <div class="absolute top-6 left-6 bg-brand-900 text-white px-4 py-2 font-heading text-xl uppercase tracking-wide shadow-lg">Residential Care</div>
                 </div>
             </div>
 
@@ -229,11 +229,11 @@
     </section>
 
     <!-- Our Commitment & Why Partner With Us (Tagged as Light) -->
-    <section data-theme="light" class="py-32 bg-slate-50 border-y border-slate-200">
+    <section data-theme="light" class="py-24 bg-slate-50 border-y border-slate-200">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="text-center max-w-3xl mx-auto mb-20 reveal">
                 <span class="text-brand-accent text-[10px] tracking-[0.3em] uppercase font-bold block mb-4">Our Commitment</span>
-                <h2 class="text-4xl md:text-5xl font-teko font-bold text-brand-900 uppercase">A Higher Standard of Clean</h2>
+                <h2 class="text-4xl md:text-5xl font-heading font-bold text-brand-900 uppercase">A Higher Standard of Clean</h2>
                 <div class="h-[2px] w-16 bg-brand-accent mx-auto mt-6 mb-6"></div>
                 <p class="text-lg text-brand-text font-light leading-relaxed">
                     We are dedicated to creating healthier, safer, and more productive environments for your staff and clients through meticulous, compliant, and reliable cleaning protocols.
@@ -248,59 +248,44 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="p-8 bg-white border border-slate-200 text-center reveal hover:shadow-xl transition-all duration-300">
                     <i data-lucide="shield-check" class="w-10 h-10 text-brand-accent mx-auto mb-6"></i>
-                    <h4 class="font-teko text-2xl uppercase text-brand-900">Uncompromising Safety &amp; Compliance</h4>
+                    <h4 class="font-heading text-2xl uppercase text-brand-900">Uncompromising Safety &amp; Compliance</h4>
                 </div>
                 <div class="p-8 bg-white border border-slate-200 text-center reveal delay-100 hover:shadow-xl transition-all duration-300">
                     <i data-lucide="clock" class="w-10 h-10 text-brand-accent mx-auto mb-6"></i>
-                    <h4 class="font-teko text-2xl uppercase text-brand-900">Reliable &amp; Punctual Service Delivery</h4>
+                    <h4 class="font-heading text-2xl uppercase text-brand-900">Reliable &amp; Punctual Service Delivery</h4>
                 </div>
                 <div class="p-8 bg-white border border-slate-200 text-center reveal delay-200 hover:shadow-xl transition-all duration-300">
                     <i data-lucide="search" class="w-10 h-10 text-brand-accent mx-auto mb-6"></i>
-                    <h4 class="font-teko text-2xl uppercase text-brand-900">Meticulous Attention to Detail</h4>
+                    <h4 class="font-heading text-2xl uppercase text-brand-900">Meticulous Attention to Detail</h4>
                 </div>
                 <div class="p-8 bg-white border border-slate-200 text-center reveal delay-300 hover:shadow-xl transition-all duration-300">
                     <i data-lucide="users" class="w-10 h-10 text-brand-accent mx-auto mb-6"></i>
-                    <h4 class="font-teko text-2xl uppercase text-brand-900">Dedicated Account Management</h4>
+                    <h4 class="font-heading text-2xl uppercase text-brand-900">Dedicated Account Management</h4>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Call To Action (Tagged as Dark) -->
-    <section data-theme="dark" class="py-32 bg-brand-900 border-t-[3px] border-brand-accent text-center">
+    <section data-theme="dark" class="py-24 bg-brand-900 border-t-[3px] border-brand-accent text-center">
         <div class="max-w-4xl mx-auto px-6 lg:px-12 reveal">
             <div class="inline-flex items-center gap-4 mb-8 justify-center">
                 <div class="h-[1px] w-12 bg-white/20"></div>
                 <span class="text-white/80 text-[10px] tracking-[0.3em] uppercase font-medium">Become A Success Story</span>
                 <div class="h-[1px] w-12 bg-white/20"></div>
             </div>
-            <h2 class="text-5xl md:text-6xl font-teko font-bold text-white mb-8 uppercase tracking-wide">Elevate Your Facility Today</h2>
+            <h2 class="text-5xl md:text-6xl font-heading font-bold text-white mb-8 uppercase tracking-wide">Elevate Your Facility Today</h2>
             <p class="text-white/60 font-light text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
                 Experience the Parker's Commercial difference. Contact us today to arrange a site walk-through and let us tailor a high-performance cleaning strategy for your infrastructure.
             </p>
-            <a href="contact.html" class="inline-block bg-white text-brand-900 px-12 py-5 font-teko text-2xl uppercase tracking-wide hover:bg-brand-accent transition-colors duration-500">
+            <a href="contact.html" class="inline-block bg-white text-brand-900 px-8 py-4 rounded-lg font-heading text-base font-semibold uppercase tracking-wider hover:bg-brand-accent transition-all duration-300 shadow-lg hover:shadow-xl">
                 Contact Our Team
             </a>
         </div>
     </section>
-
-    <!-- Footer (Tagged as Dark) -->
-    <footer data-theme="dark" class="bg-brand-900 py-16 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="flex items-center">
-                <img src="https://parkerscommercial.co.uk/wp-content/uploads/2025/09/cropped-Parkers-Logo-Long-354x80.png" alt="Parker's Commercial Cleaning" class="h-8 md:h-10 w-auto brightness-0 invert">
-            </div>
-            <div class="text-white/40 text-[10px] tracking-[0.1em] text-center md:text-right font-light uppercase">
-                <p>© <script>document.write(new Date().getFullYear())</script> Parker's Commercial Cleaning. All rights reserved.</p>
-                <div class="mt-4 flex flex-wrap gap-6 justify-center md:justify-end">
-                    <a href="about.html" class="hover:text-white transition-colors">About</a>
-                    <a href="services.html" class="hover:text-white transition-colors">Services</a>
-                    <a href="results.html" class="hover:text-white transition-colors">Results</a>
-                    <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer Injection Point -->
+    <div id="footer-placeholder"></div>
+    <script src="footer.js"></script>
 
     <!-- Mobile Sticky CTA Bar -->
     <div class="md:hidden fixed bottom-0 left-0 w-full z-50 flex border-t border-brand-900 shadow-2xl">

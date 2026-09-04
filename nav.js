@@ -49,7 +49,7 @@ const navHTML = `
                         <i data-lucide="phone" class="w-4 h-4"></i>
                         <span class="text-[14px] tracking-[0.2em] font-semibold">020 4620 6344</span>
                     </a>
-                    <a href="contact.html" class="border border-brand-accent bg-brand-accent text-brand-900 px-8 py-3 font-teko uppercase tracking-[0.1em] text-xl hover:bg-white hover:border-white transition-all duration-500 nav-btn shadow-lg">Get A Quote</a>
+                    <a href="contact.html" class="border border-brand-accent bg-brand-accent text-brand-900 px-6 py-2.5 rounded-lg font-heading uppercase tracking-[0.08em] text-base font-semibold hover:bg-white hover:border-white transition-all duration-300 nav-btn shadow-md hover:shadow-lg">Get A Quote</a>
                 </div>
 
                 <div class="md:hidden flex items-center">
