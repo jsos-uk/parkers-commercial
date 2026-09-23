@@ -9,10 +9,18 @@ export interface LocationData {
   domesticFocus: boolean;
   landmarks: string[];
   description: string;
+  // B2B Enterprise Extensions
+  districtCategory?: 'london_prime' | 'london_corridor' | 'essex_hub' | 'essex_commuter';
+  targetSectors?: string[];
+  buildingTypes?: string[];
+  transportLinks?: string[];
+  procurementHighlights?: string[];
 }
 
 export const LOCATIONS: LocationData[] = [
+  // ==========================================
   // Affluent Essex Villages (Priority Domestic)
+  // ==========================================
   {
     slug: 'ingatestone',
     name: 'Ingatestone',
@@ -82,21 +90,41 @@ export const LOCATIONS: LocationData[] = [
     nearbyAreas: ['Brentwood', 'Hutton', 'Ingatestone'],
     commercialFocus: true,
     domesticFocus: true,
+    districtCategory: 'essex_commuter',
+    targetSectors: ['Professional Practices', 'Executive Suites', 'Commuter Retail & Offices'],
+    buildingTypes: ['Multi-Floor Commercial Suites', 'Private Medical Practices', 'Retail Parades'],
+    transportLinks: ['Shenfield Elizabeth Line Terminal', 'Brentwood Rail', 'A12 Arterial'],
     landmarks: ['Shenfield Station Elizabeth Line corridor', 'Hutton Mount private estate'],
+    procurementHighlights: [
+      'Flexible keyholder evening cleaning schedules',
+      'COSHH compliant, eco-friendly chemical regimes',
+      'Dedicated local contract supervisor'
+    ],
     description: 'Premier commuter hub home to exclusive private avenues, high-value residences, and local commercial premises.'
   },
 
-  // Major Commercial & Property Management Hubs (Commercial Focus)
+  // ==========================================
+  // Major Essex Commercial Hubs (Commercial Focus)
+  // ==========================================
   {
     slug: 'brentwood',
     name: 'Brentwood',
     county: 'Essex',
     type: 'commercial_hub',
     postcodes: ['CM14', 'CM15'],
-    nearbyAreas: ['Shenfield', 'Warley', 'Ingatestone', 'Romford'],
+    nearbyAreas: ['Shenfield', 'Warley', 'Ingatestone', 'Romford', 'Harold Wood'],
     commercialFocus: true,
     domesticFocus: true,
+    districtCategory: 'essex_hub',
+    targetSectors: ['Financial Services', 'Corporate Regional HQs', 'Property Management Portfolios', 'Healthcare Surgeries'],
+    buildingTypes: ['Business Park Headquarters', 'Residential Block Portfolios', 'Multi-Tenant Commercial Units'],
+    transportLinks: ['Brentwood Elizabeth Line', 'M25 Junction 28', 'A12 Corridor'],
     landmarks: ['Brentwood High Street', 'Warley Business Park', 'Brook Street Business Area'],
+    procurementHighlights: [
+      '£10M Public & Employers Liability Insurance',
+      'Dedicated mobile supervisor & digital audit reporting',
+      'Directly employed, vetted & uniformed cleaning operatives'
+    ],
     description: 'Major commercial centre in Essex with multi-tenancy business parks, residential block management portfolios, and corporate headquarters.'
   },
   {
@@ -105,10 +133,19 @@ export const LOCATIONS: LocationData[] = [
     county: 'Essex',
     type: 'commercial_hub',
     postcodes: ['CM1', 'CM2', 'CM3'],
-    nearbyAreas: ['Writtle', 'Danbury', 'Great Baddow', 'Broomfield'],
+    nearbyAreas: ['Writtle', 'Danbury', 'Great Baddow', 'Broomfield', 'Springfield'],
     commercialFocus: true,
     domesticFocus: true,
+    districtCategory: 'essex_hub',
+    targetSectors: ['Corporate Offices', 'NHS & Private Healthcare Surgeries', 'Legal Practices', 'Logistics Depots'],
+    buildingTypes: ['Grade-A City Centre Offices', 'Industrial Distribution Units', 'CQC Healthcare Facilities'],
+    transportLinks: ['Chelmsford Mainline Station', 'A12 Expressway', 'A130 Link'],
     landmarks: ['Chelmsford City Centre', 'Springfield Business Park', 'Broomfield Hospital Corridor'],
+    procurementHighlights: [
+      'CQC & BICSc-compliant clinical sanitation regimes',
+      'High-reach gutter vacuuming and facade restoration',
+      'Tailored SLA contracts with guaranteed uptime'
+    ],
     description: 'Vibrant Essex city featuring major commercial office developments, logistics facilities, and extensive healthcare surgeries.'
   },
   {
@@ -117,11 +154,63 @@ export const LOCATIONS: LocationData[] = [
     county: 'Greater London',
     type: 'commercial_hub',
     postcodes: ['RM1', 'RM2', 'RM3', 'RM7'],
-    nearbyAreas: ['Hornchurch', 'Upminster', 'Gallows Corner', 'Brentwood'],
+    nearbyAreas: ['Hornchurch', 'Upminster', 'Gallows Corner', 'Brentwood', 'Dagenham'],
     commercialFocus: true,
     domesticFocus: true,
+    districtCategory: 'london_corridor',
+    targetSectors: ['Light Manufacturing & Distribution', 'Block Management Portfolios', 'Automotive & Commercial Showrooms'],
+    buildingTypes: ['Industrial Parks', 'Residential Block Developments', 'Commercial High Street Buildings'],
+    transportLinks: ['Romford Elizabeth Line', 'A12 / A127 Arterial Nexus', 'M25 Access'],
     landmarks: ['Romford Commercial Corridor', 'Gallows Corner Industrial Estate', 'Harold Hill'],
+    procurementHighlights: [
+      'Ride-on floor scrubber dryers & factory degreasing',
+      'Communal block cleaning & bin store sanitisation',
+      '24/7 keyholder and out-of-hours deployment'
+    ],
     description: 'Key East London commercial hub with industrial manufacturing parks, healthcare facilities, and dense residential block developments.'
+  },
+
+  // =========================================================================
+  // Prime London Commercial Business Districts (Enterprise B2B Target Hubs)
+  // =========================================================================
+  {
+    slug: 'city-of-london',
+    name: 'City of London (Square Mile)',
+    county: 'Greater London',
+    type: 'commercial_hub',
+    postcodes: ['EC1', 'EC2', 'EC3', 'EC4'],
+    nearbyAreas: ['Canary Wharf', 'London Bridge', 'Holborn', 'Finsbury', 'Shoreditch'],
+    commercialFocus: true,
+    domesticFocus: false,
+    districtCategory: 'london_prime',
+    targetSectors: [
+      'Global Investment Banks & Financial Institutions',
+      'International Law Chambers & Legal Practices',
+      'Lloyd’s Insurance Underwriters & Broking Houses',
+      'Fintech & Private Equity Headquarters'
+    ],
+    buildingTypes: [
+      'Multi-Tenancy Grade-A Corporate Towers',
+      'Historic Listed Commercial Freeholds',
+      'Institutional Landmark Headquarters'
+    ],
+    transportLinks: ['Bank Station', 'Liverpool Street Elizabeth Line', 'Moorgate', 'Cannon Street', 'Fenchurch Street'],
+    landmarks: [
+      'The Gherkin (30 St Mary Axe)',
+      'The Leadenhall Building (Cheesegrater)',
+      '22 Bishopsgate',
+      'Heron Tower',
+      'Paternoster Square',
+      'Bank of England Corridor'
+    ],
+    procurementHighlights: [
+      'Dedicated Contract Supervisor & timestamped digital audit reports',
+      'Directly employed, enhanced DBS-checked & uniformed operatives',
+      '£10M Public & Employers Liability Insurance with Tier-1 risk assessment',
+      'Strict BICSc colour-coding, COSHH safety compliance & sustainable chemistry',
+      'Zero-disruption evening, out-of-hours & 24/7 keyholder contracts'
+    ],
+    description: 'The historic financial capital of the world, characterized by iconic high-rise office towers, multi-floor corporate headquarters, prestige legal chambers, and high-density executive commercial suites.'
   },
   {
     slug: 'canary-wharf',
@@ -129,11 +218,230 @@ export const LOCATIONS: LocationData[] = [
     county: 'Greater London',
     type: 'commercial_hub',
     postcodes: ['E14'],
-    nearbyAreas: ['Isle of Dogs', 'Stratford', 'City of London'],
+    nearbyAreas: ['Isle of Dogs', 'Stratford', 'City of London', 'Wapping', 'Greenwich Peninsula'],
     commercialFocus: true,
     domesticFocus: false,
-    landmarks: ['Canada Square', 'South Quay', 'Heron Quays'],
-    description: 'Prestige corporate headquarters, high-rise commercial blocks, and premium facilities management contracts.'
+    districtCategory: 'london_prime',
+    targetSectors: [
+      'Tier-1 Facilities Management (FM) Firms',
+      'Multinational Banking & Financial Services HQs',
+      'Professional Services & Advisory Consultancies',
+      'Luxury Residential & Commercial Mixed-Use Blocks'
+    ],
+    buildingTypes: [
+      'High-Rise Corporate Megastructures',
+      'Multi-Tenancy Dockside Commercial Blocks',
+      'High-Footfall Retail & Concourse Plazas'
+    ],
+    transportLinks: ['Canary Wharf Elizabeth Line', 'Canary Wharf Jubilee Line', 'DLR Network', 'London City Airport Link'],
+    landmarks: [
+      'One Canada Square',
+      'South Quay Plaza',
+      'Heron Quays',
+      'Crossrail Place',
+      'Wood Wharf Development',
+      'Cabot Square'
+    ],
+    procurementHighlights: [
+      'Integrated high-level facade, cladding & pure-water window cleaning',
+      'High-reach vacuum gutter & structural roof drainage clearing up to 50ft',
+      'Automated digital audit logs delivered directly to FM portals',
+      'Fully vetted, DBS-checked, uniformed operatives with strict security clearance',
+      '£10M Insurance cover with comprehensive RAMS signed off prior to mobilisation'
+    ],
+    description: 'A global epicenter for financial institutions and international corporate headquarters, demanding rigorous facilities management standards, discrete out-of-hours execution, and strict SLA compliance.'
+  },
+  {
+    slug: 'westminster-mayfair',
+    name: 'Westminster, Victoria & Mayfair',
+    county: 'Greater London',
+    type: 'commercial_hub',
+    postcodes: ['SW1', 'W1'],
+    nearbyAreas: ['St James’s', 'Belgravia', 'Soho', 'Marylebone', 'City of London'],
+    commercialFocus: true,
+    domesticFocus: false,
+    districtCategory: 'london_prime',
+    targetSectors: [
+      'Private Equity, Sovereign Wealth & Family Offices',
+      'Embassy & Diplomatic Missions',
+      'Prestige Real Estate & Landed Estate Portfolios (Grosvenor / Crown Estate)',
+      'Government Advisory & Public Affairs Consultancies'
+    ],
+    buildingTypes: [
+      'Period Georgian & Victorian Corporate Headquarters',
+      'Boutique Grade-A Office Developments',
+      'Institutional Embassy Premises & Consulates'
+    ],
+    transportLinks: ['Victoria Station (Gatwick Express)', 'Green Park', 'Bond Street Elizabeth Line', 'Westminster Station'],
+    landmarks: [
+      'Victoria Street Corporate Corridor',
+      'Berkeley Square',
+      'Curzon Street',
+      'St James’s Square',
+      'Grosvenor Place',
+      'Nova Victoria Complex'
+    ],
+    procurementHighlights: [
+      'Discretion-first service delivery for high-net-worth & diplomatic premises',
+      'Preservation cleaning for delicate marble, hardwood, and listed architectural brass',
+      'Enhanced DBS vetted operatives with non-disclosure agreements (NDAs)',
+      'Direct account manager access with 2-hour priority emergency response',
+      'Comprehensive RAMS and ISO-aligned environmental cleaning protocols'
+    ],
+    description: 'London’s most prestigious commercial district, housing elite private equity funds, diplomatic embassies, sovereign wealth institutions, and heritage architectural head offices requiring meticulous discretion.'
+  },
+  {
+    slug: 'stratford-olympic-park',
+    name: 'Stratford & International Quarter',
+    county: 'Greater London',
+    type: 'commercial_hub',
+    postcodes: ['E15', 'E20'],
+    nearbyAreas: ['Canary Wharf', 'Hackney Wick', 'Bow', 'Leyton', 'Barking'],
+    commercialFocus: true,
+    domesticFocus: false,
+    districtCategory: 'london_corridor',
+    targetSectors: [
+      'Public Sector & Government Department HQs (FCA, TfL)',
+      'Higher Education & Cultural Campuses (East Bank, UCL East)',
+      'Commercial Property & High-Density Block Management',
+      'Technology & Creative Innovation Hubs'
+    ],
+    buildingTypes: [
+      'International Quarter London (IQL) Grade-A Office Towers',
+      'Modern High-Density Residential & BTR Commercial Blocks',
+      'Educational & Creative Production Facilities'
+    ],
+    transportLinks: ['Stratford Regional Station', 'Stratford International', 'Elizabeth Line', 'Central & Jubilee Lines'],
+    landmarks: [
+      'International Quarter London (IQL)',
+      'Queen Elizabeth Olympic Park',
+      'Westfield Stratford City Commercial Precinct',
+      'Here East Innovation Campus',
+      'East Bank Cultural Quarter'
+    ],
+    procurementHighlights: [
+      'High-volume communal block caretaking & Build-To-Rent (BTR) contracts',
+      'Rotary floor scrubbing & high-reach atrium vacuuming',
+      'Sustainability-first green cleaning chemicals reducing corporate carbon footprint',
+      'Directly employed, security-vetted on-site cleaning personnel',
+      'Digital attendance tracking and automated shift handover reports'
+    ],
+    description: 'East London’s dynamic metropolitan powerhouse, anchored by the International Quarter London (IQL), major public sector HQs, high-density Build-to-Rent developments, and innovation campuses.'
+  },
+  {
+    slug: 'london-bridge-southwark',
+    name: 'Southwark & London Bridge',
+    county: 'Greater London',
+    type: 'commercial_hub',
+    postcodes: ['SE1'],
+    nearbyAreas: ['City of London', 'Waterloo', 'Borough', 'Bermondsey', 'Canary Wharf'],
+    commercialFocus: true,
+    domesticFocus: false,
+    districtCategory: 'london_prime',
+    targetSectors: [
+      'Legal & Professional Services Firms',
+      'Tech Scale-Ups & Creative Media Agenciess',
+      'Healthcare Institutions & Medical Surgeries (Guys Hospital Corridor)',
+      'Commercial Landlords & Riverfront Asset Portfolios'
+    ],
+    buildingTypes: [
+      'Riverfront Landmark Commercial Complexes',
+      'Converted Warehouse Tech & Media Studios',
+      'Multi-Tenant Corporate Offices'
+    ],
+    transportLinks: ['London Bridge Mainline & Underground', 'Waterloo Station', 'Southwark Underground', 'Blackfriars'],
+    landmarks: [
+      'The Shard Quarter',
+      'More London Riverside',
+      'London Bridge City',
+      'Borough Yards',
+      'South Bank Cultural & Commercial Strip',
+      'Bankside 123'
+    ],
+    procurementHighlights: [
+      'Commercial carpet deep extraction & hard floor diamond polishing',
+      'High-level glass & facade reach-and-wash systems',
+      'CQC-compliant sanitation protocols for clinical & diagnostic facilities',
+      'Dedicated site supervisors with daily digital sign-off audits',
+      '£10M Public Liability insurance with site-specific risk management'
+    ],
+    description: 'The South Bank’s dominant commercial nexus, stretching from More London Riverside and The Shard to Bankside, combining major legal practices, technology studios, and extensive corporate complexes.'
+  },
+  {
+    slug: 'kings-cross-camden',
+    name: 'King’s Cross & Knowledge Quarter',
+    county: 'Greater London',
+    type: 'commercial_hub',
+    postcodes: ['N1C', 'NW1'],
+    nearbyAreas: ['Euston', 'Bloomsbury', 'Islington', 'Camden Town', 'City of London'],
+    commercialFocus: true,
+    domesticFocus: false,
+    districtCategory: 'london_prime',
+    targetSectors: [
+      'Global Big Tech Headquarters (Google, Meta, DeepMind)',
+      'Life Sciences & Bioscience Research Institutes',
+      'Creative & Global Architectural Studios',
+      'Mixed-Use Commercial Estate Portfolios'
+    ],
+    buildingTypes: [
+      'State-of-the-Art BREEAM-Outstanding Corporate Campuses',
+      'Laboratory & Cleanroom Research Facilities',
+      'Converted Railway Heritage Offices & Retail Complexes'
+    ],
+    transportLinks: ['King’s Cross St Pancras International (Eurostar)', 'Euston Mainline', 'Thameslink Corridor'],
+    landmarks: [
+      'King’s Cross Estate (Coal Drops Yard)',
+      'Francis Crick Institute Corridor',
+      'Google London HQ Campus',
+      'Pancras Square Commercial Cluster',
+      'Regent’s Place Commercial Estate'
+    ],
+    procurementHighlights: [
+      'Rigorous cleanroom, laboratory & tech campus sanitation procedures',
+      'Eco-friendly, chemical-reduced cleaning methods aligning with BREEAM standards',
+      'Full COSHH management and ISO-compliant health & safety registers',
+      'Strict security vetting with keycard access control logging',
+      'Dedicated mobile account management with daily supervisor sign-offs'
+    ],
+    description: 'Europe’s leading Knowledge Quarter and premier technological epicentre, featuring hyper-modern corporate campuses, bioscience laboratories, and multinational tech headquarters demanding world-class cleanliness.'
+  },
+  {
+    slug: 'barking-dagenham',
+    name: 'Barking & Dagenham Logistics Corridor',
+    county: 'Greater London',
+    type: 'commercial_hub',
+    postcodes: ['IG11', 'RM9', 'RM10'],
+    nearbyAreas: ['Romford', 'Rainham', 'Stratford', 'Thurrock', 'Beckton'],
+    commercialFocus: true,
+    domesticFocus: false,
+    districtCategory: 'london_corridor',
+    targetSectors: [
+      'National Logistics & FMCG Distribution Centers',
+      'Cold Storage & Food Manufacturing Plants',
+      'Industrial Plant Facilities & Heavy Engineering Units',
+      'Commercial Fleet & Transport Depots'
+    ],
+    buildingTypes: [
+      'High-Bay Logistics Warehouses (>100,000 sq ft)',
+      'Manufacturing & Production Plants',
+      'Multi-Unit Trade Parks & Industrial Estates'
+    ],
+    transportLinks: ['A13 Commercial Corridor', 'A406 North Circular', 'Barking Rail & Freight Terminals', 'M25 Junction 30/31'],
+    landmarks: [
+      'Barking Riverside Commercial Zone',
+      'Dagenham Dock Industrial Hub',
+      'A13 Logistics Corridor',
+      'Thames Enterprise Park Gateway',
+      'Rippleside Commercial Estate'
+    ],
+    procurementHighlights: [
+      'Heavy-duty ride-on scrubber dryers & industrial concrete degreasing',
+      'High-reach vacuum gutter clearance for expansive warehouse roofing up to 50ft',
+      'Combustible dust extraction from high structural steelwork & HVAC ducts',
+      '24/7/365 scheduling accommodating continuous shift rotations',
+      'IPAF-certified high-access operators and full RAMS provided'
+    ],
+    description: 'East London’s vital arterial logistics and manufacturing corridor, home to high-throughput distribution centres, freight hubs, and expansive industrial facilities requiring heavy-duty industrial sanitation.'
   }
 ];
 
@@ -144,51 +452,139 @@ export interface ServiceData {
   heroImage: string;
   leadParagraph: string;
   features: string[];
+  b2bTitle?: string;
+  slaHighlights?: string[];
+  complianceNotes?: string;
 }
 
 export const SERVICES: ServiceData[] = [
-  // Commercial Priority Services
+  // ==========================================
+  // Commercial Priority Services (Programmatic)
+  // ==========================================
   {
     slug: 'commercial-gutter-cleaning',
     name: 'Commercial Gutter Cleaning & Roof Clearance',
+    b2bTitle: 'Commercial Gutter Cleaning & Preventative Roof Drainage',
     division: 'commercial',
     heroImage: '/images/high-level-gutter-cleaning.jpg',
-    leadParagraph: 'High-reach vacuum gutter clearing up to 50ft with wireless CCTV camera verification for commercial property blocks, industrial warehouses, and offices.',
+    leadParagraph: 'High-reach vacuum gutter clearing up to 50ft with wireless CCTV camera verification for corporate office towers, commercial property blocks, and industrial warehouses.',
     features: [
-      'High-reach vacuum extraction from ground level up to 50ft',
-      'Wireless high-definition CCTV camera inspection logs',
-      'Downpipe flushing & preventative drainage unblocking',
-      'RAMS provided, fully insured with £10M Public Liability'
-    ]
+      'High-reach vacuum extraction from ground level up to 50ft without scaffolding',
+      'Wireless high-definition CCTV camera inspection logs and photographic sign-off',
+      'Downpipe flushing, hopper clearing, and preventative drainage unblocking',
+      'Full RAMS provided, IPAF-certified operators, fully insured with £10M Public Liability'
+    ],
+    slaHighlights: [
+      'Guaranteed free site survey and photographic drainage assessment within 24 hours',
+      'Zero ground-level disruption to tenant access and daily operations',
+      'Preventative bi-annual contracts with automatic seasonal clearance scheduling'
+    ],
+    complianceNotes: 'Compliant with Working at Height Regulations 2005. Complete Risk Assessment & Method Statement (RAMS) issued prior to any site mobilisation.'
   },
   {
     slug: 'property-management',
     name: 'Property Management & Block Cleaning',
+    b2bTitle: 'Commercial Property & Block Management Communal Maintenance',
     division: 'commercial',
     heroImage: '/images/property-management-external.jpg',
-    leadParagraph: 'Fully managed communal area cleaning, stairwell caretaking, bin store sanitisation, and routine block maintenance for managing agents.',
+    leadParagraph: 'Fully managed communal area cleaning, stairwell caretaking, bin store sanitisation, and routine block maintenance for institutional managing agents and landlords.',
     features: [
-      'SLA-backed weekly or fortnightly scheduled communal upkeep',
-      'Internal stairwell, lobby, and brass polishing',
-      'Bin store power-washing and odour neutralisation',
-      'Digital quality audit reports after every site visit'
-    ]
+      'SLA-backed daily, weekly, or fortnightly scheduled communal upkeep',
+      'Internal stairwell, lobby, lift car, and architectural brass/marble polishing',
+      'Bin store high-pressure steam washing, degreasing, and odour neutralisation',
+      'Digital quality audit reports with supervisor photographic sign-offs after every site visit'
+    ],
+    slaHighlights: [
+      'Dedicated mobile site supervisor assigned to every block portfolio',
+      '2-hour emergency spill and reactive sanitation callout response',
+      'Directly employed, uniformed caretakers and cleaners'
+    ],
+    complianceNotes: 'BICSc colour-coded hygiene system prevents cross-contamination between waste areas, washrooms, and public corridors. Fully COSHH compliant.'
+  },
+  {
+    slug: 'commercial-industrial-cleaning',
+    name: 'Corporate Office & Commercial Premises Cleaning',
+    b2bTitle: 'Corporate Office Cleaning & Multi-Floor Commercial Facility Care',
+    division: 'commercial',
+    heroImage: '/images/commercial-industrial-hero.jpg',
+    leadParagraph: 'Comprehensive daily and periodic cleaning contracts for corporate headquarters, multi-tenancy office towers, financial institutions, and professional practices.',
+    features: [
+      'Bespoke daily office cleaning: desk sanitisation, communal breakout zones, and washrooms',
+      'Deep carpet soil extraction and anti-static treatments for server rooms and trading floors',
+      'High-touch surface disinfection reducing corporate absenteeism and seasonal sickness',
+      'Keyholder out-of-hours, evening, and weekend operations with zero tenant disruption'
+    ],
+    slaHighlights: [
+      'Uniformed, permanently employed, and enhanced DBS-checked cleaning operatives',
+      'Dedicated account manager with monthly formal KPI and SLA review audits',
+      'Site-specific RAMS and COSHH compliance packs prior to first shift'
+    ],
+    complianceNotes: 'Strict adherence to Health and Safety at Work Act 1974, COSHH guidelines, and non-disclosure agreements (NDAs) for sensitive corporate and legal chambers.'
+  },
+  {
+    slug: 'warehouse-factory-cleaning',
+    name: 'Industrial Warehouse & Logistics Cleaning',
+    b2bTitle: 'Industrial Warehouse & Logistics Depot Deep Cleaning',
+    division: 'commercial',
+    heroImage: '/images/warehouse-factory-hero.webp',
+    leadParagraph: 'Heavy-duty industrial floor scrubbing, structural steelwork degreasing, and high-level dust extraction for high-throughput distribution centres and manufacturing plants.',
+    features: [
+      'Ride-on and walk-behind industrial scrubber dryer floor scrubbing and tire mark removal',
+      'Combustible dust vacuuming from high-level steelwork, HVAC ducting, and lighting rigs',
+      'De-greasing and decontamination of loading bays, vehicle docks, and plant rooms',
+      '24/7/365 scheduling aligned meticulously with logistics downtime and shift changes'
+    ],
+    slaHighlights: [
+      'High-capacity machinery fleet capable of cleaning over 100,000 sq ft per shift',
+      'Rapid turnaround during tenant lease-ends, fit-outs, and dilapidation handovers',
+      'IPAF, PASMA, and CSCS-certified industrial cleaning crews'
+    ],
+    complianceNotes: 'Full compliance with HSE industrial guidelines, ATEX combustible dust awareness, and site-specific RAMS tailored to active forklift zones.'
   },
   {
     slug: 'healthcare-sanitation-services',
     name: 'Healthcare & CQC Dental Practice Cleaning',
+    b2bTitle: 'Clinical Sanitation & CQC-Compliant Healthcare Facility Cleaning',
     division: 'commercial',
     heroImage: '/images/healthcare-and-sanitisation.jpg',
-    leadParagraph: 'CQC-compliant clinical sanitation, decontamination protocols, and audit-ready cleaning logs for dental practices and medical facilities.',
+    leadParagraph: 'CQC-compliant clinical sanitation, decontamination protocols, and audit-ready cleaning logs for dental practices, private clinics, and healthcare facilities.',
     features: [
-      'Strict CQC & BICSc color-coded cross-contamination prevention',
-      'Clinical-grade virucidal disinfection and logbooks',
-      'DBS-vetted, uniformed, and trained clinical operatives',
-      'Zero-disruption evening and out-of-hours scheduling'
-    ]
+      'Strict CQC & BICSc color-coded cross-contamination prevention throughout all clinical zones',
+      'Clinical-grade virucidal disinfection and tamper-proof daily audit logbooks',
+      'DBS-vetted, uniformed, and infection-control certified cleaning operatives',
+      'Zero-disruption evening and out-of-hours scheduling for uninterrupted patient consultations'
+    ],
+    slaHighlights: [
+      'Guaranteed 100% CQC audit-ready standard with verifiable inspection trails',
+      'Emergency biological decontamination and outbreak response within 2 hours',
+      'Monthly ATP bioluminescence surface swab testing available upon request'
+    ],
+    complianceNotes: 'Fully aligned with Care Quality Commission (CQC) Fundamental Standards, HTM 01-05 (dental decontamination), and NHS National Specifications for Cleanliness.'
+  },
+  {
+    slug: 'high-level-cladding',
+    name: 'High-Level Facade & Cladding Restoration',
+    b2bTitle: 'Commercial Facade Washing & High-Level Architectural Cladding Care',
+    division: 'commercial',
+    heroImage: '/images/high-level-cleaning.webp',
+    leadParagraph: 'Specialist exterior architectural cladding washing, powder-coated facade restoration, and reach-and-wash window cleaning for commercial buildings and business parks.',
+    features: [
+      'IPAF-certified high-access operators utilizing MEWPs, cherry pickers, and spider lifts',
+      'Non-abrasive pure water wash systems and specialist pH-neutral cladding detergents',
+      'Removal of traffic film, industrial fallout, atmospheric soot, and biological growth',
+      'Comprehensive exterior glass, canopy, and signage restorative washdown'
+    ],
+    slaHighlights: [
+      'Full traffic and pedestrian management plans for busy public and commercial thoroughfares',
+      'Dramatically enhances commercial kerb appeal and preserves multi-million pound building assets',
+      'Transparent fixed-price project quotes backed by detailed photographic before/after reporting'
+    ],
+    complianceNotes: 'Work at Height Regulations 2005 compliant. Detailed method statements, drop-zone risk assessments, and pedestrian segregation cordons installed for every project.'
   },
 
+  // ==========================================
   // Domestic Priority Services
+  // ==========================================
   {
     slug: 'window-cleaning',
     name: 'Pure Water Window Cleaning',

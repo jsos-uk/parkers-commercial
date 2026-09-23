@@ -2,7 +2,8 @@
 import { LOCATIONS } from '../data/locations';
 
 const villages = LOCATIONS.filter(l => l.domesticFocus);
-const commercialHubs = LOCATIONS.filter(l => l.commercialFocus);
+const londonCommercialHubs = LOCATIONS.filter(l => l.commercialFocus && l.county === 'Greater London');
+const essexCommercialHubs = LOCATIONS.filter(l => l.commercialFocus && l.county === 'Essex');
 ---
 
 <footer class="bg-slate-950 text-slate-300 pt-16 pb-12 border-t border-white/10 relative">
@@ -31,10 +32,10 @@ const commercialHubs = LOCATIONS.filter(l => l.commercialFocus);
         <!-- Main Footer Links Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 mb-14">
             
-            <div class="lg:col-span-4 space-y-4">
+            <div class="lg:col-span-3 space-y-4">
                 <img src="/images/parkers-logo-long.png" alt="Parker's Commercial Cleaning" class="h-8 w-auto brightness-0 invert opacity-90">
                 <p class="text-slate-400 text-xs leading-relaxed">
-                    Premier commercial block cleaning, high-reach gutter vacuuming, and clinical decontamination across London and Essex.
+                    Premier B2B commercial office cleaning, property management block caretaking, high-reach gutter vacuuming, and clinical decontamination across prime London business districts and Essex commercial corridors.
                 </p>
                 <div class="pt-2 text-xs text-slate-400">
                     <p class="font-semibold text-white">Head Office: 020 4620 6344</p>
@@ -50,23 +51,23 @@ const commercialHubs = LOCATIONS.filter(l => l.commercialFocus);
                 <ul class="space-y-2 text-xs font-light">
                     <li><a href="/commercial-gutter-cleaning" class="hover:text-brand-accent transition-colors">Commercial Gutter Cleaning</a></li>
                     <li><a href="/property-management" class="hover:text-brand-accent transition-colors">Property &amp; Block Maintenance</a></li>
-                    <li><a href="/commercial-industrial-cleaning" class="hover:text-brand-accent transition-colors">Commercial Office Cleaning</a></li>
+                    <li><a href="/commercial-industrial-cleaning" class="hover:text-brand-accent transition-colors">Corporate Office Cleaning</a></li>
                     <li><a href="/healthcare-sanitation-services" class="hover:text-brand-accent transition-colors">Healthcare &amp; Dental Surgery</a></li>
-                    <li><a href="/warehouse-factory-cleaning" class="hover:text-brand-accent transition-colors">Warehouse &amp; Factory Floors</a></li>
+                    <li><a href="/warehouse-factory-cleaning" class="hover:text-brand-accent transition-colors">Warehouse &amp; Logistics Floors</a></li>
                     <li><a href="/high-level-cladding" class="hover:text-brand-accent transition-colors">High-Level Facade &amp; Cladding</a></li>
                     <li><a href="/post-construction-sparkle" class="hover:text-brand-accent transition-colors">Post-Construction Sparkle Cleans</a></li>
                 </ul>
             </div>
 
-            <!-- Column 3: Commercial Hubs -->
-            <div class="lg:col-span-2">
+            <!-- Column 3: Prime London Commercial Districts -->
+            <div class="lg:col-span-3">
                 <h4 class="text-white font-heading font-semibold text-sm uppercase tracking-wider mb-4">
-                    Commercial Hubs
+                    London Commercial Districts
                 </h4>
                 <ul class="space-y-1.5 text-xs text-slate-400">
-                    {commercialHubs.map(hub => (
+                    {londonCommercialHubs.map(hub => (
                         <li>
-                            <a href={`/commercial-gutter-cleaning/${hub.slug}`} class="hover:text-brand-accent transition-colors">
+                            <a href={`/commercial-industrial-cleaning/${hub.slug}`} class="hover:text-brand-accent transition-colors">
                                 {hub.name}
                             </a>
                         </li>
@@ -74,23 +75,43 @@ const commercialHubs = LOCATIONS.filter(l => l.commercialFocus);
                 </ul>
             </div>
 
-            <!-- Column 4: Essex Villages (Domestic Coverage) -->
-            <div class="lg:col-span-3">
-                <h4 class="text-white font-heading font-semibold text-sm uppercase tracking-wider mb-4">
-                    Village Coverage (Domestic)
-                </h4>
-                <div class="flex flex-wrap gap-1.5">
-                    {villages.map(village => (
-                        <a href={`/domestic/window-cleaning/${village.slug}`} class="text-[11px] px-2.5 py-1 bg-white/5 hover:bg-brand-accent/20 hover:text-brand-accent rounded border border-white/10 transition-colors">
-                            {village.name}
-                        </a>
-                    ))}
+            <!-- Column 4: Essex Commercial & Villages -->
+            <div class="lg:col-span-3 space-y-6">
+                <div>
+                    <h4 class="text-white font-heading font-semibold text-sm uppercase tracking-wider mb-3">
+                        Essex Commercial Hubs
+                    </h4>
+                    <ul class="space-y-1.5 text-xs text-slate-400 mb-4">
+                        {essexCommercialHubs.map(hub => (
+                            <li>
+                                <a href={`/commercial-industrial-cleaning/${hub.slug}`} class="hover:text-brand-accent transition-colors">
+                                    {hub.name}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-heading font-semibold text-xs uppercase tracking-wider mb-2">
+                        Domestic Villages (Essex)
+                    </h4>
+                    <div class="flex flex-wrap gap-1">
+                        {villages.map(village => (
+                            <a href={`/domestic/window-cleaning/${village.slug}`} class="text-[10px] px-2 py-0.5 bg-white/5 hover:bg-brand-accent/20 hover:text-brand-accent rounded border border-white/10 transition-colors">
+                                {village.name}
+                            </a>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="pt-8 border-t border-white/10 text-center text-[11px] text-slate-500">
+        <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
             <p>&copy; {new Date().getFullYear()} Parker's Commercial Cleaning Ltd. All rights reserved.</p>
+            <p>
+                Website designed by <a href="https://jsos.uk" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-brand-accent transition-colors font-medium underline underline-offset-4 decoration-white/20 hover:decoration-brand-accent">JS Office Solutions</a>
+            </p>
         </div>
     </div>
 </footer>
