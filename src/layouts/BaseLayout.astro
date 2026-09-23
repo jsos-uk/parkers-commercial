@@ -84,5 +84,48 @@ import '../styles/global.css';
       import { createIcons, icons } from 'lucide';
       createIcons({ icons });
     </script>
+
+    <!-- Google Analytics (GA4) Form Lead & Phone Call Conversion Tracking -->
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        // 1. Form Submission Lead Tracking
+        const forms = document.querySelectorAll('form[action*="web3forms.com"]');
+        forms.forEach((form) => {
+          form.addEventListener('submit', () => {
+            const formId = form.id || 'quote_form';
+            const serviceInput = form.querySelector('[name="service"]');
+            const serviceVal = serviceInput ? serviceInput.value : 'General Commercial Cleaning';
+            
+            if (typeof window.gtag === 'function') {
+              window.gtag('event', 'generate_lead', {
+                event_category: 'Lead',
+                event_label: formId,
+                form_id: formId,
+                service_requested: serviceVal,
+                page_location: window.location.href
+              });
+              console.log('📊 GA4 Event Fired: generate_lead', { formId, serviceVal });
+            }
+          });
+        });
+
+        // 2. Click-to-Call Phone Tracking
+        const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+        phoneLinks.forEach((link) => {
+          link.addEventListener('click', () => {
+            const phone = link.getAttribute('href').replace('tel:', '');
+            if (typeof window.gtag === 'function') {
+              window.gtag('event', 'phone_call_click', {
+                event_category: 'Contact',
+                event_label: phone,
+                phone_number: phone,
+                page_location: window.location.href
+              });
+              console.log('📞 GA4 Event Fired: phone_call_click', { phone });
+            }
+          });
+        });
+      });
+    </script>
 </body>
 </html>
