@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = "Commercial & Healthcare Cleaning Case Studies | London & Essex | Parker's";
+const pageDescription = "Explore real client case studies from Parker's Commercial. Delivering high standards for corporate office blocks, healthcare facilities, and commercial sites in London & Essex.";
+const canonical = "https://parkerscommercial.co.uk/case-studies";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Parker's Commercial Cleaning Case Studies",
+  "description": "Proven case studies and results for office blocks, healthcare premises, and commercial facilities across London and Essex.",
+  "publisher": {
+    "@type": "CleaningService",
+    "name": "Parker's Commercial Cleaning",
+    "telephone": "+442046206344",
+    "url": "https://parkerscommercial.co.uk/"
+  }
+};
+
+const caseStudies = [
+  {
+    client: "Blue Sky Dental",
+    category: "Healthcare & CQC Compliance",
+    badge: "Healthcare",
+    image: "/images/cqc-compliant-auditing.jpg",
+    desc: "We provide ongoing contract cleaning for Blue Sky Dental, ensuring their clinical environment consistently meets the rigorous standards required for CQC inspections. Our work includes detailed sanitation of treatment areas and creating a pristine, welcoming atmosphere for their patients, reinforcing their reputation for professional excellence."
+  },
+  {
+    client: "Spire Wellesley Hospital",
+    category: "Clinical & Surgical Environment Cleaning",
+    badge: "Clinical",
+    image: "/images/clinical-decontamination.jpg",
+    desc: "For this major private hospital, our team was tasked with performing a comprehensive deep clean of a surgical ward. The project required meticulous attention to detail, adherence to strict infection control protocols, and was completed with zero disruption to the hospital’s critical ongoing operations."
+  },
+  {
+    client: "Lookers Motor Group",
+    category: "Commercial Showroom & Workshop Cleaning",
+    badge: "Commercial",
+    image: "/images/commercial-industrial-hero.jpg",
+    desc: "Maintaining the prestige of a high-value car showroom is paramount. For Lookers, we deliver a complete cleaning solution that covers their public-facing showroom, offices, and their industrial workshop and servicing bays, ensuring a brand image of quality and professionalism is projected at every touchpoint."
+  },
+  {
+    client: "Ramsey's Care Home",
+    category: "Residential Care & Sanitation Services",
+    badge: "Residential Care",
+    image: "/images/clinical-sanitisation.jpg",
+    desc: "Creating a safe, hygienic, and comfortable environment is the top priority for any residential care home. Our services for Ramsey’s Care Home focus on the thorough and discreet cleaning of communal areas, resident rooms, and dining facilities, contributing to the health and well-being of all residents."
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} canonicalUrl={canonical} schema={schema}>
+    <Navbar slot="header" />
+
+    <!-- Subpage Hero -->
+    <header class="pt-32 pb-16 md:pt-48 md:pb-24 bg-brand-900 border-b border-white/10 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-4 uppercase tracking-tight">Case Studies</h1>
+            <p class="text-brand-accent text-sm tracking-[0.3em] uppercase font-semibold">Proven Operational Excellence</p>
+        </div>
+    </header>
+
+    <!-- Intro Section -->
+    <section class="py-20 bg-white border-b border-slate-200">
+        <div class="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-heading font-medium text-brand-900 mb-6">Recent Projects Showcase</h2>
+            <p class="text-base md:text-lg text-slate-600 font-light leading-relaxed">
+                Over the past 35 years, we have had the privilege of partnering with a diverse range of businesses across the commercial, industrial, and healthcare sectors. Below is a selection of projects that highlight our commitment to quality, safety, and delivering a flawless finish.
+            </p>
+        </div>
+    </section>
+
+    <!-- Case Studies Showcase -->
+    <section class="py-20 pb-32 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-24">
+            {caseStudies.map((study, idx) => (
+                <div class={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+                    <div class={`h-[420px] lg:h-[480px] rounded-2xl overflow-hidden border border-slate-200 shadow-md relative ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
+                        <img src={study.image} alt={study.client} class="w-full h-full object-cover">
+                        <div class="absolute top-6 right-6 bg-brand-900 text-white px-4 py-1.5 font-heading text-sm uppercase tracking-wider rounded-lg shadow-lg">
+                            {study.badge}
+                        </div>
+                    </div>
+                    <div class={`space-y-6 ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
+                        <span class="text-brand-accent text-xs tracking-[0.25em] uppercase font-bold block">
+                            {study.category}
+                        </span>
+                        <h3 class="text-3xl md:text-4xl font-heading font-bold text-brand-900 uppercase">
+                            {study.client}
+                        </h3>
+                        <p class="text-slate-600 font-light leading-relaxed text-base">
+                            {study.desc}
+                        </p>
+                        <div class="pt-4">
+                            <a href="/contact" class="inline-flex items-center gap-2 text-brand-500 font-bold text-xs uppercase tracking-wider hover:text-brand-900 transition-colors">
+                                Discuss Similar Requirements &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </section>
+
+    <Footer slot="footer" />
+</BaseLayout>

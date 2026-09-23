@@ -1,0 +1,265 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = "Contract Office Cleaning London & Essex | Daily & Facilities | Parker's";
+const pageDescription = "Reliable daily & scheduled contract cleaning for commercial offices, corporate headquarters, and facilities across London & Essex. 35+ years experience. Fully vetted staff.";
+const canonical = "https://parkerscommercial.co.uk/ongoing-contract-maintenance";
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Commercial Contract Cleaning",
+  "provider": {
+    "@type": "CleaningService",
+    "name": "Parker's Commercial Cleaning",
+    "telephone": "+442046206344",
+    "url": "https://parkerscommercial.co.uk/"
+  },
+  "areaServed": [
+    {
+      "@type": "AdministrativeArea",
+      "name": "London"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Essex"
+    }
+  ],
+  "description": "Daily scheduled contract cleaning and routine maintenance for corporate offices and commercial facilities across London and Essex."
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} canonicalUrl={canonical} schema={schema} >
+    <Navbar slot="header"  />
+
+    <!-- Dynamic Themed Navigation -->
+    
+
+    <!-- Subpage Hero (Tagged as Dark) -->
+    <header data-theme="dark" class="pt-32 pb-16 md:pt-48 md:pb-24 bg-brand-900 border-b border-white/10 relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-500 opacity-20 blur-3xl pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center reveal active relative z-10">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-4 uppercase tracking-tight">Ongoing Contract Maintenance</h1>
+            <p class="text-brand-accent text-sm tracking-[0.3em] uppercase font-semibold">Core Service Portfolio</p>
+        </div>
+    </header>
+
+    <!-- About Section (Tagged as Light) -->
+    <section data-theme="light" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="reveal">
+                    <div class="inline-flex items-center gap-4 mb-8">
+                        <span class="text-brand-900 text-[10px] tracking-[0.3em] uppercase font-medium">Philosophy</span>
+                        <div class="h-[1px] w-12 bg-slate-200"></div>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-heading font-medium text-brand-900 mb-8 leading-tight">
+                        Reliable, Scheduled Cleaning for a Consistently Professional Image.
+                    </h2>
+                    <div class="space-y-6 text-brand-text font-light leading-relaxed">
+                        <p>For a busy commercial facility, cleanliness is not a one-time task—it’s an absolute, ongoing requirement. A poorly maintained environment doesn't just look bad; it impacts staff morale, productivity, and the crucial first impressions of your visiting clients.</p>
+                        <p>Our contract maintenance services are designed to provide complete peace of mind. We work as a seamless extension of your own team, developing a flexible and reliable cleaning schedule that protects your investment and ensures your premises operate at the highest standards, day in and day out.</p>
+                    </div>
+                </div>
+                <div class="relative reveal delay-200 h-full min-h-[400px] lg:min-h-[600px]">
+                    <img src="/images/commercial-external-wfp.jpg" alt="Ongoing Contract Maintenance" class="absolute inset-0 w-full h-full object-cover ">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Value of Consistency Section (Tagged as Light) -->
+    <section data-theme="light" class="py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h3 class="text-4xl font-heading font-bold text-brand-900 uppercase mb-4">The True Value of Consistency</h3>
+                <p class="text-brand-text font-light leading-relaxed">A strategic maintenance contract is an investment in your business operations, yielding returns far beyond basic hygiene.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="reveal">
+                    <div class="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="trending-up" class="w-6 h-6 text-brand-500"></i>
+                    </div>
+                    <h4 class="font-heading text-2xl text-brand-900 uppercase mb-3">Asset Preservation</h4>
+                    <p class="text-sm font-light text-brand-text leading-relaxed">Regular, professional cleaning extends the lifespan of expensive carpets, hard flooring, and office fixtures, delaying costly replacements.</p>
+                </div>
+                <div class="reveal delay-100">
+                    <div class="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="users" class="w-6 h-6 text-brand-500"></i>
+                    </div>
+                    <h4 class="font-heading text-2xl text-brand-900 uppercase mb-3">Staff Morale &amp; Health</h4>
+                    <p class="text-sm font-light text-brand-text leading-relaxed">A sanitized environment drastically reduces the spread of seasonal illnesses, minimizing sick days and boosting overall employee productivity.</p>
+                </div>
+                <div class="reveal delay-200">
+                    <div class="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="eye" class="w-6 h-6 text-brand-500"></i>
+                    </div>
+                    <h4 class="font-heading text-2xl text-brand-900 uppercase mb-3">Brand Perception</h4>
+                    <p class="text-sm font-light text-brand-text leading-relaxed">Your facility is a physical representation of your brand. We ensure that every client walk-through is met with an immaculate, professional aesthetic.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operational Methodology / Features (Tagged as Light) -->
+    <section data-theme="light" class="py-24 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="max-w-3xl mb-20 reveal">
+                <div class="inline-flex items-center gap-4 mb-8">
+                    <span class="text-brand-900 text-[10px] tracking-[0.3em] uppercase font-medium">Methodology</span>
+                    <div class="h-[1px] w-12 bg-slate-300"></div>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-heading font-medium text-brand-900 mb-6">Features of Our Maintenance Contracts</h2>
+                <p class="text-lg text-brand-text font-light leading-relaxed">We don't just supply cleaners; we supply a fully managed operational solution.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-slate-50 border border-slate-200 group overflow-hidden flex flex-col reveal hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-slate-200">
+                        <img src="/images/vacuuming-ongoing-maintenance.jpg" alt="Bespoke Cleaning Schedules" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-10 flex-1 bg-white">
+                        <span class="text-[10px] font-sans tracking-[0.2em] text-brand-accent block mb-4 group-hover:text-brand-900 transition-colors font-bold">01.</span>
+                        <h3 class="text-2xl font-heading text-brand-900 mb-4 uppercase">Bespoke Schedules</h3>
+                        <p class="text-brand-text font-light leading-relaxed text-sm">We develop a customised daily, weekly, or monthly schedule perfectly aligned with your operational hours to ensure zero disruption to your business.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-200 group overflow-hidden flex flex-col reveal delay-100 hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-slate-200">
+                        <img src="/images/dedicated-teams.jpg" alt="Dedicated &amp; Consistent Team" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-10 flex-1 bg-white">
+                        <span class="text-[10px] font-sans tracking-[0.2em] text-brand-accent block mb-4 group-hover:text-brand-900 transition-colors font-bold">02.</span>
+                        <h3 class="text-2xl font-heading text-brand-900 mb-4 uppercase">Dedicated Teams</h3>
+                        <p class="text-brand-text font-light leading-relaxed text-sm">Security and consistency are key. You will be assigned a dedicated team of our fully-vetted, uniformed professionals who intimately understand your site.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-200 group overflow-hidden flex flex-col reveal delay-200 hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-slate-200">
+                        <img src="/images/digital-audit.webp" alt="Regular Quality Audits" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-10 flex-1 bg-white">
+                        <span class="text-[10px] font-sans tracking-[0.2em] text-brand-accent block mb-4 group-hover:text-brand-900 transition-colors font-bold">03.</span>
+                        <h3 class="text-2xl font-heading text-brand-900 mb-4 uppercase">Digital Quality Audits</h3>
+                        <p class="text-brand-text font-light leading-relaxed text-sm">Our area managers conduct regular, unannounced on-site quality audits using digital reporting tools to ensure our high standards never slip.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-200 group overflow-hidden flex flex-col reveal hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-slate-200">
+                        <img src="/images/scalable-cleaning-solutions.jpg" alt="Flexible Service Agreements" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-10 flex-1 bg-white">
+                        <span class="text-[10px] font-sans tracking-[0.2em] text-brand-accent block mb-4 group-hover:text-brand-900 transition-colors font-bold">04.</span>
+                        <h3 class="text-2xl font-heading text-brand-900 mb-4 uppercase">Scalable Agreements</h3>
+                        <p class="text-brand-text font-light leading-relaxed text-sm">We offer flexible contract terms that can easily scale up or down to accommodate seasonal changes or the rapid growth of your business.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-200 group overflow-hidden flex flex-col reveal delay-100 hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-slate-200">
+                        <img src="/images/sustainable-practices.jpg" alt="Sustainable Practices" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-10 flex-1 bg-white">
+                        <span class="text-[10px] font-sans tracking-[0.2em] text-brand-accent block mb-4 group-hover:text-brand-900 transition-colors font-bold">05.</span>
+                        <h3 class="text-2xl font-heading text-brand-900 mb-4 uppercase">Sustainable Practices</h3>
+                        <p class="text-brand-text font-light leading-relaxed text-sm">We prioritise the health of your team and the planet by utilising eco-friendly, non-toxic cleaning agents and sustainable methods. Every product we use is fully COSHH-compliant, ensuring a safe, chemical-reduced environment that lowers your building’s carbon footprint without compromising on clinical results.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-200 group overflow-hidden flex flex-col reveal delay-200 hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-slate-200">
+                        <img src="/images/single-point-contact.jpg" alt="Single Point of Contact" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-10 flex-1 bg-white">
+                        <span class="text-[10px] font-sans tracking-[0.2em] text-brand-accent block mb-4 group-hover:text-brand-900 transition-colors font-bold">06.</span>
+                        <h3 class="text-2xl font-heading text-brand-900 mb-4 uppercase">Single Point of Contact</h3>
+                        <p class="text-brand-text font-light leading-relaxed text-sm">No call centers. You will have a dedicated, direct-line account manager ensuring communication is always clear, immediate, and highly responsive.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries / Who We Serve Section (Tagged as Light) -->
+    <section data-theme="light" class="py-24 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row gap-16 md:items-center">
+                <div class="md:w-1/3 reveal">
+                    <div class="inline-flex items-center gap-4 mb-8">
+                        <span class="text-brand-900 text-[10px] tracking-[0.3em] uppercase font-medium">Who We Serve</span>
+                        <div class="h-[1px] w-12 bg-slate-300"></div>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-heading font-medium text-brand-900 mb-6">Ideal for Demanding Facilities:</h2>
+                    <p class="text-brand-text font-light leading-relaxed mb-8">Our teams are experienced in navigating the complex access, security, and operational requirements of high-end sectors.</p>
+                </div>
+                
+                <div class="md:w-2/3">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8">
+                        <div class="border-b border-slate-200 pb-6 reveal">
+                            <span class="text-[10px] tracking-[0.2em] text-brand-accent font-bold block mb-2">01.</span>
+                            <h4 class="text-xl font-heading font-medium text-brand-900">Multi-Tenant Office Buildings</h4>
+                        </div>
+                        <div class="border-b border-slate-200 pb-6 reveal delay-100">
+                            <span class="text-[10px] tracking-[0.2em] text-brand-accent font-bold block mb-2">02.</span>
+                            <h4 class="text-xl font-heading font-medium text-brand-900">Healthcare Clinics &amp; Dental</h4>
+                        </div>
+                        <div class="border-b border-slate-200 pb-6 reveal">
+                            <span class="text-[10px] tracking-[0.2em] text-brand-accent font-bold block mb-2">03.</span>
+                            <h4 class="text-xl font-heading font-medium text-brand-900">Schools &amp; Educational Campuses</h4>
+                        </div>
+                        <div class="border-b border-slate-200 pb-6 reveal delay-100">
+                            <span class="text-[10px] tracking-[0.2em] text-brand-accent font-bold block mb-2">04.</span>
+                            <h4 class="text-xl font-heading font-medium text-brand-900">Retail Centres &amp; Showrooms</h4>
+                        </div>
+                        <div class="border-b border-slate-200 pb-6 reveal">
+                            <span class="text-[10px] tracking-[0.2em] text-brand-accent font-bold block mb-2">05.</span>
+                            <h4 class="text-xl font-heading font-medium text-brand-900">Corporate Headquarters</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call To Action (Tagged as Dark) -->
+    <section data-theme="dark" class="py-24 bg-brand-900 border-t-[3px] border-brand-accent text-center">
+        <div class="max-w-4xl mx-auto px-6 lg:px-12 reveal">
+            <div class="inline-flex items-center gap-4 mb-8 justify-center">
+                <div class="h-[1px] w-12 bg-white/20"></div>
+                <span class="text-white/80 text-[10px] tracking-[0.3em] uppercase font-medium">Take Action Now</span>
+                <div class="h-[1px] w-12 bg-white/20"></div>
+            </div>
+            <h2 class="text-5xl md:text-6xl font-heading font-bold text-white mb-8 uppercase tracking-wide">Discuss Your Long-Term Strategy</h2>
+            <p class="text-white/60 font-light text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
+                Contact us today to arrange a complimentary site visit. We will provide a comprehensive, transparent proposal for a contract maintenance plan that fits your exact operational budget.
+            </p>
+            <a href="/contact" class="inline-block bg-white text-brand-900 px-8 py-4 rounded-lg font-heading text-base font-semibold uppercase tracking-wider hover:bg-brand-accent transition-all duration-300 shadow-lg hover:shadow-xl">
+                Contact Our Team
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer (Tagged as Dark) -->
+    
+
+    <!-- Mobile Sticky CTA Bar -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full z-50 flex border-t border-brand-900 shadow-2xl">
+        <a href="tel:02046206344" class="flex-1 bg-white text-brand-900 py-4 font-semibold uppercase tracking-[0.1em] text-xs flex justify-center items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4"></i> Call Now
+        </a>
+        <a href="/contact" class="flex-1 bg-brand-accent text-brand-900 py-4 font-semibold uppercase tracking-[0.1em] text-xs flex justify-center items-center gap-2">
+            Get Quote
+        </a>
+    </div>
+
+    <!-- Scripts -->
+
+    <Footer slot="footer" />
+</BaseLayout>

@@ -1,0 +1,262 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = "Commercial Property & Office Block Cleaning London & Essex | Parker's";
+const pageDescription = "Specialist communal area, reception, and estate cleaning services for commercial property managers and office blocks across London & Essex.";
+const canonical = "https://parkerscommercial.co.uk/property-management";
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://parkerscommercial.co.uk/property-management#service",
+      "serviceType": "Commercial Property & Block Management Cleaning",
+      "provider": {
+        "@type": "CleaningService",
+        "name": "Parker's Commercial Cleaning",
+        "telephone": "+442046206344",
+        "url": "https://parkerscommercial.co.uk/"
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "London"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Essex"
+        }
+      ],
+      "description": "Comprehensive cleaning and facilities maintenance for commercial property managers, multi-tenant office blocks, and residential developments across London and Essex."
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://parkerscommercial.co.uk/property-management#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What communal areas are covered under your block management contracts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our block management contracts cover entrance lobbies, internal stairwells, lifts, communal corridors, bin stores, bike sheds, and exterior grounds maintenance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide digital audit logs for managing agents and freeholders?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, our site supervisors complete timestamped digital quality audits after every scheduled visit, ensuring complete visibility and audit-readiness for block managers and residents."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} canonicalUrl={canonical} schema={schema} >
+    <Navbar slot="header"  />
+
+    <!-- Dynamic Themed Navigation -->
+
+
+    <!-- Subpage Hero (Tagged as Dark) -->
+    <header data-theme="dark" class="pt-32 pb-16 md:pt-48 md:pb-24 bg-brand-900 border-b border-white/10 relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="/images/property-management-block.jpg" alt="High-End Property Lobby" class="w-full h-full object-cover opacity-30 grayscale">
+            <div class="absolute inset-0 bg-brand-900/80"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center reveal active relative z-10">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-4 uppercase tracking-tight">Property Management</h1>
+            <p class="text-brand-accent text-sm tracking-[0.3em] uppercase font-semibold">Specialist Block Services</p>
+        </div>
+    </header>
+
+    <!-- About Section (Tagged as Light) -->
+    <section data-theme="light" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="reveal">
+                    <div class="inline-flex items-center gap-4 mb-8">
+                        <span class="text-brand-900 text-[10px] tracking-[0.3em] uppercase font-medium">Philosophy</span>
+                        <div class="h-[1px] w-12 bg-slate-200"></div>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-heading font-medium text-brand-900 mb-8 leading-tight">
+                        Preserving Asset Value &amp; Elevating Tenant Experience.
+                    </h2>
+                    <div class="space-y-6 text-brand-text font-light leading-relaxed">
+                        <p>Managing multi-tenant residential or commercial blocks requires a delicate balance of reliability, speed, and discretion. A poorly maintained communal area directly impacts tenant retention, property valuations, and your reputation as a block manager.</p>
+                        <p>We partner with property managers, landlords, and block management firms to deliver seamless, integrated maintenance programs. From immaculate communal spaces and bin store sanitation to rapid-response end-of-tenancy deep cleans, we serve as the reliable operational arm of your property portfolio.</p>
+                    </div>
+                </div>
+                <div class="relative reveal delay-200 h-full min-h-[400px] lg:min-h-[600px]">
+                    <img src="/images/integrated-asset-care.jpg" alt="Modern Corporate Office Lobby" class="absolute inset-0 w-full h-full object-cover ">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operational Methodology / Features (Tagged as Light) -->
+    <section data-theme="light" class="py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="max-w-3xl mb-20 reveal">
+                <div class="inline-flex items-center gap-4 mb-8">
+                    <span class="text-brand-900 text-[10px] tracking-[0.3em] uppercase font-medium">Methodology</span>
+                    <div class="h-[1px] w-12 bg-slate-300"></div>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-heading font-medium text-brand-900 mb-6">Integrated Asset Care</h2>
+                <p class="text-lg text-brand-text font-light leading-relaxed">Comprehensive cleaning and maintenance solutions tailored specifically for multi-tenant assets.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-white border border-slate-200 group overflow-hidden flex flex-col reveal hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-slate-200">
+                        <img src="/images/communal-area-maintenance.jpg" alt="Communal Area Cleaning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-10 flex-1">
+                        <span class="text-[10px] font-sans tracking-[0.2em] text-brand-accent block mb-4 group-hover:text-brand-900 transition-colors font-bold">01.</span>
+                        <h3 class="text-2xl font-heading text-brand-900 mb-4 uppercase">Communal Area Maintenance</h3>
+                        <p class="text-brand-text font-light leading-relaxed text-sm">Scheduled cleaning of high-traffic zones including lobbies, stairwells, lifts, and corridors to maintain a premium environment for residents and guests.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 group overflow-hidden flex flex-col reveal delay-100 hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-slate-200">
+                        <img src="/images/end-of-tenancy-cleaning.jpg" alt="End of Tenancy Cleans" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-10 flex-1">
+                        <span class="text-[10px] font-sans tracking-[0.2em] text-brand-accent block mb-4 group-hover:text-brand-900 transition-colors font-bold">02.</span>
+                        <h3 class="text-2xl font-heading text-brand-900 mb-4 uppercase">Tenancy &amp; Void Cleans</h3>
+                        <p class="text-brand-text font-light leading-relaxed text-sm">Rapid-response, intensive deep cleaning at the end of leases. We ensure properties are pristine and ready for immediate viewing, minimizing costly void periods.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 group overflow-hidden flex flex-col reveal delay-200 hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-slate-200 bg-slate-200">
+                        <img src="/images/waste-area-sanitisation.jpg" alt="Waste &amp; Bin Store Management" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-10 flex-1">
+                        <span class="text-[10px] font-sans tracking-[0.2em] text-brand-accent block mb-4 group-hover:text-brand-900 transition-colors font-bold">03.</span>
+                        <h3 class="text-2xl font-heading text-brand-900 mb-4 uppercase">Waste Area Sanitation</h3>
+                        <p class="text-brand-text font-light leading-relaxed text-sm">Crucial hygiene maintenance for bin stores and refuse areas, including bulk waste clearance and specialized odor control/disinfection.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 group overflow-hidden flex flex-col reveal hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-slate-200">
+                        <img src="/images/exterior-grounds-tidy.jpg" alt="Exterior Grounds Tidy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-10 flex-1">
+                        <span class="text-[10px] font-sans tracking-[0.2em] text-brand-accent block mb-4 group-hover:text-brand-900 transition-colors font-bold">04.</span>
+                        <h3 class="text-2xl font-heading text-brand-900 mb-4 uppercase">Exterior Grounds Tidy</h3>
+                        <p class="text-brand-text font-light leading-relaxed text-sm">Sweeping of pathways, litter picking, and seasonal pressure washing of exterior walkways and car parks to ensure kerb appeal is always maximized.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 group overflow-hidden flex flex-col reveal delay-100 hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-slate-200">
+                        <img src="/images/window-and-facade-cleaning.jpg" alt="Window &amp; Facade Cleaning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-10 flex-1">
+                        <span class="text-[10px] font-sans tracking-[0.2em] text-brand-accent block mb-4 group-hover:text-brand-900 transition-colors font-bold">05.</span>
+                        <h3 class="text-2xl font-heading text-brand-900 mb-4 uppercase">Window &amp; Facade Cleaning</h3>
+                        <p class="text-brand-text font-light leading-relaxed text-sm">Scheduled exterior glass and cladding cleaning using pure water-fed pole systems, ensuring your building's exterior reflects the standards within.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 group overflow-hidden flex flex-col reveal delay-200 hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-slate-200">
+                        <img src="/images/hard-floor-cleaning.jpg" alt="Hard Floor &amp; Carpet Care" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-10 flex-1">
+                        <span class="text-[10px] font-sans tracking-[0.2em] text-brand-accent block mb-4 group-hover:text-brand-900 transition-colors font-bold">06.</span>
+                        <h3 class="text-2xl font-heading text-brand-900 mb-4 uppercase">Hard Floor &amp; Carpet Care</h3>
+                        <p class="text-brand-text font-light leading-relaxed text-sm">Periodic hot water extraction for communal carpets, alongside stripping, polishing, and sealing for hard flooring to delay costly replacements.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Block Manager Support / Trust Section (Tagged as Light) -->
+    <section data-theme="light" class="py-24 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+                <div class="lg:col-span-1 reveal">
+                    <h3 class="text-4xl font-heading font-bold text-brand-900 mb-4 uppercase">Supporting Block Managers</h3>
+                    <p class="text-brand-text font-light leading-relaxed">We understand that property managers are exceptionally busy. Our services are structured to operate autonomously while keeping you fully informed and legally compliant.</p>
+                </div>
+                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="flex gap-4 reveal delay-100">
+                        <i data-lucide="smartphone" class="w-8 h-8 text-brand-accent flex-shrink-0"></i>
+                        <div>
+                            <h5 class="font-heading text-2xl uppercase text-brand-900 mb-1">Digital Reporting</h5>
+                            <p class="text-sm font-light text-brand-text leading-relaxed">Real-time audits, before/after photos of void cleans, and immediate digital notification of any on-site maintenance issues observed by our staff.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 reveal delay-200">
+                        <i data-lucide="user-check" class="w-8 h-8 text-brand-accent flex-shrink-0"></i>
+                        <div>
+                            <h5 class="font-heading text-2xl uppercase text-brand-900 mb-1">Fully Vetted Operatives</h5>
+                            <p class="text-sm font-light text-brand-text leading-relaxed">Total peace of mind for your tenants. All staff operating in residential areas are fully background checked, uniformed, and wear clear ID.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 reveal delay-100">
+                        <i data-lucide="key" class="w-8 h-8 text-brand-accent flex-shrink-0"></i>
+                        <div>
+                            <h5 class="font-heading text-2xl uppercase text-brand-900 mb-1">Secure Keyholding</h5>
+                            <p class="text-sm font-light text-brand-text leading-relaxed">Fully insured and secure keyholding protocols, allowing our teams to operate efficiently out-of-hours or during vacant periods.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 reveal delay-200">
+                        <i data-lucide="file-check" class="w-8 h-8 text-brand-accent flex-shrink-0"></i>
+                        <div>
+                            <h5 class="font-heading text-2xl uppercase text-brand-900 mb-1">Compliance &amp; RAMS</h5>
+                            <p class="text-sm font-light text-brand-text leading-relaxed">We provide full COSHH documentation, Risk Assessments, and Method Statements to satisfy your portfolio's health and safety requirements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call To Action (Tagged as Dark) -->
+    <section data-theme="dark" class="py-24 bg-brand-900 border-t-[3px] border-brand-accent text-center">
+        <div class="max-w-4xl mx-auto px-6 lg:px-12 reveal">
+            <div class="inline-flex items-center gap-4 mb-8 justify-center">
+                <div class="h-[1px] w-12 bg-white/20"></div>
+                <span class="text-white/80 text-[10px] tracking-[0.3em] uppercase font-medium">Take Action Now</span>
+                <div class="h-[1px] w-12 bg-white/20"></div>
+            </div>
+            <h2 class="text-5xl md:text-6xl font-heading font-bold text-white mb-8 uppercase tracking-wide">Elevate Your Portfolio Standards</h2>
+            <p class="text-white/60 font-light text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
+                Contact us today to discuss your property management requirements. We provide highly competitive, comprehensive proposals tailored to the specific needs of your managed blocks.
+            </p>
+            <a href="/contact" class="inline-block bg-white text-brand-900 px-8 py-4 rounded-lg font-heading text-base font-semibold uppercase tracking-wider hover:bg-brand-accent transition-all duration-300 shadow-lg hover:shadow-xl">
+                Contact Our Team
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer (Tagged as Dark) -->
+    
+    
+    <!-- Mobile Sticky CTA Bar -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full z-50 flex border-t border-brand-900 shadow-2xl">
+        <a href="tel:02046206344" class="flex-1 bg-white text-brand-900 py-4 font-semibold uppercase tracking-[0.1em] text-xs flex justify-center items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4"></i> Call Now
+        </a>
+        <a href="/contact" class="flex-1 bg-brand-accent text-brand-900 py-4 font-semibold uppercase tracking-[0.1em] text-xs flex justify-center items-center gap-2">
+            Get Quote
+        </a>
+    </div>
+
+    <!-- Scripts -->
+
+    <Footer slot="footer" />
+</BaseLayout>

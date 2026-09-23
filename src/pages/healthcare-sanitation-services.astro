@@ -1,0 +1,251 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = "Dental Practice & Care Home Cleaning London & Essex | CQC Compliant | Parker's";
+const pageDescription = "CQC-compliant clinical sanitation & deep cleaning for dental surgeries, care homes, and healthcare clinics across London and Essex. BICSc color-coded standards.";
+const canonical = "https://parkerscommercial.co.uk/healthcare-sanitation-services";
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Healthcare & Dental Practice Cleaning",
+  "provider": {
+    "@type": "CleaningService",
+    "name": "Parker's Commercial Cleaning",
+    "telephone": "+442046206344",
+    "url": "https://parkerscommercial.co.uk/"
+  },
+  "areaServed": [
+    {
+      "@type": "AdministrativeArea",
+      "name": "London"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Essex"
+    }
+  ],
+  "description": "Professional CQC-compliant clinical sanitation and infection prevention cleaning for dental practices, care homes, and medical centers in London and Essex."
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} canonicalUrl={canonical} schema={schema} >
+    <Navbar slot="header"  />
+
+    <!-- Dynamic Themed Navigation -->
+
+
+    <!-- Subpage Hero (Tagged as Dark) -->
+    <header data-theme="dark" class="pt-32 pb-16 md:pt-48 md:pb-24 bg-brand-900 border-b border-white/10 relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="/images/healthcare-and-sanitisation.jpg" alt="Modern Clinical Healthcare Facility" class="w-full h-full object-cover opacity-30 grayscale">
+            <div class="absolute inset-0 bg-brand-900/80"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center reveal active relative z-10">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-4 uppercase tracking-tight">Dental & Healthcare Cleaning</h1>
+            <p class="text-brand-accent text-sm tracking-[0.3em] uppercase font-semibold">CQC-Compliant Cleaning for Dental Surgeries, Care Homes & Clinics across London & Essex</p>
+        </div>
+    </header>
+
+    <!-- About Section (Tagged as Light) -->
+    <section data-theme="light" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="reveal">
+                    <div class="inline-flex items-center gap-4 mb-8">
+                        <span class="text-brand-900 text-[10px] tracking-[0.3em] uppercase font-medium">Specialist Healthcare Division</span>
+                        <div class="h-[1px] w-12 bg-slate-200"></div>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-heading font-medium text-brand-900 mb-8 leading-tight">
+                        CQC-Compliant Infection Prevention for Dental Practices &amp; Care Homes.
+                    </h2>
+                    <div class="space-y-6 text-brand-text font-light leading-relaxed">
+                        <p>In dental practices, residential care homes, and clinical healthcare environments, an immaculate and sterile facility is completely non-negotiable. Standard commercial cleaning methods are simply not sufficient when dealing with vulnerable patients, clinical staff, and strict regulatory frameworks set by the <strong>Care Quality Commission (CQC)</strong> and <strong>National Standards of Healthcare Cleanliness</strong>.</p>
+                        <p>Our specialist healthcare division provides tailored cleaning contracts across <strong>London and Essex</strong>. We partner with dental practice managers, care home directors, and clinic coordinators to ensure treatment rooms, surgeries, resident lounges, and communal areas remain audit-ready and protected against cross-contamination.</p>
+                    </div>
+                </div>
+                <div class="relative reveal delay-200 h-full min-h-[400px] lg:min-h-[600px]">
+                    <img src="/images/clinical-sanitisation.jpg" alt="Sterile Treatment Room" class="absolute inset-0 w-full h-full object-cover ">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operational Methodology / Features (Tagged as Light) -->
+    <section data-theme="light" class="py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="max-w-3xl mb-20 reveal">
+                <div class="inline-flex items-center gap-4 mb-8">
+                    <span class="text-brand-900 text-[10px] tracking-[0.3em] uppercase font-medium">Methodology</span>
+                    <div class="h-[1px] w-12 bg-slate-300"></div>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-heading font-medium text-brand-900 mb-6">Rigorous Clinical Sanitation</h2>
+                <p class="text-lg text-brand-text font-light leading-relaxed">Executing specialized medical cleaning protocols designed to completely break the chain of infection.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-white border border-slate-200 group overflow-hidden flex flex-col reveal hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-slate-200">
+                        <img src="/images/cqc-compliant-auditing.jpg" alt="CQC Compliance Auditing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-10 flex-1">
+                        <span class="text-[10px] font-sans tracking-[0.2em] text-brand-accent block mb-4 group-hover:text-brand-900 transition-colors font-bold">01.</span>
+                        <h3 class="text-2xl font-heading text-brand-900 mb-4 uppercase">CQC Compliant Auditing</h3>
+                        <p class="text-brand-text font-light leading-relaxed text-sm">We provide fully documented cleaning schedules and digital audit logs, ensuring you have the precise records required to pass any unannounced CQC inspection flawlessly.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 group overflow-hidden flex flex-col reveal delay-100 hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-slate-200">
+                        <img src="/images/cleaning-product-colour-coded.jpg" alt="Cross-Contamination Prevention" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-10 flex-1">
+                        <span class="text-[10px] font-sans tracking-[0.2em] text-brand-accent block mb-4 group-hover:text-brand-900 transition-colors font-bold">02.</span>
+                        <h3 class="text-2xl font-heading text-brand-900 mb-4 uppercase">Color-Coded Systems</h3>
+                        <p class="text-brand-text font-light leading-relaxed text-sm">Strict adherence to the British Institute of Cleaning Science (BICSc) color-coding guidelines, ensuring equipment used in washrooms never enters clinical spaces.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 group overflow-hidden flex flex-col reveal delay-200 hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-slate-200 bg-slate-200">
+                        <img src="/images/clinical-decontamination.jpg" alt="Treatment Room Decontamination" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-10 flex-1">
+                        <span class="text-[10px] font-sans tracking-[0.2em] text-brand-accent block mb-4 group-hover:text-brand-900 transition-colors font-bold">03.</span>
+                        <h3 class="text-2xl font-heading text-brand-900 mb-4 uppercase">Clinical Decontamination</h3>
+                        <p class="text-brand-text font-light leading-relaxed text-sm">Medical-grade disinfection of surgeries, operating rooms, and treatment areas utilizing specialized antiviral and antibacterial chemical agents.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 group overflow-hidden flex flex-col reveal hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-slate-200">
+                        <img src="/images/high-touch-sanitisation.jpg" alt="High-Touch Point Sanitation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-10 flex-1">
+                        <span class="text-[10px] font-sans tracking-[0.2em] text-brand-accent block mb-4 group-hover:text-brand-900 transition-colors font-bold">04.</span>
+                        <h3 class="text-2xl font-heading text-brand-900 mb-4 uppercase">High-Touch Sanitation</h3>
+                        <p class="text-brand-text font-light leading-relaxed text-sm">Targeted, high-frequency cleaning of critical touch points in waiting rooms and reception areas—such as door handles, chairs, and check-in desks—to protect arriving patients.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 group overflow-hidden flex flex-col reveal delay-100 hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-slate-200">
+                        <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Biohazard &amp; Sharps Awareness" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-10 flex-1">
+                        <span class="text-[10px] font-sans tracking-[0.2em] text-brand-accent block mb-4 group-hover:text-brand-900 transition-colors font-bold">05.</span>
+                        <h3 class="text-2xl font-heading text-brand-900 mb-4 uppercase">Biohazard Awareness</h3>
+                        <p class="text-brand-text font-light leading-relaxed text-sm">Our operatives are highly trained in clinical waste protocols, understanding how to safely navigate environments containing sharps bins and biohazard materials.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 group overflow-hidden flex flex-col reveal delay-200 hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-slate-200">
+                        <img src="/images/clinical-consumables.webp" alt="Clinical Consumables Management" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-10 flex-1">
+                        <span class="text-[10px] font-sans tracking-[0.2em] text-brand-accent block mb-4 group-hover:text-brand-900 transition-colors font-bold">06.</span>
+                        <h3 class="text-2xl font-heading text-brand-900 mb-4 uppercase">Consumables Management</h3>
+                        <p class="text-brand-text font-light leading-relaxed text-sm">We monitor and restock critical clinical consumables, including specialised antibacterial hand soaps, sanitiser stations, and medical-grade paper towel dispensers.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries / Who We Serve Section (Tagged as Light) -->
+    <section data-theme="light" class="py-24 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+                <div class="lg:col-span-1 reveal">
+                    <h3 class="text-4xl font-heading font-bold text-brand-900 mb-4 uppercase">Specialized Facilities</h3>
+                    <p class="text-brand-text font-light leading-relaxed">We understand that every medical field has unique regulatory nuances. We tailor our cleaning schedules to seamlessly integrate with your specific clinical hours and patient flow.</p>
+                </div>
+                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="flex gap-4 reveal delay-100">
+                        <i data-lucide="stethoscope" class="w-8 h-8 text-brand-accent flex-shrink-0"></i>
+                        <div>
+                            <h5 class="font-heading text-2xl uppercase text-brand-900 mb-1">GP Surgeries &amp; Clinics</h5>
+                            <p class="text-sm font-light text-brand-text leading-relaxed">Reliable daily sanitation for waiting areas, consult rooms, and administrative offices.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 reveal delay-200">
+                        <i data-lucide="activity" class="w-8 h-8 text-brand-accent flex-shrink-0"></i>
+                        <div>
+                            <h5 class="font-heading text-2xl uppercase text-brand-900 mb-1">Dental Practices</h5>
+                            <p class="text-sm font-light text-brand-text leading-relaxed">Deep, specialized cleaning for dental surgeries, decontamination rooms, and high-tech imaging areas.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 reveal delay-100">
+                        <i data-lucide="cross" class="w-8 h-8 text-brand-accent flex-shrink-0"></i>
+                        <div>
+                            <h5 class="font-heading text-2xl uppercase text-brand-900 mb-1">Veterinary Clinics</h5>
+                            <p class="text-sm font-light text-brand-text leading-relaxed">Implementation of highly specialized, animal-safe chemical protocols and rigorous odor control.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 reveal delay-200">
+                        <i data-lucide="building" class="w-8 h-8 text-brand-accent flex-shrink-0"></i>
+                        <div>
+                            <h5 class="font-heading text-2xl uppercase text-brand-900 mb-1">Private Hospitals</h5>
+                            <p class="text-sm font-light text-brand-text leading-relaxed">High-frequency, scalable cleaning teams dedicated to maintaining pristine conditions across multi-wing facilities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Safeguarding (Tagged as Light) -->
+    <section data-theme="light" class="py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center reveal">
+            <h2 class="text-4xl font-heading font-bold text-brand-900 mb-6 uppercase">Total Safeguarding &amp; Confidentiality</h2>
+            <p class="text-lg text-brand-text font-light leading-relaxed max-w-3xl mx-auto mb-12">
+                Operating within a healthcare environment requires absolute trust. Patient confidentiality and safeguarding are paramount. Every Parker's operative assigned to a clinical setting undergoes enhanced background checks, rigorous reference verification, and signs strict non-disclosure agreements to protect your practice and your patients.
+            </p>
+            <div class="flex flex-wrap justify-center gap-8 items-center opacity-60 grayscale">
+                <!-- Trust Badges Placeholders -->
+                <i data-lucide="shield-check" class="w-12 h-12"></i>
+                <i data-lucide="file-check-2" class="w-12 h-12"></i>
+                <i data-lucide="lock" class="w-12 h-12"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call To Action (Tagged as Dark) -->
+    <section data-theme="dark" class="py-24 bg-brand-900 border-t-[3px] border-brand-accent text-center">
+        <div class="max-w-4xl mx-auto px-6 lg:px-12 reveal">
+            <div class="inline-flex items-center gap-4 mb-8 justify-center">
+                <div class="h-[1px] w-12 bg-white/20"></div>
+                <span class="text-white/80 text-[10px] tracking-[0.3em] uppercase font-medium">Ensure Compliance</span>
+                <div class="h-[1px] w-12 bg-white/20"></div>
+            </div>
+            <h2 class="text-5xl md:text-6xl font-heading font-bold text-white mb-8 uppercase tracking-wide">Secure Your Clinical Cleaning Strategy</h2>
+            <p class="text-white/60 font-light text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
+                Don't leave your CQC compliance to chance. Contact us today to arrange a site walk-through with our specialized healthcare management team, and receive a comprehensive, regulatory-aligned proposal.
+            </p>
+            <a href="/contact" class="inline-block bg-white text-brand-900 px-8 py-4 rounded-lg font-heading text-base font-semibold uppercase tracking-wider hover:bg-brand-accent transition-all duration-300 shadow-lg hover:shadow-xl">
+                Contact Our Healthcare Division
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer (Tagged as Dark) -->
+
+
+    <!-- Mobile Sticky CTA Bar -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full z-50 flex border-t border-brand-900 shadow-2xl">
+        <a href="tel:02046206344" class="flex-1 bg-white text-brand-900 py-4 font-semibold uppercase tracking-[0.1em] text-xs flex justify-center items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4"></i> Call Now
+        </a>
+        <a href="/contact" class="flex-1 bg-brand-accent text-brand-900 py-4 font-semibold uppercase tracking-[0.1em] text-xs flex justify-center items-center gap-2">
+            Get Quote
+        </a>
+    </div>
+
+    <!-- Scripts -->
+
+    <Footer slot="footer" />
+</BaseLayout>

@@ -1,0 +1,278 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = "Commercial Gutter Cleaning London & Essex | High-Reach Vacuum Clearance | Parker's";
+const pageDescription = "Specialist commercial gutter cleaning & roof drainage clearance across London & Essex. Ground-operated vacuum systems, wireless camera inspection, MEWPs, and preventative maintenance for commercial blocks, warehouses & offices.";
+const canonical = "https://parkerscommercial.co.uk/commercial-gutter-cleaning";
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://parkerscommercial.co.uk/commercial-gutter-cleaning#service",
+      "serviceType": "Commercial Gutter Cleaning & Downpipe Clearance",
+      "provider": {
+        "@type": "CleaningService",
+        "name": "Parker's Commercial Cleaning",
+        "telephone": "+442046206344",
+        "url": "https://parkerscommercial.co.uk/"
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "London"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Essex"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Greater London"
+        }
+      ],
+      "description": "High-powered vacuum gutter cleaning, wireless camera surveys, downpipe clearance, and preventative roof drainage maintenance for commercial properties, residential blocks, warehouses, and corporate facilities."
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://parkerscommercial.co.uk/commercial-gutter-cleaning#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How often should commercial property gutters be cleared?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Commercial gutters should be inspected and cleared at least once or twice annually (typically in late autumn and spring) to prevent water ingress, structural damp, and foundation damage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How high can your commercial gutter vacuum systems reach?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our ground-operated carbon fibre vacuum systems safely reach up to 4 stories (approx. 50 feet / 15 meters) from the ground without requiring expensive scaffolding. For higher structures, our IPAF-certified operators utilize MEWPs (cherry pickers) and rope access."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you assess commercial gutters before carrying out work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We perform a thorough initial site assessment to evaluate building height, roof drainage layout, and access points. We then recommend the most efficient method—whether ground-reach vacuum systems, MEWP cherry pickers, or specialist access."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you service residential blocks and managing agents across London and Essex?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we work extensively with property management companies, block managers, freeholders, and commercial landlords across all London boroughs and Essex districts on scheduled maintenance contracts and emergency callouts."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} canonicalUrl={canonical} schema={schema} >
+    <Navbar slot="header"  />
+
+    <!-- Dynamic Themed Navigation -->
+    
+
+    <!-- Subpage Hero (Tagged as Dark) -->
+    <header data-theme="dark" class="pt-32 pb-16 md:pt-48 md:pb-24 bg-brand-900 border-b border-white/10 relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="/images/high-level-gutter-cleaning.jpg" alt="Commercial Gutter Cleaning Vacuum System" class="w-full h-full object-cover opacity-30 grayscale">
+            <div class="absolute inset-0 bg-brand-900/80"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center reveal active relative z-10">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-4 uppercase tracking-tight">Commercial Gutter Cleaning</h1>
+            <p class="text-brand-accent text-sm tracking-[0.3em] uppercase font-semibold">London &amp; Essex • High-Reach Vacuum &amp; Camera Inspection</p>
+        </div>
+    </header>
+
+    <!-- About Section (Tagged as Light) -->
+    <section data-theme="light" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="reveal">
+                    <div class="inline-flex items-center gap-4 mb-8">
+                        <span class="text-brand-900 text-[10px] tracking-[0.3em] uppercase font-medium">Preventative Roof Drainage</span>
+                        <div class="h-[1px] w-12 bg-slate-200"></div>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-heading font-medium text-brand-900 mb-8 leading-tight">
+                        Protect Commercial Assets from Costly <span class="italic text-brand-500">Water Ingress &amp; Drainage Failure.</span>
+                    </h2>
+                    <div class="space-y-6 text-brand-text font-light leading-relaxed">
+                        <p>Blocked commercial gutters and silted downpipes are one of the leading causes of structural dampness, damaged brickwork, and interior flooding in multi-tenant commercial blocks and industrial warehouses.</p>
+                        <p>Parker's Commercial Cleaning provides advanced, ground-operated high-reach vacuum systems equipped with wireless CCTV optics to safely extract silt, vegetation, moss, and standing debris up to 50 feet without requiring costly scaffolding or cherry pickers. For high-rise complexes and awkward architectural profiles, our IPAF and IRATA teams ensure total drainage clearance.</p>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-slate-100 flex flex-wrap gap-4">
+                        <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-900 bg-slate-100 px-4 py-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Dedicated Site Assessment</span>
+                        <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-900 bg-slate-100 px-4 py-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Up to 50ft Ground Reach</span>
+                        <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-900 bg-slate-100 px-4 py-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> RAMS &amp; HSE Compliant</span>
+                    </div>
+                </div>
+                <div class="relative reveal delay-200 h-full min-h-[400px] lg:min-h-[600px]">
+                    <img src="/images/high-level-gutter-cleaning.jpg" alt="Commercial Gutter Clearance in Progress" class="absolute inset-0 w-full h-full object-cover ">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operational Methodology / Features (Tagged as Light) -->
+    <section data-theme="light" class="py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="max-w-3xl mb-20 reveal">
+                <div class="inline-flex items-center gap-4 mb-8">
+                    <span class="text-brand-900 text-[10px] tracking-[0.3em] uppercase font-medium">Clearance Solutions</span>
+                    <div class="h-[1px] w-12 bg-slate-300"></div>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-heading font-medium text-brand-900 mb-6">Complete Commercial Gutter &amp; Drainage Services</h2>
+                <p class="text-lg text-brand-text font-light leading-relaxed">Engineered specifically for property management companies, corporate landlords, and facility directors requiring hands-off, dependable maintenance.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-white border border-slate-200 group overflow-hidden flex flex-col reveal hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-slate-200">
+                        <img src="/images/window-sparkle-clean.jpg" alt="High-Reach Vacuum Gutter Clearance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-10 flex-1">
+                        <span class="text-[10px] font-sans tracking-[0.2em] text-brand-accent block mb-4 group-hover:text-brand-900 transition-colors font-bold">01.</span>
+                        <h3 class="text-2xl font-heading text-brand-900 mb-4 uppercase">High-Reach Vacuum Clearance</h3>
+                        <p class="text-brand-text font-light leading-relaxed text-sm">Industrial wet/dry vacuum units capable of lifting dense mud, roots, and blockages up to 50ft directly from ground level, eliminating access disruption.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 group overflow-hidden flex flex-col reveal delay-100 hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-slate-200">
+                        <img src="/images/property-management-block.jpg" alt="Commercial Drainage Inspection & Maintenance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-10 flex-1">
+                        <span class="text-[10px] font-sans tracking-[0.2em] text-brand-accent block mb-4 group-hover:text-brand-900 transition-colors font-bold">02.</span>
+                        <h3 class="text-2xl font-heading text-brand-900 mb-4 uppercase">Drainage &amp; Outlet Inspection</h3>
+                        <p class="text-brand-text font-light leading-relaxed text-sm">Comprehensive checks across hopper heads, parapet outlets, and valley gutters to ensure water channels are completely free from standing silt, debris, and seasonal blockages.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 group overflow-hidden flex flex-col reveal delay-200 hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-slate-200">
+                        <img src="/images/single-point-contact.jpg" alt="Downpipe Jetting & Unblocking" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-10 flex-1">
+                        <span class="text-[10px] font-sans tracking-[0.2em] text-brand-accent block mb-4 group-hover:text-brand-900 transition-colors font-bold">03.</span>
+                        <h3 class="text-2xl font-heading text-brand-900 mb-4 uppercase">Downpipe Jetting &amp; Clearance</h3>
+                        <p class="text-brand-text font-light leading-relaxed text-sm">We clear vertical downpipe blockages and swan necks, testing water flow rates to ensure rainwater discharges freely into main drainage gullies.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 group overflow-hidden flex flex-col reveal hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-slate-200">
+                        <img src="/images/cqc-compliant-auditing.jpg" alt="Block Management Scheduled Retainers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-10 flex-1">
+                        <span class="text-[10px] font-sans tracking-[0.2em] text-brand-accent block mb-4 group-hover:text-brand-900 transition-colors font-bold">04.</span>
+                        <h3 class="text-2xl font-heading text-brand-900 mb-4 uppercase">Block Management Retainers</h3>
+                        <p class="text-brand-text font-light leading-relaxed text-sm">Tailored biannual and annual service contracts for property managers, estate agents, and residential freeholders managing multi-unit portfolios across London and Essex.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 group overflow-hidden flex flex-col reveal delay-100 hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-slate-200">
+                        <img src="/images/warehouse-roof-clean.jpg" alt="Commercial Warehouses & Industrial Units" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-10 flex-1">
+                        <span class="text-[10px] font-sans tracking-[0.2em] text-brand-accent block mb-4 group-hover:text-brand-900 transition-colors font-bold">05.</span>
+                        <h3 class="text-2xl font-heading text-brand-900 mb-4 uppercase">Warehouse &amp; Industrial Units</h3>
+                        <p class="text-brand-text font-light leading-relaxed text-sm">Large-footprint valley gutter cleaning and industrial outlet maintenance for logistics hubs, distribution centers, and manufacturing plants.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 group overflow-hidden flex flex-col reveal delay-200 hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-slate-200">
+                        <img src="/images/cladding-restoration.jpg" alt="Combined Facade & Cladding Washing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-10 flex-1">
+                        <span class="text-[10px] font-sans tracking-[0.2em] text-brand-accent block mb-4 group-hover:text-brand-900 transition-colors font-bold">06.</span>
+                        <h3 class="text-2xl font-heading text-brand-900 mb-4 uppercase">Combined Facade &amp; Cladding</h3>
+                        <p class="text-brand-text font-light leading-relaxed text-sm">Combine gutter clearance with high-pressure facade washing, soffit cleaning, and reach-and-wash window restoration for complete building exterior care.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive FAQ Section (Tagged as Light) -->
+    <section data-theme="light" class="py-24 bg-white border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16 reveal">
+                <div class="inline-flex items-center gap-4 mb-6">
+                    <span class="text-brand-900 text-[10px] tracking-[0.3em] uppercase font-medium">FAQ</span>
+                    <div class="h-[1px] w-12 bg-slate-300"></div>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-heading font-medium text-brand-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-brand-text font-light text-base">Key considerations for commercial gutter maintenance and block drainage.</p>
+            </div>
+
+            <div class="space-y-6 reveal">
+                <div class="border border-slate-200 p-8 bg-slate-50 rounded-lg">
+                    <h4 class="font-heading text-2xl uppercase text-brand-900 mb-2">How often should commercial property gutters be cleared?</h4>
+                    <p class="text-sm font-light text-brand-text leading-relaxed">Commercial gutters should be inspected and cleared at least once or twice annually (typically late autumn and early spring) to prevent overflows, water ingress, and structural dampness.</p>
+                </div>
+                <div class="border border-slate-200 p-8 bg-slate-50 rounded-lg">
+                    <h4 class="font-heading text-2xl uppercase text-brand-900 mb-2">How high can your commercial gutter vacuum systems reach?</h4>
+                    <p class="text-sm font-light text-brand-text leading-relaxed">Our carbon-fibre vacuum poles reach up to 50 feet (approx. 4 storeys) safely from ground level. For higher or complex architectural profiles, our IPAF-certified operators utilize MEWPs and rope access systems.</p>
+                </div>
+                <div class="border border-slate-200 p-8 bg-slate-50 rounded-lg">
+                    <h4 class="font-heading text-2xl uppercase text-brand-900 mb-2">How do you assess commercial gutters before carrying out work?</h4>
+                    <p class="text-sm font-light text-brand-text leading-relaxed">We carry out an initial site assessment to evaluate your building's height, roof perimeter, and access routes. From there, we deploy the most cost-effective and safe access method tailored to your facility.</p>
+                </div>
+                <div class="border border-slate-200 p-8 bg-slate-50 rounded-lg">
+                    <h4 class="font-heading text-2xl uppercase text-brand-900 mb-2">Do you service property managers and residential blocks across London &amp; Essex?</h4>
+                    <p class="text-sm font-light text-brand-text leading-relaxed">Yes, we regularly contract with block management companies, managing agents, and multi-academy trusts across London, Romford, Brentwood, Chelmsford, Colchester, and Southend-on-Sea.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call To Action (Tagged as Dark) -->
+    <section data-theme="dark" class="py-24 bg-brand-900 border-t-[3px] border-brand-accent text-center">
+        <div class="max-w-4xl mx-auto px-6 lg:px-12 reveal">
+            <div class="inline-flex items-center gap-4 mb-8 justify-center">
+                <div class="h-[1px] w-12 bg-white/20"></div>
+                <span class="text-white/80 text-[10px] tracking-[0.3em] uppercase font-medium">Prevent Water Ingress</span>
+                <div class="h-[1px] w-12 bg-white/20"></div>
+            </div>
+            <h2 class="text-5xl md:text-6xl font-heading font-bold text-white mb-8 uppercase tracking-wide">Book a Commercial Gutter Survey</h2>
+            <p class="text-white/60 font-light text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
+                Receive an immediate fixed-price proposal for your commercial block, warehouse, or corporate facility in London &amp; Essex.
+            </p>
+            <a href="/contact" class="inline-block bg-white text-brand-900 px-8 py-4 rounded-lg font-heading text-base font-semibold uppercase tracking-wider hover:bg-brand-accent transition-all duration-300 shadow-lg hover:shadow-xl">
+                Request Free Quote
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer (Tagged as Dark) -->
+    
+
+    <!-- Mobile Sticky CTA Bar -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full z-50 flex border-t border-brand-900 shadow-2xl">
+        <a href="tel:02046206344" class="flex-1 bg-white text-brand-900 py-4 font-semibold uppercase tracking-[0.1em] text-xs flex justify-center items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4"></i> Call Now
+        </a>
+        <a href="/contact" class="flex-1 bg-brand-accent text-brand-900 py-4 font-semibold uppercase tracking-[0.1em] text-xs flex justify-center items-center gap-2">
+            Get Quote
+        </a>
+    </div>
+
+    <!-- Scripts -->
+
+    <Footer slot="footer" />
+</BaseLayout>

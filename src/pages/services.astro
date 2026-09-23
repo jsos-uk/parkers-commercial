@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = "Commercial Cleaning Services London & Essex | Offices & Healthcare | Parker's";
+const pageDescription = "Comprehensive commercial cleaning services across London & Essex. Contract office cleaning, CQC dental practice sanitisation, care home cleaning, and property management.";
+const canonical = "https://parkerscommercial.co.uk/services";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Commercial Cleaning Services",
+  "provider": {
+    "@type": "CleaningService",
+    "name": "Parker's Commercial Cleaning",
+    "telephone": "+442046206344",
+    "url": "https://parkerscommercial.co.uk/"
+  },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "London" },
+    { "@type": "AdministrativeArea", "name": "Essex" }
+  ]
+};
+
+const serviceCards = [
+  {
+    title: "Commercial Gutter Cleaning",
+    href: "/commercial-gutter-cleaning",
+    image: "/images/high-level-gutter-cleaning.jpg",
+    desc: "Ground-operated vacuum extraction up to 50ft with wireless CCTV camera verification for property management blocks, warehouses, and offices."
+  },
+  {
+    title: "Ongoing Contract Maintenance",
+    href: "/ongoing-contract-maintenance",
+    image: "/images/ongoing-contract-maintenance.jpg",
+    desc: "Reliable, fully-managed scheduled cleaning. We handle the logistics, staffing, and quality control so you can focus entirely on running your business."
+  },
+  {
+    title: "Commercial & Industrial",
+    href: "/commercial-industrial-cleaning",
+    image: "/images/commercial-and-industrial-cleaning.webp",
+    desc: "Heavy-duty, specialized cleaning designed to tackle grease, grime, and unique challenges within high-traffic manufacturing and corporate facilities."
+  },
+  {
+    title: "Healthcare & Sanitation",
+    href: "/healthcare-sanitation-services",
+    image: "/images/healthcare-and-sanitisation.jpg",
+    desc: "Strict, clinical-grade sanitation services meeting all CQC compliance requirements for medical, dental, and veterinary practices."
+  },
+  {
+    title: "High-Level & Cladding",
+    href: "/high-level-cladding",
+    image: "/images/high-level-cladding.jpg",
+    desc: "Specialist IPAF-certified operators and high-reach water-fed pole systems to safely restore the exterior facade and windows of your building."
+  },
+  {
+    title: "Post-Construction Sparkle",
+    href: "/post-construction-sparkle",
+    image: "/images/construction-sparkle-cleaning.jpg",
+    desc: "Thorough, multi-stage builders' cleans and final sparkle detailing to prepare your newly built or renovated property for immediate client handover."
+  },
+  {
+    title: "Property Management",
+    href: "/property-management",
+    image: "/images/property-management-external.jpg",
+    desc: "Integrated cleaning and maintenance solutions tailored specifically for block managers overseeing multi-tenant residential or commercial spaces."
+  },
+  {
+    title: "Warehouse & Factory Cleaning",
+    href: "/warehouse-factory-cleaning",
+    image: "/images/commercial-internal-warehouse.jpg",
+    desc: "High-capacity scrubber drying, degreasing, high-reach dust extraction, and industrial deep cleaning for logistics depots and production facilities."
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} canonicalUrl={canonical} schema={schema}>
+    <Navbar slot="header" />
+
+    <!-- Subpage Hero -->
+    <header class="pt-32 pb-16 md:pt-48 md:pb-24 bg-brand-900 border-b border-white/10 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-4 uppercase tracking-tight">Our Services</h1>
+            <p class="text-brand-accent text-sm tracking-[0.3em] uppercase font-semibold">Tailored Operational Solutions for London &amp; Essex</p>
+        </div>
+    </header>
+
+    <!-- Intro Section -->
+    <section class="py-20 bg-white border-b border-slate-200">
+        <div class="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-heading font-medium text-brand-900 mb-6">A Complete Suite of Facility Solutions</h2>
+            <p class="text-base md:text-lg text-slate-600 font-light leading-relaxed">
+                Modern commercial facilities require more than just surface-level cleaning. They require strategic maintenance programmes that ensure health and safety compliance, extend the lifespan of physical assets, and create an impeccable impression for every visitor.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {serviceCards.map(service => (
+                    <a href={service.href} class="group block bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 rounded-xl">
+                        <div class="h-60 overflow-hidden relative border-b border-slate-200 bg-slate-100">
+                            <img src={service.image} alt={service.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-heading font-medium text-brand-900 mb-3 uppercase tracking-wide group-hover:text-brand-500 transition-colors">
+                                {service.title}
+                            </h3>
+                            <p class="text-slate-600 font-light leading-relaxed text-sm mb-6">
+                                {service.desc}
+                            </p>
+                            <span class="text-brand-500 font-semibold text-xs uppercase tracking-wider flex items-center gap-2 group-hover:gap-3 transition-all">
+                                Explore Service &rarr;
+                            </span>
+                        </div>
+                    </a>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- Accreditation Bar -->
+    <section class="py-20 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div>
+                    <h5 class="font-heading text-xl uppercase text-brand-900 mb-2">Directly Employed Staff</h5>
+                    <p class="text-xs text-slate-600 leading-relaxed font-light">Every operative undergoes background checks, DBS vetting, and continuous health &amp; safety training.</p>
+                </div>
+                <div>
+                    <h5 class="font-heading text-xl uppercase text-brand-900 mb-2">Digital Auditing</h5>
+                    <p class="text-xs text-slate-600 leading-relaxed font-light">Account managers use electronic auditing software to verify contract standards and send periodic reports.</p>
+                </div>
+                <div>
+                    <h5 class="font-heading text-xl uppercase text-brand-900 mb-2">COSHH &amp; CQC Compliant</h5>
+                    <p class="text-xs text-slate-600 leading-relaxed font-light">Full risk assessments and method statements (RAMS) and strict color-coded protocols prevent cross-contamination.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <Footer slot="footer" />
+</BaseLayout>

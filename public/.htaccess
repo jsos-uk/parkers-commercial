@@ -1,0 +1,39 @@
+# ----------------------------------------------------------------------
+# Parker's Commercial Cleaning - Server Configuration & 301 Redirect Rules
+# ----------------------------------------------------------------------
+
+RewriteEngine On
+
+# 1. Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. Redirect /index.html to /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.html$ https://%{HTTP_HOST}/ [R=301,L]
+
+# 3. Strip .html extension from URLs (301 redirect)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^.]+)\.html\ HTTP/
+RewriteRule ^([^.]+)\.html$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# 4. Resolve extensionless URLs to their .html files internally
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([^/]+)/?$ $1.html [L]
+
+# 5. Fix legacy broken/WordPress and moved paths
+Redirect 301 /property-management-specialist-services.html https://parkerscommercial.co.uk/property-management
+Redirect 301 /property-management-specialist-services https://parkerscommercial.co.uk/property-management
+Redirect 301 /services/property-management-specialist-services https://parkerscommercial.co.uk/property-management
+Redirect 301 /results.html https://parkerscommercial.co.uk/case-studies
+
+# 6. Legacy WordPress Categories and Taxonomy Redirects
+RewriteRule ^category/(.*)$ /services [R=301,L]
+RewriteRule ^services-2/(.*)$ /services [R=301,L]
+RewriteRule ^author/(.*)$ /about [R=301,L]
+RewriteRule ^home/(.*)$ /$1 [R=301,L]
+
+# 7. Discard spam query strings
+RewriteCond %{QUERY_STRING} ^.*$
+RewriteCond %{REQUEST_URI} ^/(services|about|case-studies|contact|property-management)
+RewriteRule ^(.*)$ /$1? [R=301,L]

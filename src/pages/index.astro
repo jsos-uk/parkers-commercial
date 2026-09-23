@@ -1,0 +1,327 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = "Commercial Cleaning London & Essex | Offices, Dental Practices & Care Homes | Parker's";
+const pageDescription = "Premier commercial cleaning across London & Essex. Specialists in corporate office blocks, property management, and CQC-compliant dental practices & care homes. Fully insured, family-run for 35+ years.";
+const canonical = "https://parkerscommercial.co.uk/";
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CleaningService",
+  "name": "Parker's Commercial Cleaning",
+  "image": "https://parkerscommercial.co.uk/images/parkers-logo-long.png",
+  "url": "https://parkerscommercial.co.uk/",
+  "telephone": "+442046206344",
+  "email": "contact@parkerscommercial.co.uk",
+  "description": "Professional commercial, office block, healthcare, and CQC-compliant dental practice and care home cleaning services throughout London, Essex, and surrounding regions.",
+  "areaServed": [
+    {
+      "@type": "AdministrativeArea",
+      "name": "London"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Greater London"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Essex"
+    },
+    {
+      "@type": "City",
+      "name": "Chelmsford"
+    },
+    {
+      "@type": "City",
+      "name": "Colchester"
+    },
+    {
+      "@type": "City",
+      "name": "Basildon"
+    },
+    {
+      "@type": "City",
+      "name": "Brentwood"
+    },
+    {
+      "@type": "City",
+      "name": "Romford"
+    },
+    {
+      "@type": "City",
+      "name": "Ilford"
+    }
+  ],
+  "priceRange": "££",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Commercial Cleaning Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Commercial Office Cleaning",
+          "description": "Daily and contract maintenance cleaning for corporate office blocks and multi-tenant commercial properties in London and Essex."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Healthcare, Dental Practice & Care Home Cleaning",
+          "description": "CQC-compliant clinical sanitation and infection prevention cleaning for dental surgeries, care homes, and clinics."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Commercial Property & Block Management Cleaning",
+          "description": "Communal area, lobby, lift, and stairwell maintenance for commercial property managers."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Warehouse & Industrial Facility Cleaning",
+          "description": "Heavy-duty factory, logistics hub, and industrial unit cleaning."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "High-Level & Cladding Cleaning",
+          "description": "Specialist high-reach window, facade, and cladding cleaning."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Post-Construction & Sparkle Handover Cleans",
+          "description": "Multi-stage builders cleans and sparkle cleans for new commercial builds and fit-outs."
+        }
+      }
+    ]
+  }
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} canonicalUrl={canonical} schema={schema} >
+    <Navbar slot="header"  />
+
+    <!-- Header Navigation Injection Point -->
+    
+
+    <!-- Hero Section -->
+    <header data-theme="dark" class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-brand-900">
+        <div class="absolute inset-0 z-0">
+            <img src="/images/hero.jpg" alt="Facility Background" class="w-full h-full object-cover opacity-50 grayscale">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+        
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 py-16 md:py-0 text-center lg:text-left">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <div class="lg:col-span-7 pt-10">
+                    <div class="inline-flex items-center gap-4 mb-6 animate-fade-in">
+                        <div class="h-[2px] w-8 bg-brand-accent"></div>
+                        <span class="text-brand-accent font-semibold text-[11px] tracking-[0.2em] uppercase">Built on Accountability</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-[1.08] mb-6 animate-fade-in tracking-tight">Delivering a <br> Higher Standard.
+                    </h1>
+                    <p class="text-xl text-white/80 mb-10 leading-relaxed font-light animate-fade-in max-w-xl mx-auto lg:mx-0">
+                        Delivering a higher standard of commercial &amp; domestic cleaning for over 35 years, built on a foundation of trust, reliability, and family-run accountability.
+                    </p>
+                    <div class="animate-fade-in" style="animation-delay: 0.6s;">
+                        <a href="/services" class="bg-brand-accent text-brand-900 px-8 py-3.5 rounded-lg font-heading text-base font-semibold uppercase tracking-wider hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl inline-block">Explore Services</a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 animate-fade-in-up w-full" style="animation-delay: 0.8s;">
+                    <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-10 relative rounded-2xl text-left shadow-2xl">
+                        <h3 class="text-3xl font-heading font-semibold text-white mb-2 uppercase tracking-wide">Request a Free Quote</h3>
+                        <p class="text-sm text-white/60 mb-8 font-light">Direct response within 24 hours.</p>
+                       <form id="heroLeadForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                            <input type="hidden" name="access_key" value="0e562e4d-f4ff-4f74-b3d8-16869cd744de">
+
+                                <div class="grid grid-cols-2 gap-6">
+                                    <input type="text" name="first_name" placeholder="First Name" required="" class="input-elegant">
+                                    <input type="text" name="last_name" placeholder="Last Name" required="" class="input-elegant">
+                                </div>
+    
+                                <input type="email" name="email" placeholder="Email Address" required="" class="input-elegant">
+    
+                                <textarea name="message" placeholder="How can we help you?" rows="2" class="input-elegant resize-none"></textarea>
+    
+                                <button type="submit" class="w-full py-3.5 mt-6 bg-brand-500 text-white rounded-lg font-heading text-base font-semibold uppercase tracking-wider hover:bg-brand-accent hover:text-brand-900 transition-all duration-300 shadow-md">
+                                Submit Request
+                            </button>
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stat Strip -->
+    <div data-theme="dark" class="bg-brand-900 py-12 relative z-20 border-t border-white/10 border-b border-brand-accent">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left divide-y md:divide-y-0 md:divide-x divide-white/10">
+                <div class="reveal px-4">
+                    <h4 class="text-white font-heading text-4xl mb-1 uppercase">35+ Years</h4>
+                    <p class="text-brand-accent text-[11px] font-semibold uppercase tracking-[0.2em]">Industry Experience</p>
+                </div>
+                <div class="reveal delay-100 px-4">
+                    <h4 class="text-white font-heading text-4xl mb-1 uppercase">UK Regional</h4>
+                    <p class="text-brand-accent text-[11px] font-semibold uppercase tracking-[0.2em]">based in london / essex</p>
+                </div>
+                <div class="reveal delay-200 px-4">
+                    <h4 class="text-white font-heading text-4xl mb-1 uppercase">Family Run</h4>
+                    <p class="text-brand-accent text-[11px] font-semibold uppercase tracking-[0.2em]">Founded on Personal Trust</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Intro Section -->
+    <section data-theme="light" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                <div class="reveal">
+                    <div class="inline-flex items-center gap-4 mb-6">
+                        <span class="text-brand-500 text-[12px] tracking-[0.2em] uppercase font-semibold">Accountability First</span>
+                        <div class="h-[2px] w-12 bg-brand-accent"></div>
+                    </div>
+                    <h2 class="text-5xl font-heading font-bold text-brand-900 mb-8 uppercase leading-[1.1]">Protecting Your Investment &amp; <br><span class="text-brand-accent italic">Enhancing Your Brand</span></h2>
+                    <div class="space-y-6 text-brand-text font-light text-lg leading-relaxed">
+                        <p>For a busy commercial facility, cleanliness is not a one-time task, it's an ongoing requirement. Our contract maintenance services are designed to provide complete peace of mind, ensuring your premises are maintained to the highest standards, day in and day out.</p>
+                        <p>We work as a seamless extension of your own team, developing a flexible and reliable cleaning schedule that protects your investment, enhances your brand image, and creates a pristine and comfortable environment for your staff and clients.</p>
+                    </div>
+                    <div class="mt-12 pt-10 border-t border-slate-100 flex items-center gap-8">
+                        <div>
+                            <p class="font-heading text-4xl text-brand-900 uppercase">Parker Family</p>
+                            <p class="text-xs tracking-widest uppercase text-brand-accent font-semibold">Management Team</p>
+                        </div>
+                        <div class="h-10 w-[1px] bg-slate-200"></div>
+                        <img src="/images/parkers-logo-long.png" class="h-6 w-auto grayscale opacity-60 hover:opacity-100 transition-opacity" alt="Parker's Commercial Cleaning">
+                    </div>
+                </div>
+                <div class="relative reveal delay-200">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img src="/images/external-window-clean.jpg" alt="Facility Image" class="w-full h-full object-cover ">
+                    </div>
+                    <div class="absolute -bottom-10 -left-10 bg-brand-900 p-10 text-white hidden md:block shadow-2xl">
+                        <p class="font-heading text-5xl mb-1 uppercase leading-none">Reliability</p>
+                        <p class="text-[10px] tracking-[0.3em] uppercase opacity-60">The Parker's Guarantee</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Summary -->
+    <section data-theme="light" class="py-24 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center mb-20 reveal">
+            <h2 class="text-5xl font-heading font-bold text-brand-900 mb-4 uppercase">Core Service Sectors</h2>
+            <p class="text-lg text-brand-text font-light max-w-2xl mx-auto">Specialized commercial cleaning solutions tailored to your unique infrastructure requirements.</p>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="p-12 bg-white border border-slate-200 reveal shadow-sm hover:shadow-lg transition-all duration-500">
+                    <i data-lucide="building-2" class="w-10 h-10 text-brand-accent mb-8"></i>
+                    <h3 class="text-3xl font-heading text-brand-900 uppercase mb-4">Property Management cleaning and maintenance</h3>
+                    <p class="text-sm font-light leading-relaxed mb-8">Comprehensive care for communal areas, stairwells, and managed residential or commercial blocks.</p>
+                    <a href="/property-management" class="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-500 hover:text-brand-accent transition-colors flex items-center gap-2">View Service <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+                <!-- Service 2 -->
+                <div class="p-12 bg-white border border-slate-200 reveal delay-100 shadow-sm hover:shadow-lg transition-all duration-500">
+                    <i data-lucide="sparkles" class="w-10 h-10 text-brand-accent mb-8"></i>
+                    <h3 class="text-3xl font-heading text-brand-900 uppercase mb-4">Construction Sparkle cleans</h3>
+                    <p class="text-sm font-light leading-relaxed mb-8">Specialist builders' cleans and final sparkle polishing to prepare site handovers for immediate tenant occupation.</p>
+                    <a href="/post-construction-sparkle" class="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-500 hover:text-brand-accent transition-colors flex items-center gap-2">View Service <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+                <!-- Service 3 -->
+                <div class="p-12 bg-white border border-slate-200 reveal delay-200 shadow-sm hover:shadow-lg transition-all duration-500">
+                    <i data-lucide="shield-check" class="w-10 h-10 text-brand-accent mb-8"></i>
+                    <h3 class="text-3xl font-heading text-brand-900 uppercase mb-4">sanitation cleaning &amp; Contract Maintenance</h3>
+                    <p class="text-sm font-light leading-relaxed mb-8">Seamless daily or weekly scheduled cleaning providing consistent hygiene and presentation for your facility.</p>
+                    <a href="/ongoing-contract-maintenance" class="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-500 hover:text-brand-accent transition-colors flex items-center gap-2">View Service <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Partner With Us / Commitment -->
+    <section data-theme="light" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+                <span class="text-brand-accent text-[10px] tracking-[0.3em] uppercase font-bold block mb-4">Our Commitment</span>
+                <h2 class="text-4xl md:text-5xl font-heading font-bold text-brand-900 uppercase">A Higher Standard of Clean</h2>
+                <div class="h-[2px] w-16 bg-brand-accent mx-auto mt-6 mb-6"></div>
+                <p class="text-lg text-brand-text font-light leading-relaxed">
+                    Our entire operation is built on four key pillars that ensure a seamless and professional service for our commercial clients.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="p-8 bg-slate-50 border border-slate-200 text-center reveal hover:bg-white hover:shadow-xl transition-all duration-300">
+                    <i data-lucide="shield-check" class="w-10 h-10 text-brand-accent mx-auto mb-6"></i>
+                    <h4 class="font-heading text-2xl uppercase text-brand-900">Uncompromising Safety &amp; Compliance</h4>
+                </div>
+                <div class="p-8 bg-slate-50 border border-slate-200 text-center reveal delay-100 hover:bg-white hover:shadow-xl transition-all duration-300">
+                    <i data-lucide="clock" class="w-10 h-10 text-brand-accent mx-auto mb-6"></i>
+                    <h4 class="font-heading text-2xl uppercase text-brand-900">Reliable &amp; Punctual Service Delivery</h4>
+                </div>
+                <div class="p-8 bg-slate-50 border border-slate-200 text-center reveal delay-200 hover:bg-white hover:shadow-xl transition-all duration-300">
+                    <i data-lucide="search" class="w-10 h-10 text-brand-accent mx-auto mb-6"></i>
+                    <h4 class="font-heading text-2xl uppercase text-brand-900">Meticulous Attention to Detail</h4>
+                </div>
+                <div class="p-8 bg-slate-50 border border-slate-200 text-center reveal delay-300 hover:bg-white hover:shadow-xl transition-all duration-300">
+                    <i data-lucide="users" class="w-10 h-10 text-brand-accent mx-auto mb-6"></i>
+                    <h4 class="font-heading text-2xl uppercase text-brand-900">Dedicated Account Management</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section data-theme="light" class="py-24 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                <div class="reveal">
+                    <span class="text-6xl font-heading text-slate-300 leading-none block mb-4">"</span>
+                    <p class="text-brand-text font-light text-lg italic leading-relaxed mb-8">Parker's Commercial Cleaning are always punctual, and have a high standard of cleaning. No task is too big, highly recommend.</p>
+                    <p class="font-heading text-2xl uppercase text-brand-900 mb-1">emma.</p>
+                    <p class="text-[10px] tracking-widest uppercase opacity-60">blue sky dental</p>
+                </div>
+                <div class="reveal delay-100">
+                    <span class="text-6xl font-heading text-slate-300 leading-none block mb-4">"</span>
+                    <p class="text-brand-text font-light text-lg italic leading-relaxed mb-8">Always provide a friendly and happy service, and follow procedures down to a tee. Best cleaning company about.</p>
+                    <p class="font-heading text-2xl uppercase text-brand-900 mb-1">tanya.</p>
+                    <p class="text-[10px] tracking-widest uppercase opacity-60">chelmsford dental</p>
+                </div>
+                <div class="reveal delay-200">
+                    <span class="text-6xl font-heading text-slate-300 leading-none block mb-4">"</span>
+                    <p class="text-brand-text font-light text-lg italic leading-relaxed mb-8">Always flexible and&nbsp; able to fit around schedules in busy school terms to make sure our windows are sparkling clean for&nbsp; our returning pupils.</p>
+                    <p class="font-heading text-2xl uppercase text-brand-900 mb-1">david.</p>
+                    <p class="text-[10px] tracking-widest uppercase opacity-60">harold court school</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Injection Point -->
+    
+
+    <!-- Page Specific Script -->
+    
+
+    <!-- Global Layout Scripts -->
+
+    <Footer slot="footer" />
+</BaseLayout>
