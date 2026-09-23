@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Scrollbars */
+::-webkit-scrollbar { width: 6px; } 
+::-webkit-scrollbar-track { background: #ffffff; } 
+::-webkit-scrollbar-thumb { background: #cbd5e1; } 
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* Global reveal animation utility */
+.reveal { 
+  opacity: 1; 
+}
+
+/* Custom Input Styles from Original Site */
+.input-elegant { 
+  width: 100%; 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+  background: transparent; 
+  padding: 0.75rem 0; 
+  font-size: 0.95rem; 
+  font-weight: 300; 
+  color: #ffffff; 
+  transition: border-color 0.3s ease; 
+}
+.input-elegant:focus { 
+  outline: none; 
+  border-bottom-color: #6DC3F6; 
+}
+.input-elegant::placeholder { 
+  color: rgba(255, 255, 255, 0.4); 
+}
+
+.input-friendly { 
+  width: 100%; 
+  border: 1px solid #e2e8f0; 
+  background: #f8fafc; 
+  padding: 1rem 1.25rem; 
+  font-size: 1rem; 
+  transition: all 0.3s ease; 
+  border-radius: 0.5rem; 
+}
+.input-friendly:focus { 
+  outline: none; 
+  border-color: #6DC3F6; 
+  box-shadow: 0 0 0 3px rgba(109, 195, 246, 0.2); 
+}
+.input-friendly::placeholder { 
+  color: #94a3b8; 
+  font-weight: 300; 
+}
+
+.hero-overlay {
+  background: linear-gradient(135deg, rgba(33, 45, 69, 0.95) 0%, rgba(16, 74, 110, 0.85) 100%);
+}

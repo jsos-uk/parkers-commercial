@@ -10,9 +10,7 @@ export default defineConfig({
     format: 'file'
   },
   integrations: [
-    tailwind({
-      applyBaseStyles: false,
-    }),
+    tailwind(),
     sitemap({
       filter: (page) => !page.includes('/wp-') && !page.includes('/category/'),
       changefreq: 'monthly',
