@@ -1,0 +1,264 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { KNOWLEDGE_ARTICLES, type KnowledgeArticle } from '../../data/knowledge';
+
+export function getStaticPaths() {
+  return KNOWLEDGE_ARTICLES.map((article) => ({
+    params: { slug: article.slug },
+    props: { article }
+  }));
+}
+
+interface Props {
+  article: KnowledgeArticle;
+}
+
+const { article } = Astro.props;
+
+const canonical = `https://parkerscommercial.co.uk/knowledge/${article.slug}`;
+
+// Dynamic Schema: TechArticle + FAQPage Schema
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": article.title,
+      "description": article.metaDescription,
+      "url": canonical,
+      "datePublished": article.publishDate,
+      "dateModified": "2026-09-23",
+      "author": {
+        "@type": "Organization",
+        "name": article.author.name
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Parker's Commercial Cleaning",
+        "url": "https://parkerscommercial.co.uk",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://parkerscommercial.co.uk/images/parkers-logo-long.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": canonical
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": article.faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={`${article.metaTitle} | Parker's Commercial`}
+  description={article.metaDescription}
+  canonicalUrl={canonical}
+  schema={schema}
+>
+  <Navbar slot="header" />
+
+  <!-- Article Header -->
+  <header class="pt-36 pb-16 bg-brand-900 text-white relative overflow-hidden border-b border-white/10">
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-900 via-brand-900/95 to-slate-900 z-10"></div>
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 relative z-20">
+      
+      <!-- Breadcrumbs -->
+      <nav class="flex items-center gap-2 text-xs text-slate-400 mb-6 font-medium">
+        <a href="/" class="hover:text-brand-accent transition-colors">Home</a>
+        <span>/</span>
+        <a href="/knowledge" class="hover:text-brand-accent transition-colors">Knowledge Hub</a>
+        <span>/</span>
+        <span class="text-white truncate">{article.title}</span>
+      </nav>
+
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-semibold uppercase tracking-wider bg-brand-accent/20 border border-brand-accent/30 text-brand-accent mb-4">
+        {article.category}
+      </div>
+
+      <h1 class="text-3xl md:text-5xl font-heading font-bold text-white tracking-tight leading-tight mb-6">
+        {article.title}
+      </h1>
+
+      <p class="text-slate-300 text-lg md:text-xl font-light leading-relaxed mb-6">
+        {article.summary}
+      </p>
+
+      <!-- Author and Meta Byline -->
+      <div class="pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-300">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-brand-800 border border-brand-accent/40 flex items-center justify-center font-bold text-brand-accent">
+            PC
+          </div>
+          <div>
+            <div class="font-bold text-white text-sm">{article.author.name}</div>
+            <div class="text-slate-400">{article.author.role}</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 text-slate-400">
+          <span>Published: {article.publishDate}</span>
+          <span>&bull;</span>
+          <span>{article.readTime}</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body & Sticky Sidebar Layout -->
+  <div class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
+      
+      <!-- Main Content Column -->
+      <main class="lg:col-span-8 bg-white p-8 md:p-12 rounded-3xl border border-slate-200/80 shadow-sm">
+        
+        <!-- Table of Contents (Mobile / On-Page) -->
+        <div class="mb-10 p-6 rounded-2xl bg-slate-50 border border-slate-200/80">
+          <h3 class="font-heading font-bold text-slate-900 text-sm uppercase tracking-wider mb-4 flex items-center gap-2">
+            <i data-lucide="list" class="w-4 h-4 text-brand-600"></i> In This Compliance Guide
+          </h3>
+          <ul class="space-y-2 text-sm text-slate-600">
+            {article.tableOfContents.map((toc) => (
+              <li>
+                <a href={`#${toc.id}`} class="hover:text-brand-600 transition-colors font-medium hover:underline">
+                  {toc.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Article Sections -->
+        <div class="prose prose-slate max-w-none space-y-10">
+          {article.contentSections.map((section) => (
+            <section id={section.id} class="scroll-mt-32">
+              <h2 class="text-2xl md:text-3xl font-heading font-bold text-slate-900 mb-4 border-b border-slate-100 pb-3">
+                {section.heading}
+              </h2>
+
+              {section.paragraphs.map((p) => (
+                <p class="text-slate-700 leading-relaxed text-base font-light mb-4">
+                  {p}
+                </p>
+              ))}
+
+              {section.bulletPoints && (
+                <ul class="my-4 space-y-2 list-disc pl-5 text-slate-700 text-sm font-light">
+                  {section.bulletPoints.map((bp) => (
+                    <li>{bp}</li>
+                  ))}
+                </ul>
+              )}
+
+              {section.calloutBox && (
+                <div class="my-6 p-6 rounded-2xl bg-brand-50 border-l-4 border-brand-600 text-brand-950 shadow-sm">
+                  <h4 class="font-bold text-sm uppercase tracking-wider text-brand-900 mb-1 flex items-center gap-2">
+                    <i data-lucide="alert-triangle" class="w-4 h-4 text-brand-600"></i> {section.calloutBox.title}
+                  </h4>
+                  <p class="text-sm text-brand-800 leading-relaxed m-0 font-light">
+                    {section.calloutBox.text}
+                  </p>
+                </div>
+              )}
+            </section>
+          ))}
+        </div>
+
+        <!-- On-Page FAQ Accordion -->
+        <section class="mt-16 pt-12 border-t border-slate-200">
+          <h2 class="text-2xl md:text-3xl font-heading font-bold text-slate-900 mb-6 flex items-center gap-2">
+            <i data-lucide="help-circle" class="w-6 h-6 text-brand-600"></i> Frequently Asked Questions
+          </h2>
+          <div class="space-y-4">
+            {article.faqs.map((faq) => (
+              <details class="group bg-slate-50 border border-slate-200 rounded-xl p-5 open:bg-white open:shadow-sm transition-all duration-200">
+                <summary class="font-heading font-semibold text-slate-900 text-base cursor-pointer list-none flex justify-between items-center group-hover:text-brand-600 transition-colors">
+                  <span>{faq.question}</span>
+                  <span class="text-slate-400 group-open:rotate-180 transition-transform duration-200">▼</span>
+                </summary>
+                <div class="mt-3 text-slate-600 text-sm leading-relaxed font-light border-t border-slate-100 pt-3">
+                  {faq.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        <!-- Funnel Service CTA Box -->
+        <div class="mt-14 p-8 rounded-2xl bg-gradient-to-br from-brand-900 to-slate-900 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <span class="text-brand-accent text-xs font-bold uppercase tracking-wider block mb-1">Recommended Commercial Service</span>
+            <h3 class="text-xl font-heading font-bold">{article.serviceTargetName}</h3>
+            <p class="text-slate-300 text-xs font-light mt-1">SLA-backed contract cleaning across London &amp; Essex. £10M insured.</p>
+          </div>
+          <div class="flex-shrink-0 flex items-center gap-3">
+            <a href={article.serviceTargetUrl} class="bg-brand-accent text-brand-900 px-5 py-2.5 rounded-xl font-heading text-xs font-bold uppercase tracking-wider hover:bg-white transition-all shadow-md">
+              View Service
+            </a>
+            <a href="/contact" class="border border-white/30 text-white px-5 py-2.5 rounded-xl font-heading text-xs font-bold uppercase tracking-wider hover:bg-white/10 transition-all">
+              Get Quote
+            </a>
+          </div>
+        </div>
+
+      </main>
+
+      <!-- Sticky Sidebar -->
+      <aside class="lg:col-span-4 space-y-8">
+        
+        <!-- Quick Proposal Card -->
+        <div class="sticky top-28 bg-white p-6 rounded-3xl border border-slate-200/80 shadow-md space-y-6">
+          <div>
+            <h4 class="font-heading font-bold text-slate-900 text-lg mb-2">Speak to a Surveying Specialist</h4>
+            <p class="text-slate-600 text-xs font-light leading-relaxed">
+              Have questions regarding statutory compliance, CQC regulations, or access requirements for your commercial facility?
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 space-y-2 text-xs text-slate-700">
+            <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> Free site visit &amp; scope review</div>
+            <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> Fixed-price 24-hr proposals</div>
+            <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> Dedicated account supervisor</div>
+          </div>
+
+          <div class="space-y-3">
+            <a href="/contact" class="block w-full text-center bg-brand-600 text-white py-3 rounded-xl font-heading text-xs font-bold uppercase tracking-wider hover:bg-brand-700 transition-all shadow-md">
+              Request Site Audit
+            </a>
+            <a href="tel:02046206344" class="block w-full text-center bg-slate-100 text-slate-800 py-3 rounded-xl font-heading text-xs font-semibold hover:bg-slate-200 transition-all">
+              Call 020 4620 6344
+            </a>
+          </div>
+
+          <!-- Other Guides in Hub -->
+          <div class="pt-6 border-t border-slate-100">
+            <h5 class="font-heading font-semibold text-xs uppercase tracking-wider text-slate-500 mb-3">Other Compliance Guides</h5>
+            <div class="space-y-2">
+              {KNOWLEDGE_ARTICLES.filter(a => a.slug !== article.slug).map(other => (
+                <a href={`/knowledge/${other.slug}`} class="block text-xs text-slate-700 hover:text-brand-600 font-medium transition-colors line-clamp-2">
+                  &rarr; {other.title}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>

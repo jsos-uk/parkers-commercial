@@ -23,42 +23,23 @@ const PRIORITY_MAP = {
     'domestic.html': { priority: '0.64', changefreq: 'monthly' }
 };
 
-function generateSitemap() {
-    console.log('🔍 Scanning directory for HTML files...');
-    const files = fs.readdirSync(WORKSPACE_DIR);
-    
-    const htmlFiles = files.filter(file => file.endsWith('.html') && !file.startsWith('_'));
-    
-    const today = new Date().toISOString().split('T')[0];
+function syncSitemaps() {
+    const distSitemap = path.join(WORKSPACE_DIR, 'dist', 'sitemap-0.xml');
+    const distIndex = path.join(WORKSPACE_DIR, 'dist', 'sitemap-index.xml');
+    const publicSitemap = path.join(WORKSPACE_DIR, 'public', 'sitemap.xml');
+    const publicIndex = path.join(WORKSPACE_DIR, 'public', 'sitemap-index.xml');
 
-    let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
-    xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
-
-    // Sort to put index first, then high priority pages
-    htmlFiles.sort((a, b) => {
-        if (a === 'index.html') return -1;
-        if (b === 'index.html') return 1;
-        return a.localeCompare(b);
-    });
-
-    htmlFiles.forEach(file => {
-        const route = file === 'index.html' ? '' : file.replace('.html', '');
-        const loc = route ? `${DOMAIN}/${route}` : `${DOMAIN}/`;
-        
-        const config = PRIORITY_MAP[file] || { priority: '0.60', changefreq: 'monthly' };
-        
-        xml += `  <url>\n`;
-        xml += `    <loc>${loc}</loc>\n`;
-        xml += `    <lastmod>${today}</lastmod>\n`;
-        xml += `    <changefreq>${config.changefreq}</changefreq>\n`;
-        xml += `    <priority>${config.priority}</priority>\n`;
-        xml += `  </url>\n`;
-    });
-
-    xml += `</urlset>\n`;
-
-    fs.writeFileSync(SITEMAP_PATH, xml, 'utf8');
-    console.log(`✅ sitemap.xml generated successfully with ${htmlFiles.length} URLs!`);
+    if (fs.existsSync(distSitemap)) {
+        fs.copyFileSync(distSitemap, SITEMAP_PATH);
+        fs.copyFileSync(distSitemap, publicSitemap);
+        console.log(`✅ Synced dist sitemap to root & public: ${SITEMAP_PATH}`);
+    }
+    if (fs.existsSync(distIndex)) {
+        const rootIndex = path.join(WORKSPACE_DIR, 'sitemap-index.xml');
+        fs.copyFileSync(distIndex, rootIndex);
+        fs.copyFileSync(distIndex, publicIndex);
+        console.log(`✅ Synced dist sitemap-index to root & public: ${rootIndex}`);
+    }
 }
 
-generateSitemap();
+syncSitemaps();

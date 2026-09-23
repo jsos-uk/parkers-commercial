@@ -13,4 +13,5 @@ Disallow: /services-2/
 Disallow: /results.html
 Disallow: /*?*
 
+Sitemap: https://parkerscommercial.co.uk/sitemap-index.xml
 Sitemap: https://parkerscommercial.co.uk/sitemap.xml
