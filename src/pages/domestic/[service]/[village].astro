@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import Footer from '../../../components/Footer.astro';
+import { LOCATIONS, SERVICES, type LocationData, type ServiceData } from '../../../data/locations';
+
+export function getStaticPaths() {
+  const domesticServices = SERVICES.filter(s => s.division === 'domestic');
+  const villages = LOCATIONS.filter(l => l.domesticFocus);
+
+  const paths = [];
+
+  for (const service of domesticServices) {
+    for (const village of villages) {
+      paths.push({
+        params: {
+          service: service.slug,
+          village: village.slug
+        },
+        props: {
+          service,
+          village
+        }
+      });
+    }
+  }
+
+  return paths;
+}
+
+interface Props {
+  service: ServiceData;
+  village: LocationData;
+}
+
+const { service, village } = Astro.props;
+
+const pageTitle = `${service.name} in ${village.name} (${village.postcodes.join(', ')}) | Parker's Domestic`;
+const pageDescription = `Family-run ${service.name.toLowerCase()} in ${village.name}, Essex. Regular 4, 6, 8-weekly schedules or one-off deep cleans. Get a fast, friendly free quote today.`;
+const canonical = `https://parkerscommercial.co.uk/domestic/${service.slug}/${village.slug}`;
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": `${service.name} in ${village.name}`,
+  "serviceType": service.name,
+  "provider": {
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Parker's Domestic Property Maintenance",
+    "telephone": "+442046206344",
+    "url": "https://parkerscommercial.co.uk/domestic"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": village.name,
+    "postalCode": village.postcodes
+  },
+  "description": pageDescription
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} canonicalUrl={canonical} schema={localSchema} division="domestic">
+    <Navbar slot="header" division="domestic" />
+
+    <!-- Domestic Hero Section -->
+    <header class="relative bg-gradient-to-b from-brand-900 via-brand-700 to-brand-900 text-white py-20 lg:py-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/20 rounded-full text-brand-accent text-xs font-semibold uppercase tracking-wider mb-6">
+                    <span>{village.name} Village Service &bull; Postcodes: {village.postcodes.join(', ')}</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold uppercase tracking-tight text-white mb-6">
+                    {service.name} <span class="text-brand-accent">{village.name}</span>
+                </h1>
+                <p class="text-lg text-slate-200 font-light leading-relaxed mb-8">
+                    {service.leadParagraph} Reliable, polite, and fully insured exterior maintenance for homes in {village.name} and surrounding country lanes.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#quote-callback" class="bg-brand-accent text-brand-900 px-8 py-4 rounded-lg font-heading text-sm uppercase tracking-wider font-bold hover:bg-white transition-all shadow-lg">
+                        Get A Free {village.name} Quote
+                    </a>
+                    <a href="tel:02046206344" class="px-8 py-4 rounded-lg font-heading text-sm uppercase tracking-wider font-semibold border border-white/30 text-white hover:bg-white/10 transition-all">
+                        Call Our Team
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Village Context & Service Excellence -->
+    <section class="py-20 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="text-brand-500 text-xs uppercase tracking-[0.2em] font-bold block mb-3">Serving {village.name} Homes</span>
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-brand-900 uppercase mb-6">
+                        Exterior Property Care Built for {village.name}
+                    </h2>
+                    <p class="text-brand-text font-light leading-relaxed mb-6">
+                        {village.description} Whether your property is situated near {village.landmarks.join(', ')} or quiet neighboring avenues, our family-run team provides dependable, first-class care.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        {service.features.map(feature => (
+                            <li class="flex items-start gap-3 text-sm text-slate-700">
+                                <span class="text-brand-500 font-bold text-lg">&check;</span>
+                                <span>{feature}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                <!-- Lead Capture Box -->
+                <div id="quote-callback" class="bg-slate-50 border border-slate-200 p-8 md:p-10 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-heading font-semibold text-brand-900 uppercase mb-2">Request a {village.name} Quote</h3>
+                    <p class="text-xs text-slate-500 mb-6 font-light">Fast response &bull; No obligation &bull; Fair local pricing</p>
+
+                    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                        <input type="hidden" name="access_key" value="d41ef623-7e73-403d-84f5-ac4c3035a076">
+                        <input type="hidden" name="subject" value={`New Domestic Enquiry from ${village.name} (${service.name})`}>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 focus:outline-none focus:border-brand-500">
+                            <input type="tel" name="phone" placeholder="Phone Number" required class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 focus:outline-none focus:border-brand-500">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <input type="text" name="postcode" placeholder={`Postcode (e.g. ${village.postcodes[0]})`} required class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 focus:outline-none focus:border-brand-500">
+                            <input type="email" name="email" placeholder="Email Address" required class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 focus:outline-none focus:border-brand-500">
+                        </div>
+                        
+                        <button type="submit" class="w-full py-4 bg-brand-500 text-white rounded-lg font-heading text-sm uppercase tracking-wider font-bold hover:bg-brand-600 transition-colors shadow-md">
+                            Send Enquiry for {village.name}
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Surrounding Villages Coverage -->
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
+            <h3 class="text-xl font-heading font-semibold text-brand-900 uppercase mb-4">
+                Also Providing Regular Services Near {village.name}:
+            </h3>
+            <div class="flex flex-wrap justify-center gap-2">
+                {village.nearbyAreas.map(area => (
+                    <span class="px-3.5 py-1.5 bg-white border border-slate-200 rounded-full text-xs font-medium text-slate-700 shadow-sm">
+                        {area}
+                    </span>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <Footer slot="footer" />
+</BaseLayout>

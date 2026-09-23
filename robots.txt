@@ -1,4 +1,16 @@
 User-agent: *
 Allow: /
 
+# Block legacy WordPress crawl paths and duplicate query parameters
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /category/
+Disallow: /author/
+Disallow: /tag/
+Disallow: /home/
+Disallow: /services-2/
+Disallow: /results.html
+Disallow: /*?*
+
 Sitemap: https://parkerscommercial.co.uk/sitemap.xml

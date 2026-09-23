@@ -1,0 +1,77 @@
+---
+interface Props {
+  currentPath?: string;
+  division?: 'commercial' | 'domestic';
+}
+
+const { currentPath = Astro.url.pathname, division = 'commercial' } = Astro.props;
+---
+
+<nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-brand-900/95 backdrop-blur-md flex flex-col border-b border-white/10 shadow-lg">
+    <!-- Division Switcher Banner -->
+    <div id="nav-banner" class="w-full pt-3 pb-2 transition-all duration-500 bg-white/5 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-12 text-center">
+            {division === 'commercial' ? (
+                <p class="font-medium uppercase flex flex-wrap items-center justify-center gap-1.5 md:gap-2 leading-tight text-[11px] tracking-[0.15em] text-white m-0">
+                    <span class="opacity-90">Looking for residential property maintenance?</span>
+                    <a href="/domestic" class="font-bold inline-flex items-center gap-1 whitespace-nowrap text-brand-accent hover:text-white transition-colors">
+                        Visit our domestic division &rarr;
+                    </a>
+                </p>
+            ) : (
+                <p class="font-medium uppercase flex flex-wrap items-center justify-center gap-1.5 md:gap-2 leading-tight text-[11px] tracking-[0.15em] text-white m-0">
+                    <span class="opacity-90">Looking for commercial & corporate facilities care?</span>
+                    <a href="/" class="font-bold inline-flex items-center gap-1 whitespace-nowrap text-brand-accent hover:text-white transition-colors">
+                        Visit commercial division &rarr;
+                    </a>
+                </p>
+            )}
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <div class="w-full py-4 md:py-5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center h-12">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href={division === 'commercial' ? '/' : '/domestic'} class="transition-opacity duration-300 hover:opacity-85">
+                        <img src="/images/parkers-logo-long.png" alt="Parker's Commercial Cleaning" class="h-8 md:h-10 w-auto brightness-0 invert">
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-[13px] font-medium uppercase tracking-[0.2em] text-white hover:text-brand-accent transition-colors">Home</a>
+                    <a href="/about" class="text-[13px] font-medium uppercase tracking-[0.2em] text-white hover:text-brand-accent transition-colors">About</a>
+                    
+                    <div class="relative group">
+                        <a href="/services" class="text-[13px] font-medium uppercase tracking-[0.2em] text-white hover:text-brand-accent transition-colors flex items-center gap-1 cursor-pointer">
+                            Services
+                        </a>
+                        <div class="absolute top-full left-0 mt-3 w-72 bg-brand-900 border-t-2 border-brand-accent opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-2xl rounded-b-lg overflow-hidden">
+                            <a href="/commercial-gutter-cleaning" class="block px-5 py-3 text-white text-xs hover:bg-white/10 hover:text-brand-accent transition-colors border-b border-white/10 font-semibold text-brand-accent">Commercial Gutter Cleaning</a>
+                            <a href="/property-management" class="block px-5 py-3 text-white text-xs hover:bg-white/10 hover:text-brand-accent transition-colors border-b border-white/10">Property &amp; Block Maintenance</a>
+                            <a href="/commercial-industrial-cleaning" class="block px-5 py-3 text-white text-xs hover:bg-white/10 hover:text-brand-accent transition-colors border-b border-white/10">Commercial Office Cleaning</a>
+                            <a href="/healthcare-sanitation-services" class="block px-5 py-3 text-white text-xs hover:bg-white/10 hover:text-brand-accent transition-colors border-b border-white/10">Healthcare &amp; Dental Surgery</a>
+                            <a href="/warehouse-factory-cleaning" class="block px-5 py-3 text-white text-xs hover:bg-white/10 hover:text-brand-accent transition-colors border-b border-white/10">Warehouse &amp; Factory Floors</a>
+                            <a href="/high-level-cladding" class="block px-5 py-3 text-white text-xs hover:bg-white/10 hover:text-brand-accent transition-colors border-b border-white/10">High-Level &amp; Cladding</a>
+                            <a href="/post-construction-sparkle" class="block px-5 py-3 text-white text-xs hover:bg-white/10 hover:text-brand-accent transition-colors">Post-Construction Sparkle</a>
+                        </div>
+                    </div>
+
+                    <a href="/case-studies" class="text-[13px] font-medium uppercase tracking-[0.2em] text-white hover:text-brand-accent transition-colors">Case Studies</a>
+                    <a href="/contact" class="text-[13px] font-medium uppercase tracking-[0.2em] text-white hover:text-brand-accent transition-colors">Contact</a>
+                </div>
+
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="tel:02046206344" class="flex items-center gap-2.5 text-white hover:text-brand-accent transition-colors text-xs font-semibold tracking-wider">
+                        <span>020 4620 6344</span>
+                    </a>
+                    <a href="/contact" class="bg-brand-accent text-brand-900 px-5 py-2.5 rounded-lg font-heading uppercase tracking-wider text-xs font-bold hover:bg-white transition-all shadow-md">
+                        Get A Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="h-28 md:h-32"></div>
