@@ -37,9 +37,14 @@ const essexCommercialHubs = LOCATIONS.filter(l => l.commercialFocus && l.county 
                 <p class="text-slate-400 text-xs leading-relaxed">
                     Premier B2B commercial office cleaning, property management block caretaking, high-reach gutter vacuuming, and clinical decontamination across prime London business districts and Essex commercial corridors.
                 </p>
-                <div class="pt-2 text-xs text-slate-400">
+                <div class="pt-2 text-xs text-slate-400 space-y-1">
                     <p class="font-semibold text-white">Head Office: 020 4620 6344</p>
                     <p>Mon - Fri: 07:00 - 19:00 | 24/7 Out-of-Hours Emergency Service</p>
+                    <p class="pt-2">
+                        <a href="/locations" class="text-brand-accent hover:text-white transition-colors underline font-medium">
+                            Browse All Service Locations &rarr;
+                        </a>
+                    </p>
                 </div>
             </div>
 
@@ -61,9 +66,14 @@ const essexCommercialHubs = LOCATIONS.filter(l => l.commercialFocus && l.county 
 
             <!-- Column 3: Prime London Commercial Districts -->
             <div class="lg:col-span-3">
-                <h4 class="text-white font-heading font-semibold text-sm uppercase tracking-wider mb-4">
-                    London Commercial Districts
-                </h4>
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="text-white font-heading font-semibold text-sm uppercase tracking-wider">
+                        London Commercial
+                    </h4>
+                    <a href="/locations" class="text-[11px] text-brand-accent hover:text-white transition-colors underline font-medium">
+                        All Locations &rarr;
+                    </a>
+                </div>
                 <ul class="space-y-1.5 text-xs text-slate-400">
                     {londonCommercialHubs.map(hub => (
                         <li>
